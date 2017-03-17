@@ -1,0 +1,5 @@
+images/
+progressReport.*
+!progressReport.tex
+!literature.bib
+!progressReport.pdf
