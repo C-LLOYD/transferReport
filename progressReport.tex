@@ -37,6 +37,7 @@ Dr Gareth Keevil, and Dr Robert Dorrell.
 
 \newcommand{\av}[1]{\overline{#1}}
 \newcommand{\pdev}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\Ddev}[2]{\frac{D {#1}}{D {#2}}}
 \newcommand{\ldev}[2]{\frac{D {#1}}{D {#2}}}
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 \newcommand{\vecti}[1]{{#1}_{i}}
@@ -70,7 +71,7 @@ Dr Gareth Keevil, and Dr Robert Dorrell.
 \cite{dean2010} define biomimcry as the study of naturally occurring properties of plants and animals for the purpose of inspired design. This particular project investigates how we can reduce the fluid dynamic drag that acts on surfaces, such as ship hulls and aircraft wings, by investigating animals that swim long distances in the ocean. There are several natural mechanisms that have evolved to reduce drag, such as the excretion of mucus, but sharks posses a unique method that can be theoretically replicated and applied to smooth surfaces \citep{dean2010}. Sharks have evolved dermal denticles (skin teeth) which help the fish defend against parasites, abrasion, and reduce hydrodynamic drag \citep{fletcher2014}. While the hydrodynamic benefit of shark scales has been known for decades, most work has been focussed on the riblet features that exist on the crest of fast-swimming shark scales, examples of which can be observed in Figure \ref{figure:scalesExample}. These riblets have been simplified and applied to open and closed channel flows and aerofoils, typically achieving a maximum drag reduction of $\sim 10\%$ \citep{dean2010}.
 \begin{figure}[!b]
 \centering
-\includegraphics[width=12cm]{Scales2.png}
+\includegraphics[width=12cm]{images/Scales2.png}
 \caption{Shark scale samples taken from the head (A, D), the dorsal fin (B, E), and the anal fin (C, F) of a Mako shark. Green scale bars are \SI{200}{\mu m}; white scale bars are \SI{100}{\mu m}. Image adapted from \cite{wen2014}.}
 \label{figure:scalesExample}
 \end{figure}
@@ -247,7 +248,136 @@ Mako                                 & Scanned + smoothed                       
 \end{table}
 \newpage
 
-\section{Proprietary Work}
+\section{Mathematical Modelling: Introduction to RANS and LES}
+This section introduces the mathematical models adopted in the present work. Two different approaches are described: Reynolds Averaged Navier-Stokes and Large-Eddy-Simulation; both of which are derived from the same fundamental equations. 
+
+\subsection{Fundamental equations}
+The two fundamental equations governing fluid flow are the continuity \eqref{equation:fundamentalEquations:continuity} and momentum \eqref{equation:fundamentalEquations:momentum} equations, derived by assuming incompressibility \citep{pope2001}:
+\begin{equation}
+\pdev{U_i}{x_i}=0,
+\label{equation:fundamentalEquations:continuity}
+\end{equation}
+and
+\begin{equation}
+\Ddev{U_i}{t}
+=
+\pdev{\tau_{ij}}{x_i},
+\label{equation:fundamentalEquations:momentum}
+\end{equation}
+where 
+\begin{equation}
+\tau_{ij}
+=
+-P\delta_{ij}
++
+\nu\left( \pdev{U_i}{x_j}+\pdev{U_j}{x_i} \right),
+\label{equation:fundamentalEquations:stressTensor}
+\end{equation}
+represents the stress tensor. 
+
+The mean flow equations can be derived by assuming the velocity and pressure variables can be decomposed into a fluctuating and mean component, such that
+
+\begin{equation}
+U_i = \langle U_i \rangle + u_i.
+\label{equation:fundamentalEquations:ReynoldsDecomposition}
+\end{equation}
+
+By substituting this form of $U_i$ into the continuity \eqref{equation:fundamentalEquations:continuity} equation we get
+\begin{equation}
+\pdev{\langle U_i\rangle}{x_i}=0,
+\label{equation:fundamentalEquations:meanContinuity}
+\end{equation}
+and
+\begin{equation}
+\pdev{u_i}{x_i}=0.
+\label{equation:fundamentalEquations:flucContinuity}
+\end{equation}
+By averaging the terms in the momentum equations we get
+\begin{equation}
+\left\langle \Ddev{U_i}{t} \right\rangle
+=
+-\pdev{\langle P \rangle}{x_i}
++
+\nu
+	\left(
+	\pdev{\langle U_j \rangle}{x_i}
+	+
+	\pdev{\langle U_i \rangle}{x_j} 
+	\right).
+\label{equation:fundamentalEquations:averagedMom}
+\end{equation}
+The material derivative can be simplified by
+\begin{equation}
+\left\langle \Ddev{U_i}{t} \right\rangle
+=
+\left\langle
+	\pdev{U_i}{t} + \pdev{U_i U_j}{x_i}
+\right\rangle
+=
+\pdev{\langle U_i\rangle}{t}
++
+\pdev{\langle U_i U_j\rangle}{x_i},
+\end{equation}
+\begin{align}
+\langle U_i U_j\rangle 
+&=
+\langle
+	(\langle U_i \rangle + u_i)(\langle U_i \rangle + u_i)
+\rangle \\
+&=
+\langle
+	\langle U_i \rangle \langle U_j \rangle
+	+
+	u_i \langle U_j \rangle
+	+
+	u_j \langle U_i \rangle
+	+
+	\langle u_i u_j \rangle
+\rangle\\
+&=
+\langle U_i \rangle \langle U_j \rangle
++
+\langle u_i u_j \rangle.
+\end{align}
+Therefore,
+\begin{align}
+\left\langle \Ddev{U_i}{t} \right\rangle
+&=
+\pdev{\langle U_i\rangle}{t} 
++
+\pdev{\langle U_i\rangle \langle U_j\rangle}{x_i}
++
+\pdev{\langle u_i u_j\rangle}{x_i},\\
+&=
+\frac{\overline{D} \langle U_i \rangle }{ \overline{D} t}
++ 
+\pdev{\langle u_i u_j\rangle}{x_i}
+\end{align}
+where $\overline{D}_t$ represents the mean material derivative. 
+
+Substituting this back into \eqref{equation:fundamentalEquations:averagedMom} we result in the Reynolds equations \citep{pope2001}:
+\begin{equation}
+\frac{\overline{D} \langle U_i \rangle }{ \overline{D} t}
+=
+-\pdev{\langle P \rangle}{x_i}
++
+\nu
+	\left(
+	\pdev{\langle U_j \rangle}{x_i}
+	+
+	\pdev{\langle U_i \rangle}{x_j} 
+	\right)
++
+\pdev{\langle u_i u_j\rangle}{x_i}.
+\label{equation:fundamentalEquations:ReynoldsEquations}
+\end{equation}
+These equations are similar in appearance as the Navier-Stokes equations \eqref{equation:fundamentalEquations:momentum} but require information about the Reynolds stresses, $\langle u_i u_j \rangle$. This forms the basis of the RANS ideology, whereby \eqref{equation:fundamentalEquations:meanContinuity} and \eqref{equation:fundamentalEquations:ReynoldsEquations} are solved for $\langle U_i \rangle$ and $\langle P \rangle$ by modelling the Reynolds stresses.
+
+
+
+\newpage
+
+\section{Work So Far ...}
 A review of the literature indicates two areas that have not been adequately investigated: Analysis of the effect of scale geometry on the flow field, and the impact of scales on separating flows. Proprietary work has, so far, concentrated on the first of those areas, although the techniques adopted are transferable to the latter. A parametric study is to be carried out, in order to investigate the effects of scale geometry on the fluid flow. This tool will exploit the periodicities and symmetries associated with arrayed scales, resulting in an infinitely long and wide computational domain. For smooth walls, an extensive range of DNS data is available, making the validation of early work straight forward. The parametric tool requires several work packages to be completed before it can be used. In order to reduce computational expense, the parametric tool will adopt RANS methods. Experimental methods could be adopted to validate the RANS model, but these will only allow validation of the fields far from the scales, due to resolution issues. This will instead be combined with a high resolution LES, which will capture the flow around the scales. Progress has been made in three areas over the last 6 months:
 
 \begin{itemize}
@@ -268,7 +398,7 @@ This Section details the process adopted to replicate and simplify a \textit{Por
 The scale sample, provided by \cite{fletcher2014phd}, is displayed in figure \ref{figure:scaleSample}. It can be observed from this image that there are many sharp edges that have been introduced, possibly by a lack of resolution from the scanning equipment, defects on the scale sample, or damage to the sample.
 \begin{figure}[!b]
 \centering
-\includegraphics[width=6cm]{Scale_Replication_1.PNG}\hfill
+\includegraphics[width=6cm]{images/Scale_Replication_1.PNG}\hfill
 \caption{\textit{Poracanthodes sp.} sample from \cite{fletcher2014phd}.}
 \label{figure:scaleSample}
 \end{figure}
@@ -281,7 +411,7 @@ the wave-like shapes on the downstream section of the scale has been removed and
 
 \begin{figure}[!b]
 \centering
-\vcenteredhbox{\includegraphics[width=12cm]{cross_section_sketch.PNG}}
+\vcenteredhbox{\includegraphics[width=12cm]{images/cross_section_sketch.PNG}}
 \caption{A comparison between a simplified cross section and the sampled scale cross section. The dimensions are scaled after the simplified scale is generated.}
 \label{figure:crossSection}
 \end{figure}
@@ -292,39 +422,39 @@ The final scale replica is compared against the scanned sample in Figure \ref{fi
 
 \begin{figure}[!t]
 \centering
-\vcenteredhbox{\includegraphics[width=7.8cm]{Scale_Replication_3.PNG}}\hfill
-\vcenteredhbox{\includegraphics[width=7.8cm]{Scale_Replication_9.PNG}}
+\vcenteredhbox{\includegraphics[width=7.8cm]{images/Scale_Replication_3.PNG}}\hfill
+\vcenteredhbox{\includegraphics[width=7.8cm]{images/Scale_Replication_9.PNG}}
 \caption{Comparison of sampled scale (left) and simplified scale (right) with overlaying primitive cross sections displayed.}
 \label{figure:blendedScale}
 \end{figure}
 
 \begin{figure}[!b]
 \centering
-\vcenteredhbox{\includegraphics[width=7cm]{Scale_Replication_10.PNG}}\hfill
-\vcenteredhbox{\includegraphics[width=7.5cm]{Scale_Replication_11.PNG}}
+\vcenteredhbox{\includegraphics[width=7cm]{images/Scale_Replication_10.PNG}}\hfill
+\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_11.PNG}}
 \caption{Comparison of blended scale (left) and warped scale (right).}
 \label{figure:warping}
 \end{figure}
 
 \begin{figure}[!t]
 \centering
-\vcenteredhbox{\includegraphics[width=7.5cm]{Scale_Replication_15.PNG}}\hfill
-\vcenteredhbox{\includegraphics[width=7.5cm]{Scale_Replication_11.PNG}}
+\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_15.PNG}}\hfill
+\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_11.PNG}}
 \\
 \vspace{2cm}
-\vcenteredhbox{\includegraphics[width=7.5cm]{Scale_Replication_16.PNG}}\hfill
-\vcenteredhbox{\includegraphics[width=7.5cm]{Scale_Replication_12.PNG}}
+\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_16.PNG}}\hfill
+\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_12.PNG}}
 \\
 \vspace{3cm}
-\vcenteredhbox{\includegraphics[width=7.5cm]{Scale_Replication_14.PNG}}\hfill
-\vcenteredhbox{\includegraphics[width=7.5cm]{Scale_Replication_13.PNG}}
+\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_14.PNG}}\hfill
+\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_13.PNG}}
 \caption{Comparison of sampled scale (left) and simplified scale (right).}
 \label{figure:scaleComparison}
 \end{figure}
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=7.5cm]{array_progress_report.PNG}
+\includegraphics[width=7.5cm]{images/array_progress_report.PNG}
 \caption{Array of staggered scales for 3D printing.}
 \label{figure:staggeredArray}
 \end{figure}
@@ -339,7 +469,7 @@ The meshing process is a large factor in optimising a parametric CFD study: bein
 
 \begin{figure}[!b]
 \centering
-\includegraphics[width=12cm]{starccm_periodic_mesh.png}
+\includegraphics[width=12cm]{images/starccm_periodic_mesh.png}
 \caption{Periodic mesh, created in STAR-CCM+, using the CAD scale documented in Section \ref{section:cad}. Periodicity exists between the $xz$ boundaries while symmetry planes are placed in the $yz$ planes.}
 \label{figure:periodicDomain}
 \end{figure}
@@ -616,24 +746,24 @@ The calculated Reynolds numbers for the three simulations are compared against t
 Little discrepancy can be observed from the velocity profiles of Figure \ref{figure:velocityProfiles}.
 \begin{figure}[!t]	
 \centering
-\includegraphics[width=0.5\textwidth]{Mean_Vel_linear.png}\hfill
-\includegraphics[width=0.5\textwidth]{Mean_Vel_log.png}
+\includegraphics[width=0.5\textwidth]{images/Mean_Vel_linear.png}\hfill
+\includegraphics[width=0.5\textwidth]{images/Mean_Vel_log.png}
 \caption{Comparison of mean velocity profiles for three LES cases and the DNS of \cite{vreman2014}.}
 \label{figure:velocityProfiles}
 \end{figure}
 Small differences are present for the two Smagorinsky models in regions of high velocity gradient. Much larger differences are present in the root-mean-square (rms) statistics. Figure \ref{figure:rmsVelocityProfiles} indicates that the non-dynamic models underpredict the maximum values significantly in both the wall-normal and cross-stream directions.
 \begin{figure}[!b]
 \centering
-\includegraphics[width=0.5\textwidth]{rms_u.png}\hfill
-\includegraphics[width=0.5\textwidth]{rms_v.png}\\
-\includegraphics[width=0.5\textwidth]{rms_w.png}
+\includegraphics[width=0.5\textwidth]{images/rms_u.png}\hfill
+\includegraphics[width=0.5\textwidth]{images/rms_v.png}\\
+\includegraphics[width=0.5\textwidth]{images/rms_w.png}
 \caption{Comparison of root-mean-square velocity profiles for three LES cases and the DNS of \cite{vreman2014}. For legend see Figure \ref{figure:velocityProfiles}.}
 \label{figure:rmsVelocityProfiles}
 \end{figure}
 The near-wall gradients are also poorly captured by the non-dynamic models, suggesting that the models perform poorly in these regions. The half-channel simulation behaves similarly to the full-channel until getting close to $y=\delta$, at which point the solutions deviate significantly. This trend can be observed in many of the presented results (Figures \ref{figure:rmsVelocityProfiles} to \ref{figure:flatness}) suggesting that the time dependent asymmetries in the flow have a large impact on the time averaged solution. The dynamic-Lagrangian model performs well, almost matching the DNS in all three directions. The small discrepancy in magnitude can be accounted for by the turbulent kinetic energy captured by the sub-grid scale stress term. The two full-channel rms velocity results collapse at $y=\delta$, suggesting that the dynamic Lagrangian model has little impact in regions far from the wall. The Reynolds stresses (Figure \ref{figure:reynoldsStress}) are well predicted by the dynamic model but the maximum is under-predicted by the Smagorinsky model. A reasonable explanation for this is expressed by \cite{pope2001}, who suggests that, for transitional flows, the fixed constant $C_s$ must be reduced in order to predict the sub-grid scale stresses. Since the Reynolds number is low, this explanation seems reasonable.
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.5\textwidth]{Reynolds_Stress.png}
+\includegraphics[width=0.5\textwidth]{images/Reynolds_Stress.png}
 \caption{Comparison of Reynolds stresses for three LES cases and the DNS of \cite{vreman2014}. For legend see Figure \ref{figure:velocityProfiles}.}
 \label{figure:reynoldsStress}
 \end{figure}
@@ -641,9 +771,9 @@ The near-wall gradients are also poorly captured by the non-dynamic models, sugg
 The rms of vorticity profiles (Figure \ref{figure:rmsVorticity}) similarly indicate that the dynamic model predicts the flow much better close to the wall.
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.5\textwidth]{rms_omega_x.png}\hfill
-\includegraphics[width=0.5\textwidth]{rms_omega_y.png}\\
-\includegraphics[width=0.5\textwidth]{rms_omega_z.png}
+\includegraphics[width=0.5\textwidth]{images/rms_omega_x.png}\hfill
+\includegraphics[width=0.5\textwidth]{images/rms_omega_y.png}\\
+\includegraphics[width=0.5\textwidth]{images/rms_omega_z.png}
 \caption{Comparison of RMS Vorticity for three LES cases and the DNS of \cite{vreman2014}. For legend see Figure \ref{figure:velocityProfiles}.}
 \label{figure:rmsVorticity}
 \end{figure}
@@ -658,17 +788,17 @@ F_q = \frac{\langle q^4 \rangle}{{\langle q^2 \rangle}^2}.
 The skewness of velocity indicates the likelihood to take on large positive values (for $S_u > 0$) or large negative values (for $S_u < 0$). A high kurtosis suggests that large intermittent bursts in velocity are present in the flow, whilst a low kurtosis indicates that fluctuations are close to the mean value. The skewness profiles of Figure \ref{figure:skewness} suggest that the averaging time is too short to reach a unique solution, especially in the cross-stream direction. The small magnitudes of $S_u$ suggest a symmetric probability distribution around the mean.
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.5\textwidth]{S_u.png}\hfill
-\includegraphics[width=0.5\textwidth]{S_v.png}\\
-\includegraphics[width=0.5\textwidth]{S_w.png}
+\includegraphics[width=0.5\textwidth]{images/S_u.png}\hfill
+\includegraphics[width=0.5\textwidth]{images/S_v.png}\\
+\includegraphics[width=0.5\textwidth]{images/S_w.png}
 \caption{Comparison of skewness of velocity for three LES cases and the DNS of \cite{vreman2014}. For legend see Figure \ref{figure:velocityProfiles}.}
 \label{figure:skewness}
 \end{figure}
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.5\textwidth]{F_u.png}\hfill
-\includegraphics[width=0.5\textwidth]{F_v.png}\\
-\includegraphics[width=0.5\textwidth]{F_w.png}
+\includegraphics[width=0.5\textwidth]{images/F_u.png}\hfill
+\includegraphics[width=0.5\textwidth]{images/F_v.png}\\
+\includegraphics[width=0.5\textwidth]{images/F_w.png}
 \caption{Comparison of flatness of velocity for three LES cases and the DNS of \cite{vreman2014}. For legend see Figure \ref{figure:velocityProfiles}.}
 \label{figure:flatness}
 \end{figure}
@@ -688,7 +818,7 @@ A priority for February is to print a preliminary array of scales (CAD shown in 
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.45\textwidth]{ganttChart.png}
+\includegraphics[width=0.45\textwidth]{images/ganttChart.png}
 \caption{Gantt chart for the months January 2017 - August 2017.}
 \label{figure:ganttChart}
 \end{figure}
@@ -714,6 +844,6 @@ The work discussed will be grouped into three chapters: LDA and LES channel flow
 
 
 \newpage
-\bibliography{../../literature/litReview/literature.bib}
+\bibliography{literature.bib}
 \end{document}
 
