@@ -252,6 +252,12 @@ Mako                                 & Scanned + smoothed                       
 \section{Mathematical Modelling: Introduction to RANS and LES}
 This section introduces the mathematical models adopted in the present work. Two different approaches are described: Reynolds Averaged Navier-Stokes and Large-Eddy-Simulation; both of which are derived from the same fundamental equations. 
 
+\vspace{2cm}
+
+- talk about different types of models: URANS, SAS DES etc ... Then specify a few specific models 
+
+\vspace{2cm}
+
 \subsection{Fundamental equations}
 The two fundamental equations governing fluid flow are the continuity \eqref{equation:fundamentalEquations:continuity} and momentum \eqref{equation:fundamentalEquations:momentum} equations, derived by assuming incompressibility \citep{pope2001}:
 \begin{equation}
@@ -379,35 +385,18 @@ These equations are similar in appearance as the Navier-Stokes equations \eqref{
 \newpage
 
 \section{Channel Flow Experiments using Laser Doppler Anemometry}
-As discussed in Section \ref{section:literatureReview}, little work has been carried out in analysing the fluid flow around shark scale surfaces; most work has focussed on the use of force balances which cannot measure velocity or pressure fields. While previous experiments have successfully measured drag reduction for shark scale surface they have not yet investigated the fluid dynamic aspects that are causing it. 
+As discussed in Section \ref{section:literatureReview}, little work has been carried out in analysing the fluid flow around shark scale surfaces; most work has focussed on the use of force balances which cannot measure velocity or pressure fields. While previous experiments have successfully measured drag reduction for shark scale surfaces they have not yet investigated the fluid dynamic features that are causing it. For this reason we choose to adopt Laser Doppler Anemometry (LDA) to measure a channel flow, with and without shark scales. While a channel flow does not replicate the complex flow fields around a shark, it allows comparison against a wide range of empirical and numerical literature data (in the case of smooth channels) and also ensures the results are applicable to a wide range of surface flows, such as boat hulls and pipe walls. In addition to this, understanding how shark scales behave in simple and controllable configurations will be instrumental when investigating their effects on separating flows. This simplification also allows numerical models to exploit the periodicity of shark scale surfaces, greatly reducing the required computing power for numerical methods. 
 
-For this reason we choose to adopt Laser Doppler Anemometry (LDA) for a channel flow, with and without shark scales. A channel flow configuration allows validation against a wide range of empirical and numerical literature data and also ensures the results are applicable to a wide range of surface flows such as boat hulls.
+This section details the preliminary experiments, the aim of which is to validate the experimental method and identify changes that must be made to future designs. Current rig designs are based on those of \cite{fletcher2014phd} who uses 2D LDA to compare differences, in terms of velocity profiles and skin friction coefficients, between 5 shark scale samples. These experiments made use of a recirculating flume with a removable flat plate (figure XX - Make image of the measurement section). This set up has a practical advantage since scale samples can be easily swapped. However, the present study requires comparison with numerical models, thus the experimental solutions are validated against the empirical law of the wall (reference) and literature data (find some, or do a RANS for it) for a fully developed channel flow. In addition to this the sensitivity to wall-normal spatial resolution and temporal averaging window are also assessed.
 
-
-		-	channel flow:	simple config, lots to validate against, very standard flow regime: can be applied to other problems.
-			-	allows matching to CFD  - validation 
-
--For this reason we choose to carry out LDA over shark scale surfaces in order to both investigate how the flow fields change when compared to flat surfaces, and to provide validation for numerical models. 
-
-\vspace{1cm}
+\subsection{Fundamentals of LDA}
+LDA is a non-intrusive method of determining a fluids velocity by measuring the Doppler shift of an emitted light beam.   
 
 
--link to lit. review - it is clear from the literature that there is little to no data available about the flow field around shark scales, therefore we do these experiments...
 
+Several methods have been successfully applied to measuring boundary layer flows, such as hot wire anemometry (HWA), 
 
 \vspace{2cm}
-
-
-
-This section discusses the methodology and results of a turbulent channel flow experiment, carried out using Laser Doppler Anemometry (LDA). The purpose of these preliminary experiments is to validate the current design before carrying out extensive work on shark scale surfaces. By measuring a simple channel flow we can compare data against numerical models, empirical models, and other laboratory experiments. 
--this will allow us to make changes for future work
-
-\vspace{2cm}
-Purpose of experiments
-	-	measure a real flow around shark scales
-	-	Velocity profiles, turbulence stats and friction coeffs
-	-	Compare these to smooth surfaces
-	-	Validate numerical models
 
 How?
 	-	recirculating open channel flume with a submerged flat plate
@@ -423,18 +412,13 @@ Why?
 		for a given flow rate.
 
 
-This section details the methodology and results of preliminary channel flow experiments, the purpose of which are to validate the current experimental design, and if applicable, provide information as to what must be changed for future experiments. 
-
-In order to validate numerical models the specified boundary conditions must match those of the experiments. In particular, for periodicity to be exploited, the experiments must allow the flow to develop fully before measurements are taken.
-
-In addition to this, the preliminary experiments will allow post-processing methods, such as filtering, to be developed.
-
 
 -	Fully developed
 		-	how much does the flow change if it is not developed
 -	time dependence
 		-	how long do we need to average for for convergence
 		-	what are the error estimates if we average for less time
+			NOTE - Y+ VALUES ARE DIFFERENT FOR DIFF FLOW RATES
 -	2D not 3D for prelim experiments
 		-	Provides info for errors and exp design without 
 			complications and additional run time
