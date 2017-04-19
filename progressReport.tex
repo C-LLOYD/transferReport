@@ -19,7 +19,9 @@ Dr Gareth Keevil, and Dr Robert Dorrell.
 \usepackage[british]{babel}
 \usepackage{natbib}
 \usepackage{multirow}
+\usepackage{caption}
 
+\DeclareCaptionFormat{cont}{#1 (cont.)#2#3\par}
 \newcommand*{\vcenteredhbox}[1]{\begingroup
 \setbox0=\hbox{#1}\parbox{\wd0}{\box0}\endgroup}
 
@@ -452,53 +454,6 @@ Fundamentals of LDA, Flume used, pump used, plate design, post-processing method
 \subsection{Preliminary Results}
 Split into three ...
 \subsubsection{Time Dependence}
-The purpose of these experiments is to both determine the amount of sampling time required for statistical quantities to converge, and estimate the error induced by sampling for less time. The quantities of interest are the mean streamwise ($\left<U_x\right>$) and wall-normal ($\left<U_y\right>$) velocities, the Root-Mean-Square (RMS) of the fluctuations of these velocity components (RMS($u_x$) and RMS($u_y$)), and the Reynolds stresses ($\left<u_x u_y \right>$). The mean and RMS quantities are evaluated by
-\begin{equation}
-\left<U_i\right> = \frac{1}{N}\sum^N_{j=1} U_{i,j}, \hspace{1cm}
-\text{RMS}(u_i) = \sqrt{\frac{1}{N}\sum^N_{j=1} (u_{i,j})^2},
-\end{equation}
-where $u_i= U_i - \left<U_i\right>$ is the velocity fluctuation. The Reynolds stresses are calculated using
-\begin{equation}
-\left< u_x u_y \right> = \frac{1}{N}\sum^N_{j=1} (u_{x,j} u_{y,j}).
-\end{equation}
-%	NEED TO EXPLAIN HOW WE CALCULATE TIME DEPENDENCE!!
-A compromise must be reached between spacial and temporal accuracy; if a long sampling time is required for convergence then the amount of time required to collect data increases, thus fewer points in space can be sampled in a given time period. The following data are gathered by sampling at three locations (\SI{1}{mm}, \SI{15}{mm} and \SI{40}{mm} from the flat plate) in the flow at two pump speeds (\SI{4}{Hz} and \SI{8}{Hz}). Several positions are chosen since the amount of sampling time required is dependent on the local velocity of the flow. It is therefore expected that close to the wall, statistics will require a longer averaging window. In order to assess convergence the statistics are estimated by averaging over the last 30 seconds of sampling time. $\pm 1\%$ and $\pm 5\%$ confidence intervals are estimated from this and plotted for each data set.
-
-The impact of accounting for velocity bias and filtering poor data is also assessed through these experiments.
-\\\\
-Figure \ref{figure:experiments:filteringExample}:	This shows the phase space diagram for filtering poor data. 
-\\
-Figure \ref{figure:experiments:timeDependence:meanUx}: plots indicate several things:\\
-1.	Weighting has a large effect near the wall but for z=15 and z=40 it has little impact\\
-2.	filtering makes very little difference\\
-3.	achieve convergence of 1\% at ~150s for both pump speeds near the wall. Get conv at 150s for slow speed and 60s at high speed for z=15mm. We get conv at ~30 sec for both flows far from the wall. \\
-\\
-Figure \ref{figure:experiments:timeDependence:meanUy}:\\
-1.	Both weighting and filtering have a large impact on all of the plots\\
-2.	we don't get convergence to 1\% for any data\\
-3.	could be argued that we reach a 5\% convergence at 40mm for both data sets although little confidence of this without longer sampling times. \\
-\\
-Figure \ref{figure:experiments:timeDependence:RMSux}:\\
-1.	filtering makes a difference close to wall\\
-2.	weighting makes a difference for all\\
-3.	conv is reached sooner for high speed flow than low speed for all distances\\
-4.	interestingly the fast flow converges quicker close to the wall than far from it. (100 sec close to wall, 200 sec far from)\\
-5.	low speed flow struggles to converge close to wall, possibly converges to 1\% at 250s but need more sampling time to confirm\\
-6.	Generally takes longer to conv. than means.\\
-\\
-Figure \ref{figure:experiments:timeDependence:RMSuy}:\\
-1.	Most notable change is the large spikes in the profiles which are removed when the filter is applied. These show up much more in RMS than means.\\
-2.	Weighting makes much more difference for the slower speed than higher\\
-3.	generally get quicker convergence for UyRMS than UxRMS, despite lack of convergence for UyMean.\\
-4.	interestingly we get conv. close to wall before far from wall
-\\\\
-Figure \ref{figure:experiments:timeDependence:uv}:\\
-1.	Same spikes are observed as in UyRMS BUT filtering doesn't remove them entirely!\\
-2.	again, weighting makes a large difference for all data.\\
-3.	Generally don't achieve convergence - need to sample for longer.\\
-\\
-Recommendations: sample for longer and for more points
--	Construct a polynomial for the estimated error for a given sampling time as a function of space.
 \begin{figure}
 \centering
 \includegraphics[width=12cm]{images/LDA_timeDependenceImages/4hz_x_400_z_1_Ux_phaseSpacePlot.png}\\
@@ -566,11 +521,88 @@ Recommendations: sample for longer and for more points
 \caption{Reynolds stresses, $u_x \text{u}_y$, at $z$ locations \SI{1}{mm} (top), \SI{15}{mm} (middle) and \SI{40}{mm} (bottom) for pump speeds of \SI{4}{Hz} (images on the left) and \SI{8}{Hz} (images on the right).}
 \label{figure:experiments:timeDependence:uv}
 \end{figure}
+The purpose of these experiments is to both determine the amount of sampling time required for statistical quantities to converge, and estimate the error induced by sampling for less time. The quantities of interest are the mean streamwise ($\left<U_x\right>$) and wall-normal ($\left<U_y\right>$) velocities, the Root-Mean-Square (RMS) of the fluctuations of these velocity components (RMS($u_x$) and RMS($u_y$)), and the Reynolds stresses ($\left<u_x u_y \right>$). The mean and RMS quantities are evaluated by
+\begin{equation}
+\left<U_i\right> = \frac{1}{N}\sum^N_{j=1} U_{i,j}, \hspace{1cm}
+\text{RMS}(u_i) = \sqrt{\frac{1}{N}\sum^N_{j=1} (u_{i,j})^2},
+\end{equation}
+where $u_i= U_i - \left<U_i\right>$ is the velocity fluctuation. The Reynolds stresses are calculated using
+\begin{equation}
+\left< u_x u_y \right> = \frac{1}{N}\sum^N_{j=1} (u_{x,j} u_{y,j}).
+\end{equation}
+%	NEED TO EXPLAIN HOW WE CALCULATE TIME DEPENDENCE!!
+A compromise must be reached between spacial and temporal accuracy; if a long sampling time is required for convergence then the amount of time required to collect data increases, thus fewer points in space can be sampled in a given time period. The following data are gathered by sampling at three locations (\SI{1}{mm}, \SI{15}{mm} and \SI{40}{mm} from the flat plate) in the flow at two pump speeds (\SI{4}{Hz} and \SI{8}{Hz}). Several positions are chosen since the amount of sampling time required is dependent on the local velocity of the flow. It is therefore expected that close to the wall, statistics will require a longer averaging window. In order to assess convergence the statistics are estimated by averaging over the last 30 seconds of sampling time. $\pm 1\%$ and $\pm 5\%$ confidence intervals are estimated from this and plotted for each data set.
+
+The impact of accounting for velocity bias and filtering poor data is also assessed through these experiments.
+\\\\
+Figure \ref{figure:experiments:filteringExample}:	This shows the phase space diagram for filtering poor data. 
+\\
+Figure \ref{figure:experiments:timeDependence:meanUx}: plots indicate several things:\\
+1.	Weighting has a large effect near the wall but for z=15 and z=40 it has little impact\\
+2.	filtering makes very little difference\\
+3.	achieve convergence of 1\% at ~150s for both pump speeds near the wall. Get conv at 150s for slow speed and 60s at high speed for z=15mm. We get conv at ~30 sec for both flows far from the wall. \\
+\\
+Figure \ref{figure:experiments:timeDependence:meanUy}:\\
+1.	Both weighting and filtering have a large impact on all of the plots\\
+2.	we don't get convergence to 1\% for any data\\
+3.	could be argued that we reach a 5\% convergence at 40mm for both data sets although little confidence of this without longer sampling times. \\
+\\
+Figure \ref{figure:experiments:timeDependence:RMSux}:\\
+1.	filtering makes a difference close to wall\\
+2.	weighting makes a difference for all\\
+3.	conv is reached sooner for high speed flow than low speed for all distances\\
+4.	interestingly the fast flow converges quicker close to the wall than far from it. (100 sec close to wall, 200 sec far from)\\
+5.	low speed flow struggles to converge close to wall, possibly converges to 1\% at 250s but need more sampling time to confirm\\
+6.	Generally takes longer to conv. than means.\\
+\\
+Figure \ref{figure:experiments:timeDependence:RMSuy}:\\
+1.	Most notable change is the large spikes in the profiles which are removed when the filter is applied. These show up much more in RMS than means.\\
+2.	Weighting makes much more difference for the slower speed than higher\\
+3.	generally get quicker convergence for UyRMS than UxRMS, despite lack of convergence for UyMean.\\
+4.	interestingly we get conv. close to wall before far from wall
+\\\\
+Figure \ref{figure:experiments:timeDependence:uv}:\\
+1.	Same spikes are observed as in UyRMS BUT filtering doesn't remove them entirely!\\
+2.	again, weighting makes a large difference for all data.\\
+3.	Generally don't achieve convergence - need to sample for longer.\\
+\\
+Recommendations: sample for longer and for more points
+-	Construct a polynomial for the estimated error for a given sampling time as a function of space.
+
 
 
 \subsubsection{Streamwise Space Dependence}
-Are we fully developed ..?
+Are we fully developed ..?\\
+\begin{figure}
+\centering
+\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/4Hz_15mm_MeanUx.png}\hfill
+\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/8Hz_15mm_MeanUx.png}\\
+\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/4Hz_15mm_MeanUy.png}\hfill
+\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/8Hz_15mm_MeanUy.png}\\
+\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/4Hz_15mm_RMSux.png}\hfill
+\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/8Hz_15mm_RMSux.png}
+\caption{Spatial dependence of statistical quantities at a location 15mm from the plate and pump speeds of \SI{4}{Hz} (left) and \SI{8}{Hz} (right).}
+\label{figure:experiments:spaceDependence}
+\end{figure}
+%
+\begin{figure}
+\ContinuedFloat
+\captionsetup{list=off,format=cont}
+\centering
+\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/4Hz_15mm_RMSuy.png}\hfill
+\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/8Hz_15mm_RMSuy.png}\\
+\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/4Hz_15mm_uv.png}\hfill
+\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/8Hz_15mm_uv.png}
+\caption{For caption see Figure \ref{figure:experiments:spaceDependence}.}
+\end{figure}
+%
+
 \subsubsection{Profile plot section}
+\begin{figure}
+\centering
+\includegraphics[width=10cm]{images/LDA_profileImages/tempProfile.png}
+\caption{Temporary velocity profile plot for a pump speed of 8Hz and a distance of 300mm.}
+\end{figure}
 Plot profiles of mean velocities, rms and Reynolds stresses. We can estimate how well we fit the law of the wall, Reynolds numbers and friction coefficients. 
 \section{Work So Far ...}
 A review of the literature indicates two areas that have not been adequately investigated: Analysis of the effect of scale geometry on the flow field, and the impact of scales on separating flows. Proprietary work has, so far, concentrated on the first of those areas, although the techniques adopted are transferable to the latter. A parametric study is to be carried out, in order to investigate the effects of scale geometry on the fluid flow. This tool will exploit the periodicities and symmetries associated with arrayed scales, resulting in an infinitely long and wide computational domain. For smooth walls, an extensive range of DNS data is available, making the validation of early work straight forward. The parametric tool requires several work packages to be completed before it can be used. In order to reduce computational expense, the parametric tool will adopt RANS methods. Experimental methods could be adopted to validate the RANS model, but these will only allow validation of the fields far from the scales, due to resolution issues. This will instead be combined with a high resolution LES, which will capture the flow around the scales. Progress has been made in three areas over the last 6 months:
