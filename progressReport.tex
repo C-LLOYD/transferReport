@@ -20,6 +20,7 @@ Dr Gareth Keevil, and Dr Robert Dorrell.
 \usepackage{natbib}
 \usepackage{multirow}
 \usepackage{caption}
+\usepackage[mathscr]{euscript}
 
 \DeclareCaptionFormat{cont}{#1 (cont.)#2#3\par}
 \newcommand*{\vcenteredhbox}[1]{\begingroup
@@ -259,6 +260,15 @@ This section introduces the mathematical models adopted in the present work. Two
 
 \vspace{2cm}
 
+Structure:\\
+-	Fundamental eq. and derivation of Reynolds Eq.\\
+-	Turbulent viscosity hyp. + standard assumptions\\
+-	Link this to development of RANS and the standard equations. - Derive these (for k)\\
+-	** Give a description of available turbulence models (common ones) and a description of why they are not applicable.\\
+Algebraic: mixing length (
+...
+Be more general: Suggest that generally adding more eq. resolves turbulence better but at an increased cost. 
+
 \subsection{Fundamental equations}
 The two fundamental equations governing fluid flow are the continuity \eqref{equation:fundamentalEquations:continuity} and momentum \eqref{equation:fundamentalEquations:momentum} equations, derived by assuming incompressibility \citep{pope2001}:
 \begin{equation}
@@ -379,9 +389,35 @@ Substituting this back into \eqref{equation:fundamentalEquations:averagedMom} we
 \pdev{\langle u_i u_j\rangle}{x_i}.
 \label{equation:fundamentalEquations:ReynoldsEquations}
 \end{equation}
-These equations are similar in appearance as the Navier-Stokes equations \eqref{equation:fundamentalEquations:momentum} but require information about the Reynolds stresses, $\langle u_i u_j \rangle$. This forms the basis of the RANS ideology, whereby \eqref{equation:fundamentalEquations:meanContinuity} and \eqref{equation:fundamentalEquations:ReynoldsEquations} are solved for $\langle U_i \rangle$ and $\langle P \rangle$ by modelling the Reynolds stresses.
+These equations are similar in appearance as the Navier-Stokes equations \eqref{equation:fundamentalEquations:momentum} but require information about the Reynolds stresses, $\langle u_i u_j \rangle$. This forms the basis of the RANS ideology, whereby \eqref{equation:fundamentalEquations:meanContinuity} and \eqref{equation:fundamentalEquations:ReynoldsEquations} are solved for $\langle U_i \rangle$ and $\langle P \rangle$ by modelling the Reynolds stresses. There have been many proposed models to close this system of equations with varying accuracy and expense. A widely adopted approach to modelling these stresses is the turbulent-viscosity hypothesis which assumes
+\begin{equation}
+\left< u_i u_j \right> = \frac{2}{3}k \delta_{ij} - \nu_T \left( 
+	\pdev{\left< U_i \right>}{x_j} + \pdev{\left< U_j \right>}{x_i}	\right),
+\end{equation}
+where $\nu_T(\boldsymbol{x},t)$ is the turbulent viscosity, analogous to the molecular viscosity. Algebraic relationships for $\nu_T$ have been suggested, such that $\nu_T=l_m^2 \left| (\partial \left<U\right> / \partial y   \right|$, but these are reliant on the specification of the mixing length $l_m$. 
+
+\begin{equation}
+\nu_T = c k^{1/2} l_m = C_\mu k^2/\epsilon,
+\end{equation}
 
 
+\begin{equation}
+\pdev{k}{t} + \left< U_i \right> \cdot \nabla k = -\nabla \cdot T_i' + \mathcal{P} - \epsilon 
+\end{equation}
+
+\begin{equation}
+T_i' = \frac{1}{2} \left< u_i u_j u_j \right> + \left< u_i P' \right> - 2 \nu \left< u_j s_{ij} \right>.
+\end{equation}
+where $P'$ is the fluctuation component of the kinematic pressure. Further assumptions: the flux, $T_i'$ is modelled using gradient diffusion, i.e 
+\begin{equation}
+T_i' = -\frac{\nu_T}{\sigma{k}} \nabla k,
+\end{equation}
+where the turbulent Prandtl number is generally taken as $\sigma_k=1$. This physically asserts that due to velocity and pressure fluctuations there is a flux of k down the gradient of k \citep{pope2001}.
+
+The equation for epsilon is entirely empirical:
+\begin{equation}
+\pdev{\epsilon}{t}  + \left< U_i \right> \cdot \nabla \epsilon = \nabla \cdot \left( \frac{\nu_T}{\sigma{\epsilon}} \nabla \epsilon \right) + C_{\epsilon 1} \frac{\mathcal{P} \epsilon}{k} - C_{\epsilon 2} \frac{\epsilon^2}{k}
+\end{equation}
 
 \newpage
 
