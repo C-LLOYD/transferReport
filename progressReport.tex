@@ -410,13 +410,21 @@ T_i' = \frac{1}{2} \left< u_i u_j u_j \right> + \left< u_i P' \right> - 2 \nu \l
 \end{equation}
 where $P'$ is the fluctuation component of the kinematic pressure. Further assumptions: the flux, $T_i'$ is modelled using gradient diffusion, i.e 
 \begin{equation}
-T_i' = -\frac{\nu_T}{\sigma{k}} \nabla k,
+T_i' = -\frac{\nu_T}{\sigma_{k}} \nabla k,
 \end{equation}
 where the turbulent Prandtl number is generally taken as $\sigma_k=1$. This physically asserts that due to velocity and pressure fluctuations there is a flux of k down the gradient of k \citep{pope2001}.
 
 The equation for epsilon is entirely empirical:
 \begin{equation}
-\pdev{\epsilon}{t}  + \left< U_i \right> \cdot \nabla \epsilon = \nabla \cdot \left( \frac{\nu_T}{\sigma{\epsilon}} \nabla \epsilon \right) + C_{\epsilon 1} \frac{\mathcal{P} \epsilon}{k} - C_{\epsilon 2} \frac{\epsilon^2}{k}
+\pdev{\epsilon}{t}  + \left< U_i \right> \cdot \nabla \epsilon = \nabla \cdot \left( \frac{\nu_T}{\sigma_{\epsilon}} \nabla \epsilon \right) + C_{\epsilon 1} \frac{\mathcal{P} \epsilon}{k} - C_{\epsilon 2} \frac{\epsilon^2}{k}
+\end{equation}
+as is the one for omega .. 
+\begin{equation}
+\pdev{\omega}{t}  + \left< U_i \right> \cdot \nabla \omega = \nabla \cdot \left( \frac{\nu_T}{\sigma_{\omega}} \nabla \omega \right) + C_{\omega 1} \frac{\mathcal{P} \omega}{k} - C_{\omega 2} \omega^2
+\end{equation}
+By taking $\omega \equiv \epsilon /k$ and substituting into $\epsilon$ equation we get
+\begin{equation}
+\pdev{\omega}{t}  + \left< U_i \right> \cdot \nabla \omega = \nabla \cdot \left( \frac{\nu_T}{\sigma_{\epsilon}} \nabla \omega \right) + (C_{\varepsilon 1}-1) \frac{\mathcal{P} \omega}{k} - (C_{\varepsilon 2}-1) \omega^2 + \frac{2 \nu_T}{\sigma_\epsilon k}\nabla \omega \cdot \nabla k
 \end{equation}
 
 \newpage
