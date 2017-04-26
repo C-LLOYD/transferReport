@@ -120,6 +120,22 @@ There are two aims of this project; to investigate the influence of shark scale 
 \section{Literature Review}
 \label{section:literatureReview}
 
+New Structure:\\
+intro:-	Shark skin has been studied for blah blah years, large documents on fossils by ...\\
+-	This is what they look like and their theorised purpose is :  look at Fletcher ..\\
+-	Give a diagram and show the flow direction - also show variety of scales\\
+-	Then talk about riblets ...\\
+-	Can go into more depth - talk about numerical methods in more detail, and get diagrams of different shapes, and get some graphs - show the important equations/dimensionless quantities. Also provide diagrams of how vortices are lifted away from riblets.\\
+-	then provide our tables etc ...\\
+-	Close the section by talking about how simplified these 'scales' are and introduce the next section...\\
+****	Find the paper on tomo-PIV.\\
+-	next section: experiments on real shark scales ... \\
+-	Introduce with Becheret (?) experiments and talk about how he theorised they may work .. \\
+-	Briefly go through each key paper, as we have done already. Talk about how, unlike the large amounts of work on riblets, nobody has actually looked into the flow profiles (or at least very few).
+
+
+\vspace{5cm}
+
 Sharkskin is comprised of small tooth-like structures called dermal denticles which are optimised to prevent abrasion, defence from parasites and reduce hydrodynamic drag \citep{fletcher2014}. The hydrodynamic properties of sharkskin is of interest to engineers due to the industrial applications of drag reduction, such as the transport of oil and gas and the design of aircraft and ships \citep{dean2010}. An extensive amount of work has been carried out on simplified, sharkskin-inspired, riblets which have been successful in reducing drag for open channel flows, closed channel flows and application to aerofoils \citep{bixler2013review}. These riblets are generally two-dimensional, whereby there is no variation in cross section in the streamwise direction. The most popular cross sectional shapes are blade like, sawtooth and scalloped although they are theorised to reduce drag in the same way. \cite{dean2010} describes the drag reduction process as the lifting of cross-stream, high speed, vortices away from the wall whereby the high shear stresses associated with which only act at the riblet tips. While vortices are introduced in-between riblets they are restricted by the riblet spacing, therefore reducing both shear stresses acting on the riblet valleys and the flow Reynolds stresses, both of which contribute to drag. The riblets also act to impede the translation of secondary vortices, reducing vortex entanglement and ejection into the outer boundary layers. These effects are known to be reliant on the geometry of the riblet cross section: Riblets must protrude above the viscous sub-layer if vortices are to be impeded, and they must also be smaller than the near-wall vortices or else their motion will not be restricted \citep{dean2010}. These effects have been visualised through the use of smoke-wire techniques \citep{lee2001}, PIV \citep{lee2008} and numerical methods \citep{goldstein1995}. The literature is in general agreement that the optimal riblet spacing is $s^+ =  u_\tau s/\nu \sim 15$ where $s$ is the spacing between riblets, $u_\tau$ is the friction velocity of the flow without riblets and $\nu$ is the fluid viscosity.
 
 \begin{table}[!t]
@@ -510,10 +526,31 @@ Fundamentals of LDA, Flume used, pump used, plate design, post-processing method
 -mounting of laser + traverse
 \subsubsection{Post processing methods}
 In order to identify poor data several filtering methods have been applied. The simplest of which is a global average filter, whereby 
-
-
-
+\begin{equation}
+\mu_\phi - 2 \sigma_\phi < \overline{\phi} < \mu_\phi + 2 \sigma_\phi,
+\end{equation}
+where 
+\begin{equation}
+\mu_\phi = \frac{1}{N} \sum^N_{i=1} \phi_i,
+\end{equation}
+is the temporal average, and
+\begin{equation}
+\sigma_\phi = \sqrt{\frac{1}{N} \sum^N_{i=1} (\phi_i - \mu_\phi)^2	} 
+\end{equation}
+is the standard deviation. The choice of $\pm 2 \sigma_\phi$ ensures that $\sim$95$\%$ of the probability distribution function of $\phi$ is captured by the filter. An alternative method is to apply a moving average over an averaging window, $W$, such that
+\begin{equation}
+\mu_{\phi,i} - 2 \sigma_{\phi,i} < \overline{\phi_i} < \mu_{\phi,i} + 2 \sigma_{\phi_i},
+\end{equation}
+where 
+\begin{equation}
+\mu_{\phi,i} = \frac{1}{N} \sum^{W/2}_{j=-W/2} \phi_j,
+\end{equation}
+is the temporal average, and
+\begin{equation}
+\sigma_{\phi,i} = \sqrt{\frac{1}{N} \sum^{W/2}_{j=-W/2} (\phi_j - \mu_{\phi,i})^2	} 
+\end{equation}
 \vspace{2cm}
+The advantage of this method is that deviations in local mean are captured, leading to a less 'harsh' method for filtering. The phase space filtering method of (Reference) adopts a different approach, whereby the variable $\phi$ and its first and second order derivatives, $d \phi$ and $d^2 \phi$, are ...
 -filtering
 -weighting
 -RMS, means, stresses etc
