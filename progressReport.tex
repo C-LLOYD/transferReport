@@ -451,11 +451,21 @@ As discussed in Section \ref{section:literatureReview}, little work has been car
 This section details the preliminary experiments, the aim of which are to validate the experimental method and identify changes that must be made to future designs. Current rig designs are based on those of \cite{fletcher2014phd} who adopts 2D LDA (measuring streamwise and wall-normal components of velocity) to compare differences between 5 shark scale samples, in terms of velocity profiles and skin friction coefficients. These experiments make use of a recirculating flume with a removable flat plate (figure XX - Make image of the measurement section). This set up has a practical advantage since scale samples can be easily swapped. However, the present study requires comparison with numerical models, thus the experimental solutions are validated against the empirical law of the wall (reference) and literature data (find some, or do a RANS for it) for a fully developed channel flow. In addition to this the sensitivity to wall-normal spatial resolution and temporal averaging window are also assessed.
 
 \subsection{Fundamentals of LDA}
-LDA is a non-intrusive method of determining a fluids velocity by measuring the Doppler shift of an emitted light beam.  
+LDA is a non-intrusive method of determining a fluids velocity by measuring the Doppler shift of laser light (reference the LDA book). This particular work makes use of a dual beam LDA configuration which relies on the superposition of two light waves that are differently shifted by the Doppler effect. This superposition creates the fringe pattern of Figure \ref{figure:experiments:fringePattern}, where $E_a$ and $E_b$ represent the two light waves,
+\begin{equation}
+E_a = E_0 \cos {\left( \omega_a t + k_a x \sin{\alpha} \right)}, \hspace{0.5cm} E_b = E_0 \cos{ \left( \omega_b t + k_b x\sin{\alpha} \right)}.
+\end{equation}
 
 
+ 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=10cm]{images/LDA_theoryImages/fringePattern.png}
+\caption{Fringe pattern (LDA book reference)}
+\label{figure:experiments:fringePattern}
+\end{figure}
 
-Several methods have been successfully applied to measuring boundary layer flows, such as hot wire anemometry (HWA), 
+
 
 \vspace{2cm}
 
