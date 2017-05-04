@@ -451,23 +451,44 @@ As discussed in Section \ref{section:literatureReview}, little work has been car
 This section details the preliminary experiments, the aim of which are to validate the experimental method and identify changes that must be made to future designs. Current rig designs are based on those of \cite{fletcher2014phd} who adopts 2D LDA (measuring streamwise and wall-normal components of velocity) to compare differences between 5 shark scale samples, in terms of velocity profiles and skin friction coefficients. These experiments make use of a recirculating flume with a removable flat plate (figure XX - Make image of the measurement section). This set up has a practical advantage since scale samples can be easily swapped. However, the present study requires comparison with numerical models, thus the experimental solutions are validated against the empirical law of the wall (reference) and literature data (find some, or do a RANS for it) for a fully developed channel flow. In addition to this the sensitivity to wall-normal spatial resolution and temporal averaging window are also assessed.
 
 \subsection{Fundamentals of LDA}
-LDA is a non-intrusive method of determining a fluids velocity by measuring the Doppler shift of laser light (reference the LDA book). This particular work makes use of a dual beam LDA configuration which relies on the superposition of two light waves that are differently shifted by the Doppler effect. This superposition creates the fringe pattern of Figure \ref{figure:experiments:fringePattern}. The light waves, $E_a$ and $E_b$ are defined by
-\begin{equation}
-E_a = E_0 \cos {\left( \omega_a t + k_a x \sin{\alpha} \right)},
-\end{equation}
-and
-\begin{equation}
-E_b = E_0 \cos{ \left( \omega_b t - k_b x\sin{\alpha} \right)},
-\end{equation}
-where $E_0$ represents the wave amplitude, $\omega = 2 \pi / T$ the respective angular frequencies and $k = 2 \pi / \lambda$ the angular wavenumber.
-
- 
+LDA is a non-intrusive method of determining a fluids velocity by measuring the Doppler shift of laser light (reference the LDA book). There are several key components which can be split into two groups; an optical unit and a receiving unit. The optical unit generates and transmits a pair of laser beams for each velocity component and focusses them onto a small volume, with a typical width of \SI{100}{\mu m} (Reference). The two beams create a fringe pattern in the measurement volume, the spacing of which, $\Delta x$, is determined by the angle of intersection, $\alpha$, and the light wavelength, $\lambda$. This is demonstrated in Figure \ref{figure:experiments:fringePattern}, whereby a particle of velocity $\vect{u}_p$ passes through the fringing pattern created by the two beams $E_a$ and $E_b$. The two beams can be represented by 
+%
 \begin{figure}[!h]
 \centering
 \includegraphics[width=10cm]{images/LDA_theoryImages/fringePattern.png}
 \caption{Fringe pattern (LDA book reference)}
 \label{figure:experiments:fringePattern}
 \end{figure}
+%
+\begin{equation}
+E_a = E_0 \cos {\left[ \omega_a t - k_a (z \cos{\alpha} - x \sin{\alpha} ) \right]},
+\end{equation}
+and
+\begin{equation}
+E_b = E_0 \cos{ \left[ \omega_b t - k_b (z \cos{\alpha} + x \sin{\alpha} ) \right]},
+\end{equation}
+where $E_0$ represents the wave amplitude, $\omega = 2 \pi / T$ the respective angular frequencies and $k = 2 \pi / \lambda$ the angular wavenumber. The wavelength is related to the speed of light by $c = \lambda f$ where $c$ represents the speed of light and $f$ represents the oscillation frequency. With some manipulation the $x$-component of the particle velocity is found to be directly related to both the fringe spacing and the shift in oscillation frequency as the particle passes through the fringes (Reference LDA book). The receiving components detect this change in frequency which is subsequently converted to an electrical signal and processed. In order to relate particle velocity to fluid velocity the flow is seeded with neutrally buoyant particles of \SI{40}{\mu m} diameter and it is assumed that these particles do not deviate from the fluid streamlines. 
+
+The present work makes use of two-component LDA, whereby two pairs of beams are transmitted perpendicular to each other and of different wave lengths; one at $\lambda = $ \SI{514.51}{nm} (green light) and $\lambda = $ \SI{488}{nm} (blue light). The respective shifts in frequency are separated by the receiving unit in order to produce two velocity components. Particle velocities are also only recorded if a shift in frequency is observed by both beam pairs, thus the covariance of the two velocities can be analysed. 
+
+Velocity biasing is a phenomena that must be considered when utilising LDA. Since velocities are only sampled when particles pass through the focal volume, the subsequent time series does not have a regular sampling interval. For this reason, high velocity fluctuations are measured more often than low velocity fluctuations which results in a bias towards higher velocities when calculating statistics such as means and standard deviations. The correction method of (reference) is adopted in the present work, whereby the means and standard deviations are normalised by the amount of time a particle resides in the focal volume, $\tau$. The temporal mean of a velocity component $u$ is therefore calculated by
+
+\begin{equation}
+\mu_u = \frac{\sum^N_{i=1} u_i \tau_i}{\sum^N_{i=1} \tau_i}, 
+\end{equation}
+and the standard deviation by
+\begin{equation}
+\sigma_u = \sqrt{\frac{\sum^N_{i=1} \tau_i (u_i - \mu_u)^2}{\sum^N_{i=1} \tau_i}}.
+\end{equation}
+
+
+ For this reason, statistics such as means ans standard deviations are biased towards  
+\\\\\\
+ 
+Next - what do we do with the velocities : give equations for time averaging etc.
+	-	also - mention two component LDA and configuration of the head
+	-	
+
 
 
 
