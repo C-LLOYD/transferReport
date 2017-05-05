@@ -117,8 +117,125 @@ There are two aims of this project; to investigate the influence of shark scale 
 
 \end{itemize}
 
-\section{Literature Review}
+1\section{Literature Review}
 \label{section:literatureReview}
+
+
+
+
+Sharkskin is comprised of small tooth-like structures called dermal denticles which are optimised for the prevention of abrasion, defence against parasites and the reduction of hydrodynamic drag \citep{fletcher2014}. There exists an extensive literature on the evolution and variability of dermal denticles \citep{reif1985} but the hydrodynamical aspect has only been studied over the last few decades \citep{dean2010}. In addition to this, most work has focussed on idealised riblets rather than real shark scales. An example of blade-like riblets is presented in Figure \ref{figure:literatureReview:bladeRiblets} and when compared to the mako denticles of Figure \ref{figure:scalesExample} it is clear that the intricate details that exist on real scales are lost. This literature review will examine both the experiments carried out on ribletted surfaces and real shark scales 
+%
+\begin{figure}[!b]
+\centering
+\includegraphics[width=8cm]{images/bladeRiblets.png}
+\caption{Blade riblets from \cite{dean2010}}
+\label{figure:literatureReview:bladeRiblets}
+\end{figure}  
+%
+\subsection{Riblets}
+ An extensive amount of work has been carried out on simplified, sharkskin-inspired, riblets which have been successful in reducing drag for open channel flows, closed channel flows and application to aerofoils \citep{bixler2013review}. These riblets are generally two-dimensional, whereby there is no variation in cross section in the streamwise direction. The most popular cross sectional shapes are blade like, sawtooth and scalloped although they are theorised to reduce drag in the same way. \cite{dean2010} describes the drag reduction process as the lifting of cross-stream, high speed, vortices away from the wall whereby the high shear stresses associated with which only act at the riblet tips. While vortices are introduced in-between riblets they are restricted by the riblet spacing, therefore reducing both shear stresses acting on the riblet valleys and the flow Reynolds stresses, both of which contribute to drag. The riblets also act to impede the translation of secondary vortices, reducing vortex entanglement and ejection into the outer boundary layers. These effects are known to be reliant on the geometry of the riblet cross section: Riblets must protrude above the viscous sub-layer if vortices are to be impeded, and they must also be smaller than the near-wall vortices or else their motion will not be restricted \citep{dean2010}. 
+ 
+ -Talk about relative size of scales! 
+ 
+ - Introduce s+ but also other length scales such as A+ ...
+ - Here we can introduce dimensionless parameters
+ 
+ 
+ 
+  These effects have been visualised through the use of smoke-wire techniques \citep{lee2001}, PIV \citep{lee2008} and numerical methods \citep{goldstein1995}. Figure \ref{figure:literatureReview:smokeWireVisualisation} highlights the effect of scalloped riblets, whereby 
+  The smoke-wire visualisations of \cite{lee2001} 
+  
+\begin{figure}[!t]
+\centering
+\includegraphics[width=12cm]{images/smokeWireVisualisation.png}
+\caption{Smoke wire visualisation of \cite{lee2001}}
+\label{figure:literatureReview:smokeWireVisualisation}
+\end{figure}
+ 
+ 
+ 
+ 
+  The literature is in general agreement that the optimal riblet spacing is $s^+ =  u_\tau s/\nu \sim 15$ where $s$ is the spacing between riblets, $u_\tau$ is the friction velocity of the flow without riblets and $\nu$ is the fluid viscosity.
+
+\begin{table}[!t]
+\scriptsize
+\centering
+\caption{Summary of experimental literature concerning the application of riblets to open channel flows. Adapted from \cite{bixler2013review}.}
+\label{table:OpenChannelRiblet}
+\begin{tabular}{|l|l|l|c|l|}
+\hline
+& & & & \\
+\small Design                                                          & \small Confirguration                                            & \small Material                                              &  \multicolumn{1}{|l|}{\small Maximum Drag} &\small  Reference \\
+& & & \multicolumn{1}{|l|}{\small Reduction} & \\
+\hline
+
+Sawtooth                                                               & Continuous                                                       & Polymer                                                      & 8\%                                        &   \citep{reidy1988}   \\
+Sawtooth                                                               & Continuous                                                       & Vinyl                                                        & 9\%                                        &    \citep{rohr1992}  \\
+Sawtooth                                                               & Continuous                                                       & Vinyl                                                        & 6\%                                        &   \citep{walsh1990}   \\
+Sawtooth                                                               & Continuous                                                       & Vinyl                                                        & 9\%                                       &    \citep{neumann1991}  \\
+\begin{tabular}[c]{@{}l@{}}Blade, Sawtooth\\ \& Scalloped\end{tabular} & Continuous                                                       & Brass                                                        & 9.9\%                                      &  \citep{bechert1997}    \\
+Blade                                                                  & \begin{tabular}[c]{@{}l@{}}Staggered\\ \& Segmented\end{tabular} & Brass                                                        & 7\%                                        &    \citep{bechert2000}  \\
+Blade                                                                  & \begin{tabular}[c]{@{}l@{}}Staggered\\ \& Segmented\end{tabular} & Epoxy                                                        & 7\%                                        &    \citep{bechert2000}  \\
+Blade                                                                  & Continuous                                                       & \begin{tabular}[c]{@{}l@{}}Titanium \&\\ Nickel\end{tabular} & 4.9\%                                      &    \citep{buttner2011}  \\
+Sawtooth                                                               & Continuous                                                       & Polyurethane                                                 & 7.6\%                                      &   \citep{gruneberger2011}   \\
+Blade                                                                  & Continuous                                                       & \begin{tabular}[c]{@{}l@{}}Metal \&\\ Polymer\end{tabular}   & 8.5\%                                      &   \citep{wilkinson1988}   \\
+Sawtooth, Scalloped & Continuous                                                       & \begin{tabular}[c]{@{}l@{}}Aluminium \&\\ Vinyl\end{tabular} & 8\%                                        &  \citep{walsh1982}  \\ \hline 
+\end{tabular}
+\end{table}
+
+In terms of open channel flows there is good agreement between the available literature, whereby drag reduction reaches a maximum of 9.9\%, as indicated by Table \ref{table:OpenChannelRiblet}. However, from observation of Table \ref{table:ClosedChannelRiblet} there is less agreement when considering closed channel flows. These discrepancies are highlighted by \cite{bixler2013review} who indicates the restricting effect of channel height on cross-stream vortices. In the case of micro-sized channels the neighbouring wall effects become important. Sawtooth riblets have also been applied to a variety of different aerofoils over a range of Reynolds numbers, as summarised by Table \ref{table:AerofoilRiblets}. Again, drag reduction can be clearly achieved through the introduction of riblets.
+
+\begin{table}[!b]
+\centering
+\caption{A summary of experimental literature concerning the application of riblets to closed channel flows. Adapted from \cite{bixler2013review}.}
+\scriptsize
+\label{table:ClosedChannelRiblet}
+\begin{tabular}{|l|l|l|c|l|}
+\hline
+& & & & \\
+\small Design                                                      & \small Configuration                                                               & \small Material                                                 &  \multicolumn{1}{|l|}{\small Maximum Drag} & \small Reference \\
+& & & \multicolumn{1}{|l|}{\small Reduction} & \\
+\hline
+
+Blade                                                       & \begin{tabular}[|c|]{@{}l@{}}Aligned \& Segmented\end{tabular}               & Acrylic                                                  & 23\%                                                                                 &    \citep{jung2009}       \\
+\begin{tabular}[|c|]{@{}l@{}}Blade \& Sawtooth\end{tabular} & \begin{tabular}[|c|]{@{}l@{}}Aligned \& Segmented,\\ Continuous\end{tabular} & \begin{tabular}[c]{@{}l@{}}Vinyl,\\ Acrylic\end{tabular} & 22\%                                                                                 &      \citep{bixler2013b}     \\
+Sawtooth                                                    & Continuous                                                                   & Vinyl                                                    & 9\%                                                                                  &   \citep{rohr1992}        \\
+Sawtooth                                                    & Continuous                                                                   & Polymer                                                  & 28\%                                                                                 &      \citep{reidy1988}     \\
+Blade                                                       & \begin{tabular}[c]{@{}l@{}}Aligned \& Segmented,\\ Continuous\end{tabular} & Acrylic                                                  & 7\%                                                                                  &     \citep{bixler2013c}      \\
+Blade                                                       & Continuous                                                                   & Polymer                                                  & 3\%                                                                                  &       \citep{nitschke1984}    \\
+Sawtooth                                                    & Continuous                                                                   & Epoxy                                                    & 7\%                                                                                  &    \citep{enyutin1995}      \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+\centering
+\scriptsize
+\caption{Summary of experimental literature concerning the application of riblets on aerofoils. Adapted from \cite{bixler2013review}.}
+\label{table:AerofoilRiblets}
+\begin{tabular}{|l|l|l|l|c|l|}
+\hline
+\begin{tabular}[c]{@{}l@{}}\small Reynolds\\\small Number\end{tabular}  &\small Foil Type                                                 & \begin{tabular}[c]{@{}l@{}}\small Location of\\\small  Trip (\% Chord\\ \small  Length)\end{tabular} & \begin{tabular}[c]{@{}l@{}} \small Angle of\\ \small  Attack\\ \small (degrees)\end{tabular} & \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} \small Maximum Drag\\ \small Reduction\end{tabular}} & \small Reference \\
+\hline
+17000                                                      & \begin{tabular}[c]{@{}l@{}}Symmetric,\\ Thin\end{tabular} & No Trip                                                                        & 0                                                                     & 4.3\%                                                                                &    \cite{han2003}       \\
+250000                                                     & \begin{tabular}[c]{@{}l@{}}Symmetric,\\ Thin\end{tabular} & No Trip                                                                        & 0                                                                     & 13.3\%                                                                               &     \cite{caram1991}      \\
+750000                                                     & Thin                                                      & 10\%                                                                           & 0-6                                                                   & 6\%                                                                                  &    \cite{sundaram1999}       \\
+1000000                                                    & Symmetric                                                 & 10\%                                                                           & 0-6                                                                   & 13\%                                                                                 &   \cite{sundaram1996}        \\
+1000000                                                    & Thin                                                      & 5\%                                                                            & 0                                                                     & 14\%                                                                                 &     \cite{subaschandar1999}      \\
+1000000                                                    & Thick                                                     & No Trip                                                                        & 0                                                                     & 5\%                                                                                  &     \cite{wetzel1996}      \\
+\begin{tabular}[c]{@{}l@{}}1000000\\ -1850000\end{tabular} & Thick                                                     & No Trip                                                                        & 0                                                                     & 5\%                                                                                  &      \cite{sareen2011}     \\
+3000000                                                    & Thick                                                     & 6\%                                                                            & -0.5-1                                                                & 10\%                                                                                 &    \cite{viswanath1995}       \\
+3300000                                                    & Thin                                                      & No Trip                                                                        & 0                                                                     & 3.3\%                                                                                &     \cite{coustols1990}      \\
+\begin{tabular}[c]{@{}l@{}}2000000\\ -6000000\end{tabular} & \begin{tabular}[c]{@{}l@{}}Symmetric,\\ Thin\end{tabular} & 5\%                                                                            & 0                                                                     & 7\%                                                                                  &   \cite{bixler2013review}    \\
+\hline   
+\end{tabular}
+\end{table}
+
+
+The effect of riblets has also been captured using numerical techniques. \cite{choi1993} and \cite{chu1993} were among the first to investigate riblets using DNS methods, whereby high order turbulence statistics were extracted with good agreement with experimental data, achieving a reduction in drag of 6\%. \cite{goldstein1995} made use of immersed boundary methods to investigate the damping of cross-flow velocity fluctuations, achieving a drag reduction of 4\%. \cite{strand2011} uses a similar code to investigate the growth of turbulent spots in a developing boundary layer, making comparisons between ribletted and smooth surfaces. Three dimensional riblets have also been investigated using numerical techniques. \cite{martin2016a,martin2016b} use large eddy simulation to investigate segmented riblets concluding that three dimensional riblets are detrimental to drag reduction. The authors suggest that the three dimensionality of real shark scales is detrimental to drag reduction due to the segmented riblets. However, the model greatly simplifies the sharkskin geometry.
+
+
+\newpage
 
 New Structure:\\
 intro:-	Shark skin has been studied for blah blah years, large documents on fossils by ...\\
@@ -133,8 +250,8 @@ intro:-	Shark skin has been studied for blah blah years, large documents on foss
 -	Introduce with Becheret (?) experiments and talk about how he theorised they may work .. \\
 -	Briefly go through each key paper, as we have done already. Talk about how, unlike the large amounts of work on riblets, nobody has actually looked into the flow profiles (or at least very few).
 
+\newpage
 
-\vspace{5cm}
 
 Sharkskin is comprised of small tooth-like structures called dermal denticles which are optimised to prevent abrasion, defence from parasites and reduce hydrodynamic drag \citep{fletcher2014}. The hydrodynamic properties of sharkskin is of interest to engineers due to the industrial applications of drag reduction, such as the transport of oil and gas and the design of aircraft and ships \citep{dean2010}. An extensive amount of work has been carried out on simplified, sharkskin-inspired, riblets which have been successful in reducing drag for open channel flows, closed channel flows and application to aerofoils \citep{bixler2013review}. These riblets are generally two-dimensional, whereby there is no variation in cross section in the streamwise direction. The most popular cross sectional shapes are blade like, sawtooth and scalloped although they are theorised to reduce drag in the same way. \cite{dean2010} describes the drag reduction process as the lifting of cross-stream, high speed, vortices away from the wall whereby the high shear stresses associated with which only act at the riblet tips. While vortices are introduced in-between riblets they are restricted by the riblet spacing, therefore reducing both shear stresses acting on the riblet valleys and the flow Reynolds stresses, both of which contribute to drag. The riblets also act to impede the translation of secondary vortices, reducing vortex entanglement and ejection into the outer boundary layers. These effects are known to be reliant on the geometry of the riblet cross section: Riblets must protrude above the viscous sub-layer if vortices are to be impeded, and they must also be smaller than the near-wall vortices or else their motion will not be restricted \citep{dean2010}. These effects have been visualised through the use of smoke-wire techniques \citep{lee2001}, PIV \citep{lee2008} and numerical methods \citep{goldstein1995}. The literature is in general agreement that the optimal riblet spacing is $s^+ =  u_\tau s/\nu \sim 15$ where $s$ is the spacing between riblets, $u_\tau$ is the friction velocity of the flow without riblets and $\nu$ is the fluid viscosity.
 
@@ -453,7 +570,7 @@ This section details the preliminary experiments, the aim of which are to valida
 \subsection{Fundamentals of LDA}
 LDA is a non-intrusive method of determining a fluids velocity by measuring the Doppler shift of laser light (reference the LDA book). There are several key components which can be split into two groups; an optical unit and a receiving unit. The optical unit generates and transmits a pair of laser beams for each velocity component and focusses them onto a small volume, with a typical width of \SI{100}{\mu m} (Reference). The two beams create a fringe pattern in the measurement volume, the spacing of which, $\Delta x$, is determined by the angle of intersection, $\alpha$, and the light wavelength, $\lambda$. This is demonstrated in Figure \ref{figure:experiments:fringePattern}, whereby a particle of velocity $\vect{u}_p$ passes through the fringing pattern created by the two beams $E_a$ and $E_b$. The two beams can be represented by 
 %
-\begin{figure}[!h]
+\begin{figure}[!t]
 \centering
 \includegraphics[width=10cm]{images/LDA_theoryImages/fringePattern.png}
 \caption{Fringe pattern (LDA book reference)}
@@ -813,7 +930,7 @@ The final scale replica is compared against the scanned sample in Figure \ref{fi
 \vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_16.PNG}}\hfill
 \vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_12.PNG}}
 \\
-\vspace{3cm}
+\vspace{2.5cm}
 \vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_14.PNG}}\hfill
 \vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_13.PNG}}
 \caption{Comparison of sampled scale (left) and simplified scale (right).}
