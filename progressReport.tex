@@ -119,6 +119,33 @@ There are two aims of this project; to investigate the influence of shark scale 
 
 \section{Literature Review}
 \label{section:literatureReview}
+Most engineering and atmospheric flows are bounded by one or many surfaces. These take the form of external flows, such as the flow around cars and aircraft, and internal flows, such as through pipes and channels \citep{pope2001}. Boundary layers arise from the interaction between a fluid as it passes over a surface, whereby the surface-parallel fluid velocity converges to zero as the distance to the wall decreases. This is illustrated by Figure \ref{figure:literatureReview:boundaryLayerRegions}, which splits the wall-parallel velocity into several different regions.
+%
+\begin{figure}[!b]
+\centering
+\includegraphics[width=10cm]{images/litReview/boundaryLayerRegions.png}
+\caption{Regions of boundary layer from \cite{perlin2016} }
+\label{figure:literatureReview:boundaryLayerRegions}
+\end{figure}
+%
+Wall units are the most common method of normalising wall bounded flows, whereby variables are scaled using the fluid kinematic viscosity, $\nu$, and friction velocity, $u_\tau = \sqrt{\tau_w / \rho}$, where $\tau_w$ is the wall shear stress and $\rho$ is the fluid density. In wall units, the average velocity and distance are given by
+\begin{equation}
+U^+ = \frac{U}{u_\tau}, \hspace{1cm} y^+ = \frac{u_\tau y }{\nu}.
+\end{equation}
+By using this scaling the velocity profiles of many external and internal flows behave in the way indicated by Figure \ref{figure:literatureReview:boundaryLayerRegions}, whereby the boundary layer is split into external and internal regions. The inner region consists of a viscous sub-layer, whereby viscous forces dominate the near negligible inertial forces, a buffer layer, and a logarithmic layer. When in the viscous sub-layer the streamwise (wall-parallel) velocity of a fluid is proportional to the distance away from it, such that $U^+ = y^+$. This extends until $y^+ \approx 5$, at which point the production of turbulent kinetic energy rapidly increase until reaching its maximum in the buffer layer \citep{perlin2016}. The logarithmic region begins at $y^+ \approx 30$, at which point the streamwise velocity behaves like $U^+ = \kappa^{-1} \ln{y^+} + B$ where $\kappa \approx 0.4$ is the von Karmon constant and $B\approx 5$ is the intercept parameter \citep{pope2001}.
+\vspace{2cm}
+
+
+
+As a fluid passes over a surface 
+
+-	boundary layers are formed by ....
+		-	no slip condition
+		-	they consist of different regions - log law etc. 
+		-	They impose a drag force !!
+
+
+Boundary layer flows can be observed in many engineering and environmental problems, such as the flow over planes and cars, the flow through pipes, and the flow of rivers. Boundary layers arise from the phenomena that as a fluid passes over a solid surface its flow is retarded, the surface-parallel velocity of which converges to zero as the distance to the wall decreases.
 
 NEW STRUCTURE:\\
 -	boundary layers
@@ -131,6 +158,7 @@ NEW STRUCTURE:\\
 -	shark skin
 	-	riblets - section as is
 	-	sharkskin	-	what has been done here ....
+					-	NOTE:	difficulties in exp. range ... s+ clearly doesn't match for sharks vs riblets ...
 
 \vspace{2cm}
 
