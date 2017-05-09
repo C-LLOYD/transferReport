@@ -119,7 +119,7 @@ There are two aims of this project; to investigate the influence of shark scale 
 
 \section{Literature Review}
 \label{section:literatureReview}
-Most engineering and atmospheric flows are bounded by one or many surfaces. These take the form of external flows, such as the flow around cars and aircraft, and internal flows, such as through pipes and channels \citep{pope2001}. Boundary layers arise from the interaction between a fluid as it passes over a surface, whereby the surface-parallel fluid velocity converges to zero as the distance to the wall decreases. This is illustrated by Figure \ref{figure:literatureReview:boundaryLayerRegions}, which splits the wall-parallel velocity into several different regions.
+Most engineering and atmospheric flows are bounded by one or many surfaces. These take the form of external flows, such as the flow around cars and aircraft, and internal flows, such as through pipes and channels \citep{pope2001}. Boundary layers are formed as a fluid passes over a surface, whereby the surface-parallel fluid velocity converges to zero as the distance to the wall decreases. This no-slip condition causes a large contribution to the total drag force that impedes the motion of an object: \SI{50}{\%} of the drag that acts on a ship hull is due to this skin-friction \citep{perlin2016}. A typical boundary layer is presented in Figure \ref{figure:literatureReview:boundaryLayerRegions}, which splits the temporally averaged wall-parallel velocity into several different regions.
 %
 \begin{figure}[!b]
 \centering
@@ -128,12 +128,37 @@ Most engineering and atmospheric flows are bounded by one or many surfaces. Thes
 \label{figure:literatureReview:boundaryLayerRegions}
 \end{figure}
 %
-Wall units are the most common method of normalising wall bounded flows, whereby variables are scaled using the fluid kinematic viscosity, $\nu$, and friction velocity, $u_\tau = \sqrt{\tau_w / \rho}$, where $\tau_w$ is the wall shear stress and $\rho$ is the fluid density. In wall units, the average velocity and distance are given by
+Typically boundary layers are quantified using wall units, whereby variables are scaled using the fluid kinematic viscosity, $\nu$, and friction velocity, $u_\tau = \sqrt{\tau_w / \rho}$, where $\tau_w$ is the wall shear stress and $\rho$ is the fluid density. In wall units, the average velocity and distance are given by
 \begin{equation}
 U^+ = \frac{U}{u_\tau}, \hspace{1cm} y^+ = \frac{u_\tau y }{\nu}.
 \end{equation}
 By using this scaling the velocity profiles of many external and internal flows behave in the way indicated by Figure \ref{figure:literatureReview:boundaryLayerRegions}, whereby the boundary layer is split into external and internal regions. The inner region consists of a viscous sub-layer, whereby viscous forces dominate the near negligible inertial forces, a buffer layer, and a logarithmic layer. When in the viscous sub-layer the streamwise (wall-parallel) velocity of a fluid is proportional to the distance away from it, such that $U^+ = y^+$. This extends until $y^+ \approx 5$, at which point the production of turbulent kinetic energy rapidly increase until reaching its maximum in the buffer layer \citep{perlin2016}. The logarithmic region begins at $y^+ \approx 30$, at which point the streamwise velocity behaves like $U^+ = \kappa^{-1} \ln{y^+} + B$ where $\kappa \approx 0.4$ is the von Karmon constant and $B\approx 5$ is the intercept parameter \citep{pope2001}.
+
+The outer layer blends the logarithmic region into the freestream velocity. The wake region, identified by Figure \ref{figure:literatureReview:boundaryLayerRegions}, deviates from the log-law and can cover a large amount of the boundary layer. For an external flow the wake region typically exists for $y/\delta > 0.2$ where $\delta$ is the boundary layer thickness, defined as the point at which the mean streamwise velocity is equal to \SI{99}{\%} of the freestream velocity. 
+
+** all is in perlin paper: 
+
+- This has been fitted to empirical relations by \cite{coles1956}
+-	generally these are more flow dependent, unlike the log-law which is consistant for lots of flows
+-	Then introduce roughness - what effect does this have on BL?
+-	how do we quantify it?
+-	how do we qunatify its effect?
+-	Then talk about skin friction - we have an equation for it ...
+
+
+ This region is much less prominent for an internal flow - generally the log-region extends until very close to the centreline
+
+
+The wake region generally only  For external flows this 
 \vspace{2cm}
+
+- outer layer - blend log law into freestream - roughness has no effect here?
+
+-drag from this - skin friction + equations + reasons ..?
+-roughness
+-streaks and coherent structures
+
+
 
 
 
