@@ -134,12 +134,29 @@ U^+ = \frac{U}{u_\tau}, \hspace{1cm} y^+ = \frac{u_\tau y }{\nu}.
 \end{equation}
 By using this scaling the velocity profiles of many external and internal flows behave in the way indicated by Figure \ref{figure:literatureReview:boundaryLayerRegions}, whereby the boundary layer is split into external and internal regions. The inner region consists of a viscous sub-layer, whereby viscous forces dominate the near negligible inertial forces, a buffer layer, and a logarithmic layer. When in the viscous sub-layer the streamwise (wall-parallel) velocity of a fluid is proportional to the distance away from it, such that $U^+ = y^+$. This extends until $y^+ \approx 5$, at which point the production of turbulent kinetic energy rapidly increase until reaching its maximum in the buffer layer \citep{perlin2016}. The logarithmic region begins at $y^+ \approx 30$, at which point the streamwise velocity behaves like $U^+ = \kappa^{-1} \ln{y^+} + B$ where $\kappa \approx 0.4$ is the von Karmon constant and $B\approx 5$ is the intercept parameter \citep{pope2001}.
 
-The outer layer blends the logarithmic region into the freestream velocity. The wake region, identified by Figure \ref{figure:literatureReview:boundaryLayerRegions}, deviates from the log-law and can cover a large amount of the boundary layer. For an external flow the wake region typically exists for $y/\delta > 0.2$ where $\delta$ is the boundary layer thickness, defined as the point at which the mean streamwise velocity is equal to \SI{99}{\%} of the freestream velocity. 
+The outer layer blends the logarithmic region into the freestream velocity. The wake region, identified by Figure \ref{figure:literatureReview:boundaryLayerRegions}, deviates from the log-law and can cover a large amount of the boundary layer. For an external flow the wake region typically exists for $y/\delta > 0.2$ where $\delta$ is the boundary layer thickness, defined as the point at which the mean streamwise velocity is equal to \SI{99}{\%} of the freestream velocity, $U_\infty$. \cite{coles1956} postulated that this region can be defined by
+\begin{equation}
+\frac{U_\infty - U(y)}{u_\tau} = f \left( \frac{y}{\delta} \right),
+\end{equation}
+Several forms of $f(y/\delta)$ have been suggested, such as polynomial and trigonometric functions \citep{perlin2016}, which is generally more problem dependent than the logarithmic region (REFERENCE - POPE?). Generally the effect of surface roughness has no impact on the outer layers .. link to next section.
 
+\subsection{Surface roughness}
+The majority of real engineering problems are subject to surface roughness. In the majority of cases this roughness increases the 
+
+\citep{nikuradse1933}
+
+-maj of cases roughness increases drag
+-some cases it doesnt - riblets and shark scales
+-quantified by using parameter ks
+-talk about range of roughness - when it has an effect, when it doesn't
+-then talk about its effect:
+	-	how does it alter drag?
+	-	how does it alter velocity profiles etc?
+	-	correlations for friction factor etc. 
+
+\vspace{2cm}
 ** all is in perlin paper: 
 
-- This has been fitted to empirical relations by \cite{coles1956}
--	generally these are more flow dependent, unlike the log-law which is consistant for lots of flows
 -	Then introduce roughness - what effect does this have on BL?
 -	how do we quantify it?
 -	how do we qunatify its effect?
