@@ -141,14 +141,26 @@ The outer layer blends the logarithmic region into the freestream velocity. The 
 Several forms of $f(y/\delta)$ have been suggested, such as polynomial and trigonometric functions \citep{perlin2016}, which is generally more problem dependent than the logarithmic region (REFERENCE - POPE?). Generally the effect of surface roughness has no impact on the outer layers .. link to next section.
 
 \subsection{Surface roughness}
-The majority of real engineering problems are subject to surface roughness which is generally detrimental to drag. The first quantitative study on the effect of surface roughness was carried out by \cite{nikuradse1933} who applied different grain sizes of sand to a pipe flow and measured the resulting friction factor,
+The majority of real engineering problems are subject to surface roughness which is generally detrimental to efficiency. The first quantitative study on the effect of surface roughness was carried out by \cite{nikuradse1933} who applied different grain sizes of sand to a pipe flow and measured the resulting friction factor,
 %
 \begin{equation}
 f \equiv \frac{\Delta p}{\Delta x} \frac{2D}{\rho U_b^2}
 \end{equation}
 %
-where $\Delta p / \Delta x$ is the pressure drop per unit length, $D$ is the pipe diameter, $\rho$ is the fluid density and $U_b$ is the bulk velocity. Several conclusions were drawn: it was observed that surface roughness has little effect on both laminar and transitional flows; at a roughness size dependent certain (roughness size dependent) Reynolds number, the friction factor is no longer dependent on the R
+where $\Delta p / \Delta x$ is the pressure drop per unit length, $D$ is the pipe diameter, $\rho$ is the fluid density and $U_b$ is the bulk velocity. Nikuradse observed that for both laminar and transitional flows surface roughness had little effect, and its effect on fully turbulent flows is dependent on the relative size of the roughness. To describe the effect of roughness three regimes were defined, based on the average roughness height, $k_s$:
+%
+$$\frac{k_s u_\tau}{\nu} < 5: \text{Hydraulically smooth,} $$
+$$5 < \frac{k_s u_\tau}{\nu} < 70:	\text{transitionally rough,} $$
+$$70 < \frac{k_s u_\tau}{\nu}:	\text{fully rough.}		$$
+%
+The hydraulically smooth regime occurs when the roughness elements do not protrude above the viscous sub-layer; In this case roughness has no effect. During the transitional stages roughness elements begin to protrude beyond the viscous sub layer, creating additional turbulent mixing and form drag on individual elements; both of these effects increase the friction factor relative to a smooth surface. The effect of roughness continues to grow until entering the fully-rough regime, at which point the friction factor is no longer a function of the Reynolds number. 
 
+velocity profiles:
+	-	adapt law of the wall to include -DU term
+	-	Generally roughness has the effect of shifting the profile towards the wall, without changing log-law gradient.
+	-	Also has no effect on outer region of boundary layer - only inner
+	-	However - some types of roughness actually reduce drag - in these cases the velocity profiles move away from the wall and the gradients can change. 
+	*** k type and p type roughness ?! ****
 
 \vspace{2cm}
 
