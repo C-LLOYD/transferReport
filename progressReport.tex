@@ -153,88 +153,17 @@ $$\frac{k_s u_\tau}{\nu} < 5: \text{Hydraulically smooth,} $$
 $$5 < \frac{k_s u_\tau}{\nu} < 70:	\text{transitionally rough,} $$
 $$70 < \frac{k_s u_\tau}{\nu}:	\text{fully rough.}		$$
 %
-The hydraulically smooth regime occurs when the roughness elements do not protrude above the viscous sub-layer; In this case roughness has no effect. During the transitional stages roughness elements begin to protrude beyond the viscous sub layer, creating additional turbulent mixing and form drag on individual elements; both of these effects increase the friction factor relative to a smooth surface. The effect of roughness continues to grow until entering the fully-rough regime, at which point the friction factor is no longer a function of the Reynolds number. 
+The hydraulically smooth regime occurs when the roughness elements do not protrude above the viscous sub-layer; In this case roughness has no effect. During the transitional stages roughness elements begin to protrude beyond the viscous sub layer, creating additional turbulent mixing and form drag on individual elements; both of these effects increase the friction factor relative to a smooth surface. The effect of roughness continues to grow until entering the fully-rough regime, at which point the friction factor is no longer a function of the Reynolds number.
 
-velocity profiles:
-	-	adapt law of the wall to include -DU term
-	-	Generally roughness has the effect of shifting the profile towards the wall, without changing log-law gradient.
-	-	Also has no effect on outer region of boundary layer - only inner
-	-	However - some types of roughness actually reduce drag - in these cases the velocity profiles move away from the wall and the gradients can change. 
-	*** k type and p type roughness ?! ****
+In terms of the mean velocity profiles, roughness has the effect of shifting the logarithmic layer towards the wall such that the velocity behaves like
+\begin{equation}
+U^+ = \frac{1}{\kappa} \ln{y^+} + B - \Delta U^+,
+\end{equation}
+where $\Delta U^+$ represents the shift \citep{newhall2006}. Generally the gradient of the logarithmic region remains the same for both smooth and rough surfaces. In addition to this the outer layers of the boundary experience no change when subject to surface roughness \citep{perlin2016}.
 
-\vspace{2cm}
-
- In the majority of cases this roughness increases the 
-
-\citep{nikuradse1933}
-
--maj of cases roughness increases drag
--some cases it doesnt - riblets and shark scales
--quantified by using parameter ks
--talk about range of roughness - when it has an effect, when it doesn't
--then talk about its effect:
-	-	how does it alter drag?
-	-	how does it alter velocity profiles etc?
-	-	correlations for friction factor etc. 
-
-\vspace{2cm}
-** all is in perlin paper: 
-
--	Then introduce roughness - what effect does this have on BL?
--	how do we quantify it?
--	how do we qunatify its effect?
--	Then talk about skin friction - we have an equation for it ...
-
-
- This region is much less prominent for an internal flow - generally the log-region extends until very close to the centreline
-
-
-The wake region generally only  For external flows this 
-\vspace{2cm}
-
-- outer layer - blend log law into freestream - roughness has no effect here?
-
--drag from this - skin friction + equations + reasons ..?
--roughness
--streaks and coherent structures
-
-
-
-
-
-As a fluid passes over a surface 
-
--	boundary layers are formed by ....
-		-	no slip condition
-		-	they consist of different regions - log law etc. 
-		-	They impose a drag force !!
-
-
-Boundary layer flows can be observed in many engineering and environmental problems, such as the flow over planes and cars, the flow through pipes, and the flow of rivers. Boundary layers arise from the phenomena that as a fluid passes over a solid surface its flow is retarded, the surface-parallel velocity of which converges to zero as the distance to the wall decreases.
-
-NEW STRUCTURE:\\
--	boundary layers
-			-APG and ZPG etc. , law of the wall, sections such as laminar etc., equations?
-			-link to skin friction - coefficients and empirical methods, how it is measured
--	roughness
-			-	how does this effect BL? friction? can it be a good thing ..
-			-	k type etc. 
-			-	equations
--	shark skin
-	-	riblets - section as is
-	-	sharkskin	-	what has been done here ....
-					-	NOTE:	difficulties in exp. range ... s+ clearly doesn't match for sharks vs riblets ...
-
-\vspace{2cm}
-
-
-This literature review is split into several sections: Before introducing work concerning shark scales the fundamentals of boundary layers and surface roughness are discussed.
-
-
-
-Sharkskin is comprised of small tooth-like structures called dermal denticles which are optimised for the prevention of abrasion, defence against parasites and the reduction of hydrodynamic drag \citep{fletcher2014}. There exists an extensive literature on the evolution and variability of dermal denticles \citep{reif1985} but the hydrodynamical aspect has only been studied over the last few decades \citep{dean2010}. In addition to this, most work has focussed on idealised riblets (see Figure \ref{figure:literatureReview:bladeRiblets}) rather than real shark scales.
+However, the above description does not hold true for all types of roughness. In particular, the effect of shark-skin, and shark-skin inspired riblets, have a very different effect on the flow. Sharkskin is comprised of small tooth-like structures called dermal denticles which are optimised for the prevention of abrasion, defence against parasites and the reduction of hydrodynamic drag \citep{fletcher2014}. There exists an extensive literature on the evolution and variability of dermal denticles \citep{reif1985} but the hydrodynamical aspect has only been studied over the last few decades \citep{dean2010}. In addition to this, most work has focussed on idealised riblets (see Figure \ref{figure:literatureReview:bladeRiblets}) rather than real shark scales.
 \\
- An example of blade-like riblets is presented in Figure \ref{figure:literatureReview:bladeRiblets} and when compared to the mako denticles of Figure \ref{figure:scalesExample} it is clear that the intricate details that exist on real scales are lost. This literature review will examine both the experiments carried out on ribletted surfaces and real shark scales 
+ An example of blade-like riblets is presented in Figure \ref{figure:literatureReview:bladeRiblets} and when compared to the mako denticles of Figure \ref{figure:scalesExample} it is clear that the intricate details that exist on real scales are lost.
 \\
 Link this to next section.
 %
@@ -243,7 +172,29 @@ Link this to next section.
 \includegraphics[width=8cm]{images/bladeRiblets.png}
 \caption{Blade riblets from \cite{dean2010}}
 \label{figure:literatureReview:bladeRiblets}
-\end{figure}  
+\end{figure} 
+
+
+
+
+Both of these types of roughness will be discussed in the following sections.
+
+
+\vspace{2cm}
+-	Then talk about skin friction - we have an equation for it ...
+
+-streaks and coherent structures
+-APG vs ZPG etc. 
+
+-	shark skin
+	-	riblets - section as is
+	-	sharkskin	-	what has been done here ....
+					-	NOTE:	difficulties in exp. range ... s+ clearly doesn't match for sharks vs riblets ...
+
+\vspace{2cm}
+
+
+ 
 %
 \subsection{Riblets}
  An extensive amount of work has been carried out on simplified, sharkskin-inspired, riblets which have been successful in reducing drag for open channel flows, closed channel flows and when applied to aerofoils \citep{bixler2013review}. These riblets are generally two-dimensional, whereby there is no variation in cross section in the streamwise direction. The most popular cross sectional shapes are blade like, sawtooth and scalloped although they are theorised to reduce drag in the same way.
