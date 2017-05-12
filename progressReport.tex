@@ -150,7 +150,7 @@ f \equiv \frac{\Delta p}{\Delta x} \frac{2D}{\rho U_b^2}
 where $\Delta p / \Delta x$ is the pressure drop per unit length, $D$ is the pipe diameter, $\rho$ is the fluid density and $U_b$ is the bulk velocity. Nikuradse observed that for both laminar and transitional flows surface roughness had little effect, and its effect on fully turbulent flows is dependent on the relative size of the roughness. To describe the effect of roughness three regimes were defined, based on the average roughness height, $k_s$:
 %
 $$\frac{k_s u_\tau}{\nu} < 5: \text{Hydraulically smooth,} $$
-$$5 < \frac{k_s u_\tau}{\nu} < 70:	\text{transitionally rough,} $$
+$$5 \leq \frac{k_s u_\tau}{\nu} \leq 70:	\text{transitionally rough,} $$
 $$70 < \frac{k_s u_\tau}{\nu}:	\text{fully rough.}		$$
 %
 The hydraulically smooth regime occurs when the roughness elements do not protrude above the viscous sub-layer; In this case roughness has no effect. During the transitional stages roughness elements begin to protrude beyond the viscous sub layer, creating additional turbulent mixing and form drag on individual elements; both of these effects increase the friction factor relative to a smooth surface. The effect of roughness continues to grow until entering the fully-rough regime, at which point the friction factor is no longer a function of the Reynolds number.
@@ -159,48 +159,69 @@ In terms of the mean velocity profiles, roughness has the effect of shifting the
 \begin{equation}
 U^+ = \frac{1}{\kappa} \ln{y^+} + B - \Delta U^+,
 \end{equation}
-where $\Delta U^+$ represents the shift \citep{newhall2006}. Generally the gradient of the logarithmic region remains the same for both smooth and rough surfaces. In addition to this the outer layers of the boundary experience no change when subject to surface roughness \citep{perlin2016}.
+where $\Delta U^+$ represents the shift \citep{newhall2006}. Generally the gradient of the logarithmic region remains the same for both smooth and rough surfaces. In addition to this the outer layers of the boundary experience no change when subject to surface roughness, despite there being an increase to the boundary layer thickness, $\delta$ \citep{perlin2016}. However, the above description does not hold true for all types of roughness. In particular, the effect of shark-skin, and shark-skin inspired riblets, have a very different effect on the flow. These will be discussed in sections \ref{section:literatureReview:Riblets} and \ref{section:literatureReview:sharkScaleFluids}.
 
-However, the above description does not hold true for all types of roughness. In particular, the effect of shark-skin, and shark-skin inspired riblets, have a very different effect on the flow. Sharkskin is comprised of small tooth-like structures called dermal denticles which are optimised for the prevention of abrasion, defence against parasites and the reduction of hydrodynamic drag \citep{fletcher2014}. There exists an extensive literature on the evolution and variability of dermal denticles \citep{reif1985} but the hydrodynamical aspect has only been studied over the last few decades \citep{dean2010}. In addition to this, most work has focussed on idealised riblets (see Figure \ref{figure:literatureReview:bladeRiblets}) rather than real shark scales.
-\\
- An example of blade-like riblets is presented in Figure \ref{figure:literatureReview:bladeRiblets} and when compared to the mako denticles of Figure \ref{figure:scalesExample} it is clear that the intricate details that exist on real scales are lost.
-\\
-Link this to next section.
+\subsection{Shark scales}
+\label{section:literatureReview:sharkScales}
+Sharks are the only surviving fishes that possess dermal denticles \citep{fletcher2014}. These small tooth-like structures erupt through soft skin tissue and are optimised for the prevention of abrasion, defence against parasites and the reduction of hydrodynamic drag \citep{fletcher2014}. An extensive range of dermal denticles are documented by \cite{reif1985}, highlighting the differences between shark species and the location of scales on the fishes. The study also indicates the complex features of real shark scales such as three dimensionality beneath the exposed scale, overlapping, diverging and converging riblets, variable angles of incidence, and the aerofoil-like shape of each scale with a smooth leading edge and a sharp trailing edge. These features can be observed in Figure \ref{figure:literatureReview:scaleVariabilityFletcher};
+\begin{figure}[!h]
+\centering
+\includegraphics[width=14cm]{images/litReview/scaleVariabilityFletcher.png}
+\caption{scale variability \citep{fletcher2014phd}}
+\label{figure:literatureReview:scaleVariabilityFletcher}
+\end{figure}
+when considering even one species the scales can vary significantly when moving from the head to the tail. Take, for example, the \textit{Scyliorhinus canicula} (demersal ecology) samples; the scales on the head of the shark are tightly interlocking and rounded scales which quickly change to sharp, loosely interlocked, and ribletted scales on the sharks flank. The vast range of these features, and the variability between species, results in little understanding as to why many of these features exist. Hydrodynamical aspects have only been studied over the last few decades \citep{dean2010} and have only focussed on riblets, examples of which are most prominent on the fast pelagic samples of Figure \ref{figure:literatureReview:scaleVariabilityFletcher}. There have been research into the fluid dynamics of shark scales but there are many gaps and inconsistencies in the literature. These will be discussed in Section \ref{section:literatureReview:sharkScaleFluids}. 
 %
-\begin{figure}[!b]
+\subsection{Riblets}
+\label{section:literatureReview:Riblets}
+ An extensive amount of work has been carried out on simplified, sharkskin-inspired, riblets which have been successful in reducing drag for open channel flows, closed channel flows and when applied to aerofoils \citep{bixler2013review}. These riblets are generally two-dimensional, whereby there is no variation in cross section in the streamwise direction. The most popular cross sectional shapes are blade like, sawtooth and scalloped although they are theorised to reduce drag in the same way. An example of blade-like riblets is presented in Figure \ref{figure:literatureReview:bladeRiblets}, and when compared to the denticle samples of Figure \ref{figure:literatureReview:scaleVariabilityFletcher} it is clear that the intricate details are lost.
+%
+\begin{figure}[!t]
 \centering
 \includegraphics[width=8cm]{images/bladeRiblets.png}
 \caption{Blade riblets from \cite{dean2010}}
 \label{figure:literatureReview:bladeRiblets}
 \end{figure} 
-
-
-
-
-Both of these types of roughness will be discussed in the following sections.
-
-
-\vspace{2cm}
--	Then talk about skin friction - we have an equation for it ...
-
--streaks and coherent structures
--APG vs ZPG etc. 
-
--	shark skin
-	-	riblets - section as is
-	-	sharkskin	-	what has been done here ....
-					-	NOTE:	difficulties in exp. range ... s+ clearly doesn't match for sharks vs riblets ...
-
-\vspace{2cm}
-
-
- 
 %
-\subsection{Riblets}
- An extensive amount of work has been carried out on simplified, sharkskin-inspired, riblets which have been successful in reducing drag for open channel flows, closed channel flows and when applied to aerofoils \citep{bixler2013review}. These riblets are generally two-dimensional, whereby there is no variation in cross section in the streamwise direction. The most popular cross sectional shapes are blade like, sawtooth and scalloped although they are theorised to reduce drag in the same way.
 
-In order to understand how riblets achieve drag reduction it is important to understand 
+In order to investigate the drag reducing effect of riblets 
 
+Typically, the drag reducing effect of riblets is studied by using a flat plate, mounted to a force balance. The drag force acting on the plate is recorded over a range of flow rates. 
+
+the dimensionless riblet spacing is varied by varying the flow rate (Utau) rather than the physical spacing. 
+
+Subsequently the plot of Figure \ref{figure:literatureReview:ribletPerformanceRegions} is given.
+
+3 regions are present:
+in the viscous regime the drag reduction, tau/tau0 is proportional to the riblet height. 
+
+The DR occurs due to the restrictions on cross-stream motion that would otherwise lead to an increase in turbulent mixing. 
+
+
+
+\newpage
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=8cm]{images/litReview/ribletPerformanceRegions.png}
+\caption{Typical behaviour of riblets, from \cite{garcia2011}}
+\label{figure:literatureReview:ribletPerformanceRegions}
+\end{figure}
+
+
+
+- get an image and show a general curve
+		-	first part is at width of ~ 0 i.e very low Reynolds number
+						in this case DR scales linearly with height
+						this is due to the impeding of cross-stream motion, that would lead to turbulent mixing and increase shearing  
+
+- how do they work?
+- key parameters?
+- r
+ 
+ \newpage
+ 
 
 Drag reduction is achieved by 
 
@@ -310,6 +331,21 @@ Sawtooth                                                    & Continuous        
 
 The effect of riblets has also been captured using numerical techniques. \cite{choi1993} and \cite{chu1993} were among the first to investigate riblets using DNS methods, whereby high order turbulence statistics were extracted with good agreement with experimental data, achieving a reduction in drag of 6\%. \cite{goldstein1995} made use of immersed boundary methods to investigate the damping of cross-flow velocity fluctuations, achieving a drag reduction of 4\%. \cite{strand2011} uses a similar code to investigate the growth of turbulent spots in a developing boundary layer, making comparisons between ribletted and smooth surfaces. Three dimensional riblets have also been investigated using numerical techniques. \cite{martin2016a,martin2016b} use large eddy simulation to investigate segmented riblets concluding that three dimensional riblets are detrimental to drag reduction. The authors suggest that the three dimensionality of real shark scales is detrimental to drag reduction due to the segmented riblets. However, the model greatly simplifies the sharkskin geometry.
 
+\newpage
+
+\vspace{2cm}
+-	Then talk about skin friction - we have an equation for it ...
+
+-streaks and coherent structures
+-APG vs ZPG etc. 
+
+-	shark skin
+	-	riblets - section as is
+	-	sharkskin	-	what has been done here ....
+					-	NOTE:	difficulties in exp. range ... s+ clearly doesn't match for sharks vs riblets ...
+
+\vspace{2cm}
+
 
 \newpage
 
@@ -327,6 +363,11 @@ intro:-	Shark skin has been studied for blah blah years, large documents on foss
 -	Briefly go through each key paper, as we have done already. Talk about how, unlike the large amounts of work on riblets, nobody has actually looked into the flow profiles (or at least very few).
 
 \newpage
+
+\subsection{Fluid dynamic experiments concerning shark scales }
+\label{section:literatureReview:sharkScaleFluids}
+
+
 
 
 Sharkskin is comprised of small tooth-like structures called dermal denticles which are optimised to prevent abrasion, defence from parasites and reduce hydrodynamic drag \citep{fletcher2014}. The hydrodynamic properties of sharkskin is of interest to engineers due to the industrial applications of drag reduction, such as the transport of oil and gas and the design of aircraft and ships \citep{dean2010}. An extensive amount of work has been carried out on simplified, sharkskin-inspired, riblets which have been successful in reducing drag for open channel flows, closed channel flows and application to aerofoils \citep{bixler2013review}. These riblets are generally two-dimensional, whereby there is no variation in cross section in the streamwise direction. The most popular cross sectional shapes are blade like, sawtooth and scalloped although they are theorised to reduce drag in the same way. \cite{dean2010} describes the drag reduction process as the lifting of cross-stream, high speed, vortices away from the wall whereby the high shear stresses associated with which only act at the riblet tips. While vortices are introduced in-between riblets they are restricted by the riblet spacing, therefore reducing both shear stresses acting on the riblet valleys and the flow Reynolds stresses, both of which contribute to drag. The riblets also act to impede the translation of secondary vortices, reducing vortex entanglement and ejection into the outer boundary layers. These effects are known to be reliant on the geometry of the riblet cross section: Riblets must protrude above the viscous sub-layer if vortices are to be impeded, and they must also be smaller than the near-wall vortices or else their motion will not be restricted \citep{dean2010}. These effects have been visualised through the use of smoke-wire techniques \citep{lee2001}, PIV \citep{lee2008} and numerical methods \citep{goldstein1995}. The literature is in general agreement that the optimal riblet spacing is $s^+ =  u_\tau s/\nu \sim 15$ where $s$ is the spacing between riblets, $u_\tau$ is the friction velocity of the flow without riblets and $\nu$ is the fluid viscosity.
@@ -409,7 +450,11 @@ Sawtooth                                                    & Continuous        
 The effect of riblets has also been captured using numerical techniques. \cite{choi1993} and \cite{chu1993} were among the first to investigate riblets using DNS methods, whereby high order turbulence statistics were extracted with good agreement with experimental data, achieving a reduction in drag of 6\%. \cite{goldstein1995} made use of immersed boundary methods to investigate the damping of cross-flow velocity fluctuations, achieving a drag reduction of 4\%. \cite{strand2011} uses a similar code to investigate the growth of turbulent spots in a developing boundary layer, making comparisons between ribletted and smooth surfaces. Three dimensional riblets have also been investigated using numerical techniques. \cite{martin2016a,martin2016b} use large eddy simulation to investigate segmented riblets concluding that three dimensional riblets are detrimental to drag reduction. The authors suggest that the three dimensionality of real shark scales is detrimental to drag reduction due to the segmented riblets. However, the model greatly simplifies the sharkskin geometry.
 
 
-While much work has been carried out on streamwise riblets there are many aspects of shark scales which have been vastly simplified. An extensive range of dermal denticles are documented by \cite{reif1985}, highlighting the differences between shark species and the location of scales on the fishes. The study also indicates the complex features of real shark scales such as three dimensionality beneath the exposed scale, overlapping, diverging and converging riblets, variable angles of incidence, and the aerofoil-like shape of each scale with a smooth leading edge and a sharp trailing edge. The vast range of these features, and the variability between species, results in little understanding as to why many of these features exist. \cite{raschi1986} relates the swimming speed of sharks to the riblet spacing present on the scales of 8 shark species. Empirical methods are adopted to estimate the cruising and burst swimming speeds. For 6 of the 8 shark samples it is concluded that the riblet spacing and keel height are optimised for burst speeds rather than cruising. Conversely \cite{bechert1985} suggests that riblet spacings are suited for cruising speeds, although estimates a cruising speed of $5\ m/s$ compared to the $0.8\ m/s$ of \cite{raschi1986}.  \cite{bechert1985} investigates the drag reduction of both replicated shark skin (Mako and Silky Shark) and longitudinal riblets. The angle of attack of the scales is varied, hypothesising that scales can passively bristle in order to enhance turbulent mixing and in turn keep boundary layers attached. It is concluded that shear stresses increase with angle of attack, suggesting that perfectly interlocking scales are required for drag reduction. However, the experimental conditions are that of a flat plate whereas the scales of a shark are likely subject to adverse pressure gradients. The authors suggest that the increase in turbulent mixing reduces the susceptibility of flow separation thus ultimately reducing drag, although further experimental evidence is required to support this. 
+While much work has been carried out on streamwise riblets there are many aspects of shark scales which have been vastly simplified. An extensive range of dermal denticles are documented by \cite{reif1985}, highlighting the differences between shark species and the location of scales on the fishes. The study also indicates the complex features of real shark scales such as three dimensionality beneath the exposed scale, overlapping, diverging and converging riblets, variable angles of incidence, and the aerofoil-like shape of each scale with a smooth leading edge and a sharp trailing edge. The vast range of these features, and the variability between species, results in little understanding as to why many of these features exist.
+
+
+
+ \cite{raschi1986} relates the swimming speed of sharks to the riblet spacing present on the scales of 8 shark species. Empirical methods are adopted to estimate the cruising and burst swimming speeds. For 6 of the 8 shark samples it is concluded that the riblet spacing and keel height are optimised for burst speeds rather than cruising. Conversely \cite{bechert1985} suggests that riblet spacings are suited for cruising speeds, although estimates a cruising speed of $5\ m/s$ compared to the $0.8\ m/s$ of \cite{raschi1986}.  \cite{bechert1985} investigates the drag reduction of both replicated shark skin (Mako and Silky Shark) and longitudinal riblets. The angle of attack of the scales is varied, hypothesising that scales can passively bristle in order to enhance turbulent mixing and in turn keep boundary layers attached. It is concluded that shear stresses increase with angle of attack, suggesting that perfectly interlocking scales are required for drag reduction. However, the experimental conditions are that of a flat plate whereas the scales of a shark are likely subject to adverse pressure gradients. The authors suggest that the increase in turbulent mixing reduces the susceptibility of flow separation thus ultimately reducing drag, although further experimental evidence is required to support this. 
 
 Denticle distributions are also investigated by \cite{fletcher2014phd} who highlighting changes in scale width, riblet spacing and riblet angles over different shark species. A range of shark scales are fabricated using 3D printing and drag reduction is found even for smooth scales that lack riblets. The coefficient of friction is calculated from the fluid velocity profile, captured using LDA. More common methods of measuring drag reduction are through the use of force balances for open channels, or calculating pressure drops for closed channels \citep{bixler2013review}. \cite{fletcher2014phd} calculates a maximum drag reduction of 35\% for a 3D printed \textit{Lophosteus} scale and 33.5\% for a \textit{Loganellia} sample, a smooth scale with no riblets.
 
