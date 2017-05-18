@@ -1,7 +1,7 @@
 \documentclass[12pt,oneside,a4paper]{article}
 \title{Shark biomimetics: Drag reduction beyond parallel riblets.
 \\
- 6 month progress report
+ Transfer report
 }
 \author{Charlie Lloyd : sccjl@leeds.ac.uk
 \\\\
@@ -140,6 +140,16 @@ The outer layer blends the logarithmic region into the freestream velocity. The 
 \end{equation}
 Several forms of $f(y/\delta)$ have been suggested, such as polynomial and trigonometric functions \citep{perlin2016}, which is generally more problem dependent than the logarithmic region (REFERENCE - POPE?). Generally the effect of surface roughness has no impact on the outer layers .. link to next section.
 
+\subsection{Coherent turbulent structures}
+This section discusses the following:
+\begin{itemize}
+\item coherent structures in relation to wall-flows
+\item streaks, bursts/ejections etc.
+\item quadrant analysis as a method of detecting these features
+\item contributions to Reynolds stresses / turbulent mixing and therefore drag
+
+\end{itemize}
+
 \subsection{Surface roughness}
 The majority of real engineering problems are subject to surface roughness which is generally detrimental to efficiency. The first quantitative study on the effect of surface roughness was carried out by \cite{nikuradse1933} who applied different grain sizes of sand to a pipe flow and measured the resulting friction factor,
 %
@@ -163,7 +173,7 @@ where $\Delta U^+$ represents the shift \citep{newhall2006}. Generally the gradi
 
 \subsection{Shark scales}
 \label{section:literatureReview:sharkScales}
-Sharks are the only surviving fishes that possess dermal denticles \citep{fletcher2014}. These small tooth-like structures erupt through soft skin tissue and are optimised for the prevention of abrasion, defence against parasites and the reduction of hydrodynamic drag \citep{fletcher2014}. An extensive range of dermal denticles are documented by \cite{reif1985}, highlighting the differences between shark species and the location of scales on the fishes. The study also indicates the complex features of real shark scales such as three dimensionality beneath the exposed scale, overlapping, diverging and converging riblets, variable angles of incidence, and the aerofoil-like shape of each scale with a smooth leading edge and a sharp trailing edge. These features can be observed in Figure \ref{figure:literatureReview:scaleVariabilityFletcher};
+Sharks are the only surviving fishes that possess dermal denticles \citep{fletcher2014phd}. These small tooth-like structures erupt through soft skin tissue and are optimised for the prevention of abrasion, defence against parasites and the reduction of hydrodynamic drag \citep{fletcher2014phd}. An extensive range of dermal denticles are documented by \cite{reif1985}, highlighting the differences between shark species and the location of scales on the fishes. The study also indicates the complex features of real shark scales such as three dimensionality beneath the exposed scale, overlapping, diverging and converging riblets, variable angles of incidence, and the aerofoil-like shape of each scale with a smooth leading edge and a sharp trailing edge. These features can be observed in Figure \ref{figure:literatureReview:scaleVariabilityFletcher};
 \begin{figure}[!h]
 \centering
 \includegraphics[width=14cm]{images/litReview/scaleVariabilityFletcher.png}
@@ -183,6 +193,19 @@ when considering even one species the scales can vary significantly when moving 
 \label{figure:literatureReview:bladeRiblets}
 \end{figure} 
 %
+Figure \ref{figure:literatureReview:ribletPerformanceRegions} indicates three operating regions for the performance of a typical ribletted surface, whereby the difference in wall shear stress is plotted against the dimensionless riblet spacing, $s^+ = s * u_\tau / \nu$. The viscous regime exists for riblets with a spacing of $s^+  \lesssim 15$ whereby the drag reduction scales linearly with spacing. The riblets act to impede cross-flow leading to a reduced susceptibility to secondary motion and therefore turbulent mixing \citep{boomsma2015}. 
+%
+\begin{figure}[!b]
+\centering
+\includegraphics[width=8cm]{images/litReview/ribletPerformanceRegions.png}
+\caption{Typical behaviour of riblets, from \cite{garcia2011}}
+\label{figure:literatureReview:ribletPerformanceRegions}
+\end{figure}
+%
+
+
+The drag reduction process can be explained 
+
 
 In order to investigate the drag reducing effect of riblets 
 
@@ -197,17 +220,21 @@ in the viscous regime the drag reduction, tau/tau0 is proportional to the riblet
 
 The DR occurs due to the restrictions on cross-stream motion that would otherwise lead to an increase in turbulent mixing. 
 
+\vspace{5cm}
+NEW PAPERS:\\
+\citep{wei2005}: 	investiagates use of Clauser method for skin friction\\
+\citep{atkin2016}:	investiagates staggered cavities using LDA and HWA - finds DR for some. Plots skin friction and vel. profiles.\\
+\citep{tang1993}:	riblets, HWA and visuals, plots profiles, does quadrant analysis etc.\\
+\citep{choi1989}: similar to above ..?\\
+
+\vspace{5cm}
+
 
 
 \newpage
 
 
-\begin{figure}[!h]
-\centering
-\includegraphics[width=8cm]{images/litReview/ribletPerformanceRegions.png}
-\caption{Typical behaviour of riblets, from \cite{garcia2011}}
-\label{figure:literatureReview:ribletPerformanceRegions}
-\end{figure}
+
 
 
 
