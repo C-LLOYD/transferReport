@@ -140,6 +140,36 @@ The outer layer blends the logarithmic region into the freestream velocity. The 
 \end{equation}
 Several forms of $f(y/\delta)$ have been suggested, such as polynomial and trigonometric functions \citep{perlin2016}, which is generally more problem dependent than the logarithmic region (REFERENCE - POPE?). Generally the effect of surface roughness has no impact on the outer layers .. link to next section.
 
+\subsection{Skin friction}
+Skin friction arises from wall-parallel momentum transfer and is directly related to the fluid velocity gradient at the wall surface:
+\begin{equation}
+\label{equation:literatureReview:wallShearStress}
+u_\tau^2 = \frac{\tau_w}{\rho} = \left. \nu \frac{d U}{d y} \right\vert_{y=0}.
+\end{equation}
+The coefficient of friction normalises the shear stress with the dynamic pressure:
+\begin{equation}
+C_f = \frac{\tau_w}{\frac{1}{2} \rho U_b^2},
+\end{equation}
+where $U_b$ is the bulk fluid viscosity. For a statistically steady and fully developed channel flow the FIK identity \citep{fukagata2002} reduces to
+\begin{equation}
+\label{equation:literatureReview:FIK}
+C_f = \frac{12}{Re_b} + 12 \int_0^\delta 2 \left(1 - \frac{y}{\delta} \right)\left( - \frac{\left< u'v' \right> }{4 U_b^2} \right) dy,
+\end{equation}
+where $\delta$ is half the channel height and $\left< u'v' \right>$ are the Reynolds stresses. For a laminar flow the second term of \eqref{equation:literatureReview:FIK} is zero. The second term is therefore the contribution to the wall shear stress that arises from turbulent fluctuations in the channel. 
+
+- similar relationships can be derived 
+- for pipes and open channel /flat palte flows
+- these can include non-homogenous and time dependent terms
+- Check some papers - what is the influence of turbulent structures on the flow
+
+
+
+
+-is this important?
+-equations to calculate it, where it is generated etc.
+-FIK identity
+
+
 \subsection{Coherent turbulent structures}
 This section discusses the following:
 \begin{itemize}
@@ -193,7 +223,7 @@ when considering even one species the scales can vary significantly when moving 
 \label{figure:literatureReview:bladeRiblets}
 \end{figure} 
 %
-Figure \ref{figure:literatureReview:ribletPerformanceRegions} indicates three operating regions for the performance of a typical ribletted surface, whereby the difference in wall shear stress is plotted against the dimensionless riblet spacing, $s^+ = s * u_\tau / \nu$. The viscous regime exists for riblets with a spacing of $s^+  \lesssim 15$ whereby the drag reduction scales linearly with spacing. The riblets act to impede cross-flow leading to a reduced susceptibility to secondary motion and therefore turbulent mixing \citep{boomsma2015}. 
+Figure \ref{figure:literatureReview:ribletPerformanceRegions} indicates three operating regions for the performance of a typical ribletted surface, whereby the difference in wall shear stress is plotted against the dimensionless riblet spacing, $s^+ = u_\tau s / \nu$.
 %
 \begin{figure}[!b]
 \centering
@@ -202,6 +232,8 @@ Figure \ref{figure:literatureReview:ribletPerformanceRegions} indicates three op
 \label{figure:literatureReview:ribletPerformanceRegions}
 \end{figure}
 %
+The viscous regime exists for riblets with a spacing of $s^+  \lesssim 15$ whereby the drag reduction scales linearly with spacing. The riblets act to impede cross-flow leading to a reduced susceptibility to secondary motion and therefore reduced turbulent mixing \citep{boomsma2015}. 
+
 
 friction drag equation .... need some evidence that increasing mixing DOES increase drag ... 
 
