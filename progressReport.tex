@@ -1249,6 +1249,100 @@ Both STAR-CCM+ and SnappyHexMesh have significant advantages over the other test
 
 In terms of mesh generation, work over the following 6 months will consist of performing LES on a polyhedral mesh, in order to determine appropriate solver and discretisation settings to achieve comparable results to those presented in Section \ref{section:les}. In addition to this, appropriate mesh parameters will be determined for the SnappyHexMesh case and RANS simulations will be carried out on this domain to assess mesh independence and the influence of RANS model choice on the solution. This information will be used to create an appropriate sizing for the LES mesh.
 
+\subsection{Application of Reynolds-Averaged Navier-Stokes to a periodic shark scale domain}
+\label{section:rans}
+Dependency analysis of RANS methods on a periodic shark scale domain.
+Dependencies include MI, DI, model I, Numerics I, Tol I ...
+The results will form the basis for the mesh resolution for the LES and the RANS studies. Before carrying out further RANS the results will be validated against a LES. 
+
+\subsubsection{Problem definition}
+As discussed? The Reynolds equations are given by
+
+\begin{equation}
+\frac{\overline{D} \langle U_i \rangle }{ \overline{D} t}
+=
+-\pdev{\langle P \rangle}{x_i}
++
+\nu
+	\left(
+	\pdev{\langle U_j \rangle}{x_i}
+	+
+	\pdev{\langle U_i \rangle}{x_j} 
+	\right)
++
+\pdev{\langle u_i u_j\rangle}{x_i}.
+\end{equation}
+and the continuity equation by
+
+\begin{equation}
+\pdev{\langle U_i\rangle}{x_i}=0,
+\end{equation}
+where $\langle \phi \rangle$ represents the ensemble average of $\phi$. The present work adopts the turbulent viscosity hypothesis whereby the Reynolds stresses are estimated using
+
+\begin{equation}
+\left< u_i u_j \right> = \frac{2}{3}k \delta_{ij} - \nu_T \left( 
+	\pdev{\left< U_i \right>}{x_j} + \pdev{\left< U_j \right>}{x_i}	\right).
+\end{equation}
+
+In order to model $\nu_T$ the model of (REF) is adopted, whereby transport equations for $k$, the turbulent kinetic energy, and $\omega$, the ...? are solved. 
+
+
+These equations are similar in appearance as the Navier-Stokes equations \eqref{equation:fundamentalEquations:momentum} but require information about the Reynolds stresses, $\langle u_i u_j \rangle$. This forms the basis of the RANS ideology, whereby \eqref{equation:fundamentalEquations:meanContinuity} and \eqref{equation:fundamentalEquations:ReynoldsEquations} are solved for $\langle U_i \rangle$ and $\langle P \rangle$ by modelling the Reynolds stresses. There have been many proposed models to close this system of equations with varying accuracy and expense. A widely adopted approach to modelling these stresses is the turbulent-viscosity hypothesis which assumes
+\begin{equation}
+\left< u_i u_j \right> = \frac{2}{3}k \delta_{ij} - \nu_T \left( 
+	\pdev{\left< U_i \right>}{x_j} + \pdev{\left< U_j \right>}{x_i}	\right),
+\end{equation}
+where $\nu_T(\boldsymbol{x},t)$ is the turbulent viscosity, analogous to the molecular viscosity. Algebraic relationships for $\nu_T$ have been suggested, such that $\nu_T=l_m^2 \left| (\partial \left<U\right> / \partial y   \right|$, but these are reliant on the specification of the mixing length $l_m$. 
+
+\begin{equation}
+\nu_T = c k^{1/2} l_m = C_\mu k^2/\epsilon,
+\end{equation}
+
+
+\begin{equation}
+\pdev{k}{t} + \left< U_i \right> \cdot \nabla k = -\nabla \cdot T_i' + \mathcal{P} - \epsilon 
+\end{equation}
+
+\begin{equation}
+T_i' = \frac{1}{2} \left< u_i u_j u_j \right> + \left< u_i P' \right> - 2 \nu \left< u_j s_{ij} \right>.
+\end{equation}
+where $P'$ is the fluctuation component of the kinematic pressure. Further assumptions: the flux, $T_i'$ is modelled using gradient diffusion, i.e 
+\begin{equation}
+T_i' = -\frac{\nu_T}{\sigma_{k}} \nabla k,
+\end{equation}
+where the turbulent Prandtl number is generally taken as $\sigma_k=1$. This physically asserts that due to velocity and pressure fluctuations there is a flux of k down the gradient of k \citep{pope2001}.
+
+The equation for omega is entirely empirical:
+\begin{equation}
+\pdev{\omega}{t}  + \left< U_i \right> \cdot \nabla \omega = \nabla \cdot \left( \frac{\nu_T}{\sigma_{\omega}} \nabla \omega \right) + C_{\omega 1} \frac{\mathcal{P} \omega}{k} - C_{\omega 2} \omega^2
+\end{equation}
+By taking $\omega \equiv \epsilon /k$ and substituting into $\epsilon$ equation we get
+\begin{equation}
+\pdev{\omega}{t}  + \left< U_i \right> \cdot \nabla \omega = \nabla \cdot \left( \frac{\nu_T}{\sigma_{\epsilon}} \nabla \omega \right) + (C_{\varepsilon 1}-1) \frac{\mathcal{P} \omega}{k} - (C_{\varepsilon 2}-1) \omega^2 + \frac{2 \nu_T}{\sigma_\epsilon k}\nabla \omega \cdot \nabla k
+\end{equation}
+
+
+-present k and epsilon equations
+-indicate what each term is - including the weighting factor
+-Then introduce the FV method and how equations are discretised over our domain - BC. 
+
+
+
+
+\subsubsection{Results and discussion}
+
+Introduction: - what are we doing, why, how ..
+dependency studies
+-MI, DI, models, tolerances, disc. schemes etc. 
+-Eventually validate against LES 
+-Then we can start varying parameters to see effects on the flow field
+Methodology: - meshing parameters and models used
+- show domain and BCs,
+-numerical methods,
+Results: - MI results for contour plots over surface, profile plots in wall-normal direction.
+
+
+
 \subsection{Large eddy simulation of a channel flow}
 \label{section:les}
 In order to exploit periodicity, an infinitely long and wide channel flow with scales on one wall will be simulated. Large-eddy simulation will be adopted in order to model the flow at a feasibly high resolution for a bulk Reynolds number greater than $Re_b = 20\ 000$. The precise Reynolds number will be determined later this year when designing the LDA experiments. Before implementing the LES on a channel flow with scales, the code is validated with smooth walls. This is carried out at a low Reynolds number of $Re_\tau = 180$ to make use of the extensive DNS database of \cite{vreman2014}. By validating at this Reynolds number we can determine suitable model and solver parameters without requiring extensive computing costs. Over the following year the model will be extended to a high Reynolds number to provide a base case for both comparisons against fish scale surfaces, and an estimation of the number of cells required.
