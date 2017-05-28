@@ -795,7 +795,14 @@ The experiments are carried out using a flat plate submerged in a recirculating 
 \label{figure:experiments:setUp}
 \end{figure}
 %
-The plate has the dimensions $L \times w \times h = 500 \times 100 \times 10 $ (mm) with semi-circular leading and trailing edges.
+The plate has the dimensions $L \times w \times h = 500 \times 100 \times 10 $ (mm) with semi-circular leading and trailing edges. The volumetric flow rate is controlled by setting the pump frequency. Relating this to a Reynolds number prior to experiments is non-trivial due to the unknown bulk velocity inbetween the plate and the flume wall. Subsequently the Reynolds number is estimated from the measured profiles. The LDA probe is mounted to a traverse and calibrated such that $(0,0,0)$ lies along the centre of the plate at the start of the flat section.
+
+
+As discussed in Section \ref{section:literatureReview}, the viscous sub-layer of a boundary layer exists up to $y^+ \approx 5$. If this is to be measured accurately the wall position, and the wall-normal grid size, must be of the same order as the viscous length scale, $\delta_\nu = u_\tau / \nu$. For this reason the wall-normal zero position is arbitrarily set to lie in the flat plate. The probe is then traversed normal to the wall with a grid spacing of \SI{0.1}{mm}. For a Reynolds number of $Re_\tau \approx 400$ this equates to a spacing of $\Delta \approx 0.33 \delta_v$. This spacing is exponentially increased as the probe moves away from the wall (defined in Section ....). When normalising the measured profiles the wall-normal positions are displaced 
+
+This displacement is estimated by extrapolating the viscous sub-layer velocity profile back to the wall.
+
+-equations - define grid here? - regression lines etc.
 
 
 \vspace{5cm}
