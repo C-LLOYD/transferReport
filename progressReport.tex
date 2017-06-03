@@ -119,102 +119,63 @@ There are two aims of this project; to investigate the influence of shark scale 
 
 \section{Literature Review}
 \label{section:literatureReview}
-Most engineering and atmospheric flows are bounded by one or many surfaces. These take the form of external flows, such as the flow around cars and aircraft, and internal flows, such as through pipes and channels \citep{pope2001}. Boundary layers are formed as a fluid passes over a surface, whereby the surface-parallel fluid velocity converges to zero as the distance to the wall decreases. This no-slip condition causes a large contribution to the total drag force that impedes the motion of an object: \SI{50}{\%} of the drag that acts on a ship hull is due to this skin-friction \citep{perlin2016}. A typical boundary layer is presented in Figure \ref{figure:literatureReview:boundaryLayerRegions}, which splits the temporally averaged wall-parallel velocity into several different regions.
+
+%\subsection{Shark scales}
+%\label{section:literatureReview:sharkScales}
+Sharks are the only surviving fishes that possess dermal denticles \citep{fletcher2014phd}. These small tooth-like structures erupt through soft skin tissue and are optimised for the prevention of abrasion, defence against parasites and the reduction of hydrodynamic drag \citep{fletcher2014phd}. An extensive range of dermal denticles are documented by \cite{reif1985}, highlighting the differences between shark species and the location of scales on the fishes. The study also indicates the complex features of real shark scales such as three dimensionality beneath the exposed scale, overlapping, diverging and converging riblets, variable angles of incidence, and the aerofoil-like shape of each scale with a smooth leading edge and a sharp trailing edge. These features can be observed in Figure \ref{figure:literatureReview:scaleVariabilityFletcher};
+\begin{figure}[!h]
+\centering
+\includegraphics[width=14cm]{images/litReview/scaleVariabilityFletcher.png}
+\caption{scale variability \citep{fletcher2014phd}}
+\label{figure:literatureReview:scaleVariabilityFletcher}
+\end{figure}
+even when considering just one species the scales can vary significantly when moving from the head to the tail. Take, for example, the \textit{Scyliorhinus canicula} (demersal ecology) samples in Figure \ref{figure:literatureReview:scaleVariabilityFletcher}; the scales on the head of the shark are tightly interlocking and rounded scales which quickly change to sharp, loosely interlocked, and ribletted scales on the sharks flank. The vast range of these features, and the variability between species, results in little understanding as to why many of these features exist. Hydrodynamical aspects have only been studied over the last few decades \citep{dean2010} and have mainly focussed on riblets, examples of which are most prominent on the fast pelagic samples of Figure \ref{figure:literatureReview:scaleVariabilityFletcher}. There has been research into the fluid dynamics of shark scales but there are many gaps and inconsistencies in the literature. These will be discussed in Section \ref{section:literatureReview:sharkScaleFluids}. Before reviewing the experiments carried out on shark scales and riblets we must first understand the underlying principles behind boundary layers and skin friction. 
 %
-\begin{figure}[!b]
+\subsection{Boundary layers and skin friction}
+Most engineering and atmospheric flows are bounded by one or many surfaces. These take the form of external flows, such as the flow around cars and aircraft, and internal flows, such as through pipes and channels \citep{pope2001}. Boundary layers are formed as a fluid passes over a surface, whereby the fluid velocity converges to zero as the distance to the wall decreases. Skin friction, arising from the no-slip condition, can be a large contribution to the total drag force that impedes the motion of an object: \SI{50}{\%} of the drag that acts on a ship hull is due to skin-friction \citep{perlin2016}. A typical boundary layer is presented in Figure \ref{figure:literatureReview:boundaryLayerRegions}, which splits the temporally averaged wall-parallel velocity into several different regions.
+%
+\begin{figure}[!t]
 \centering
 \includegraphics[width=10cm]{images/litReview/boundaryLayerRegions.png}
 \caption{Regions of boundary layer from \cite{perlin2016} }
 \label{figure:literatureReview:boundaryLayerRegions}
 \end{figure}
 %
-Typically boundary layers are quantified using wall units, whereby variables are scaled using the fluid kinematic viscosity, $\nu$, and friction velocity, $u_\tau = \sqrt{\tau_w / \rho}$, where $\tau_w$ is the wall shear stress and $\rho$ is the fluid density. In wall units, the average velocity and distance are given by
+The velocity and spatial variables are scaled using the fluid kinematic viscosity, $\nu$, and friction velocity, $u_\tau = \sqrt{\tau_w / \rho}$, where $\tau_w$ is the wall shear stress and $\rho$ is the fluid density:
 \begin{equation}
 U^+ = \frac{U}{u_\tau}, \hspace{1cm} y^+ = \frac{u_\tau y }{\nu}.
 \end{equation}
 By using this scaling the velocity profiles of many external and internal flows behave in the way indicated by Figure \ref{figure:literatureReview:boundaryLayerRegions}, whereby the boundary layer is split into external and internal regions. The inner region consists of a viscous sub-layer, whereby viscous forces dominate the near negligible inertial forces, a buffer layer, and a logarithmic layer. When in the viscous sub-layer the streamwise (wall-parallel) velocity of a fluid is proportional to the distance away from it, such that $U^+ = y^+$. This extends until $y^+ \approx 5$, at which point the production of turbulent kinetic energy rapidly increase until reaching its maximum in the buffer layer \citep{perlin2016}. The logarithmic region begins at $y^+ \approx 30$, at which point the streamwise velocity behaves like $U^+ = \kappa^{-1} \ln{y^+} + B$ where $\kappa \approx 0.4$ is the von Karmon constant and $B\approx 5$ is the intercept parameter \citep{pope2001}.
 
-The outer layer blends the logarithmic region into the freestream velocity. The wake region, identified by Figure \ref{figure:literatureReview:boundaryLayerRegions}, deviates from the log-law and can cover a large amount of the boundary layer. For an external flow the wake region typically exists for $y/\delta > 0.2$ where $\delta$ is the boundary layer thickness, defined as the point at which the mean streamwise velocity is equal to \SI{99}{\%} of the freestream velocity, $U_\infty$. \cite{coles1956} postulated that this region can be defined by
-\begin{equation}
-\frac{U_\infty - U(y)}{u_\tau} = f \left( \frac{y}{\delta} \right),
-\end{equation}
-Several forms of $f(y/\delta)$ have been suggested, such as polynomial and trigonometric functions \citep{perlin2016}, which is generally more problem dependent than the logarithmic region (REFERENCE - POPE?). Generally the effect of surface roughness has no impact on the outer layers .. link to next section.
+The outer layer blends the logarithmic region into the freestream velocity. The wake region, identified by Figure \ref{figure:literatureReview:boundaryLayerRegions}, deviates from the log-law and can cover a large amount of the boundary layer. For an external flow the wake region typically exists for $y/\delta > 0.2$ where $\delta$ is the boundary layer thickness, defined as the point at which the mean streamwise velocity is equal to \SI{99}{\%} of the freestream velocity, $U_\infty$ \citep{pope2001}. What is interesting is that surface roughness, including shark scales and riblets, have no effect on the wake portion of the outer boundary layer \citep{flack2010}. These effects will be discussed in Section \ref{section:literatureReview:roughness}.
 
-\subsection{Skin friction}
-The two fundamental equations governing fluid flow are the continuity \eqref{equation:fundamentalEquations:continuity} and momentum \eqref{equation:fundamentalEquations:momentum} equations, derived by assuming incompressibility \citep{pope2001}:
+Relationships between the skin friction drag and the flow field can be derived from the Reynolds equations \citep{pope2001}:
 \begin{equation}
-\pdev{U_i}{x_i}=0,
-\label{equation:fundamentalEquations:continuity}
-\end{equation}
-and
-\begin{equation}
-\Ddev{U_i}{t}
+\pdev{\langle U_i \rangle}{t} + \langle U_j \rangle \pdev{\langle U_i \rangle}{x_j}
 =
-\pdev{\tau_{ij}}{x_i},
-\label{equation:fundamentalEquations:momentum}
-\end{equation}
-where 
-\begin{equation}
-\tau_{ij}
-=
--P\delta_{ij}
+-\pdev{\langle P \rangle}{x_i}
 +
-\nu\left( \pdev{U_i}{x_j}+\pdev{U_j}{x_i} \right),
-\label{equation:fundamentalEquations:stressTensor}
+\nu
+	\left(
+	\pdev{\langle U_j \rangle}{x_i}
+	+
+	\pdev{\langle U_i \rangle}{x_j} 
+	\right)
++
+\pdev{\langle u_i u_j\rangle}{x_i},
+\label{equation:literatureReview:ReynoldsEquations}
 \end{equation}
-represents the stress tensor, $P = p/\rho$ represents the kinematic pressure, and $\nu$ represents the kinematic viscosity.
-
-The mean flow equations can be derived by assuming the velocity and pressure variables can be decomposed into a fluctuating and mean component, such that
-
-\begin{equation}
-U_i = \langle U_i \rangle + u_i.
-\label{equation:fundamentalEquations:ReynoldsDecomposition}
-\end{equation}
-
-The fundamental equations that dictate the behaviour of a Newtonian fluid is given by the three-component momentum equations and continuity equation:
-
-
-
-Skin friction arises from wall-parallel momentum transfer and is directly related to the fluid velocity gradient at the wall surface:
-\begin{equation}
-\label{equation:literatureReview:wallShearStress}
-u_\tau^2 = \frac{\tau_w}{\rho} = \left. \nu \frac{d U}{d y} \right\vert_{y=0}.
-\end{equation}
-The coefficient of friction normalises the shear stress with the dynamic pressure,
-\begin{equation}
-C_f = \frac{\tau_w}{\frac{1}{2} \rho U_b^2},
-\end{equation}
-where $U_b$ is the bulk fluid viscosity. For a statistically steady and fully developed channel flow the FIK identity \citep{fukagata2002} reduces to
+where the three component velocity vector, $U_i$, and the kinematic pressure, $P$, are decomposed into an ensemble mean and fluctuating component: $U_i = \langle U_i \rangle + u_i$, and $P = \langle P \rangle + p$. The term $\langle u_i u_j \rangle$, is termed the Reynolds stresses which account for the effect of velocity fluctuations on the mean flow \citep{pope2001}. The FIK identity \citep{fukagata2002} manipulates \eqref{equation:literatureReview:FIK} to determine a relationship for the coefficient of skin friction. For a statistically steady and fully developed channel flow the FIK identity is
 \begin{equation}
 \label{equation:literatureReview:FIK}
-C_f = \frac{12}{Re_b} + 12 \int_0^\delta 2 \left(1 - \frac{y}{\delta} \right)\left( - \frac{\left< u'v' \right> }{4 U_b^2} \right) dy,
+C_f = \frac{\tau_w}{\frac{1}{2} \rho U_b^2} = \frac{12}{Re_b} + 12 \int_0^\delta 2 \left(1 - \frac{y}{\delta} \right)\left( - \frac{\left< u'v' \right> }{4 U_b^2} \right) dy,
 \end{equation}
-where $\delta$ is half the channel height and $\left< u'v' \right>$ are the Reynolds stresses. For a laminar flow the second term of \eqref{equation:literatureReview:FIK} is zero. The second term is therefore the contribution to the wall shear stress that arises from turbulent fluctuations in the channel. 
+where $U_b$ is the bulk fluid viscosity and $Re_b$ is the bulk Reynolds number based on the bulk velocity and the channel half height, $\delta$. Similar equations can also be derived for pipe flows and flat plates. \cite{newhall2006} derives an integrated boundary layer equation, similar to \eqref{equation:literatureReview:FIK}, to compare the skin friction coefficients for smooth and rough flat plate flows. 
 
-- similar relationships can be derived 
-- for pipes and open channel /flat palte flows
-- these can include non-homogenous and time dependent terms
-- Check some papers - what is the influence of turbulent structures on the flow
-
-
-
-
--is this important?
--equations to calculate it, where it is generated etc.
--FIK identity
-
-
-\subsection{Coherent turbulent structures}
-This section discusses the following:
-\begin{itemize}
-\item coherent structures in relation to wall-flows
-\item streaks, bursts/ejections etc.
-\item quadrant analysis as a method of detecting these features
-\item contributions to Reynolds stresses / turbulent mixing and therefore drag
-
-\end{itemize}
+By setting the Reynolds stresses to zero it is clear that \eqref{equation:literatureReview:FIK} is decomposed into a laminar and turbulent component \citep{kasagi2006}. It is the control of this turbulent component that is key to how riblets reduce drag, as will be discussed in Section \ref{section:literatureReview:Riblets}.
 
 \subsection{Surface roughness}
+\label{section:literatureReview:roughness}
 The majority of real engineering problems are subject to surface roughness which is generally detrimental to efficiency. The first quantitative study on the effect of surface roughness was carried out by \cite{nikuradse1933} who applied different grain sizes of sand to a pipe flow and measured the resulting friction factor,
 %
 \begin{equation}
@@ -235,19 +196,11 @@ U^+ = \frac{1}{\kappa} \ln{y^+} + B - \Delta U^+,
 \end{equation}
 where $\Delta U^+$ represents the shift \citep{newhall2006}. Generally the gradient of the logarithmic region remains the same for both smooth and rough surfaces. In addition to this the outer layers of the boundary experience no change when subject to surface roughness, despite there being an increase to the boundary layer thickness, $\delta$ \citep{perlin2016}. However, the above description does not hold true for all types of roughness. In particular, the effect of shark-skin, and shark-skin inspired riblets, have a very different effect on the flow. These will be discussed in sections \ref{section:literatureReview:Riblets} and \ref{section:literatureReview:sharkScaleFluids}.
 
-\subsection{Shark scales}
-\label{section:literatureReview:sharkScales}
-Sharks are the only surviving fishes that possess dermal denticles \citep{fletcher2014phd}. These small tooth-like structures erupt through soft skin tissue and are optimised for the prevention of abrasion, defence against parasites and the reduction of hydrodynamic drag \citep{fletcher2014phd}. An extensive range of dermal denticles are documented by \cite{reif1985}, highlighting the differences between shark species and the location of scales on the fishes. The study also indicates the complex features of real shark scales such as three dimensionality beneath the exposed scale, overlapping, diverging and converging riblets, variable angles of incidence, and the aerofoil-like shape of each scale with a smooth leading edge and a sharp trailing edge. These features can be observed in Figure \ref{figure:literatureReview:scaleVariabilityFletcher};
-\begin{figure}[!h]
-\centering
-\includegraphics[width=14cm]{images/litReview/scaleVariabilityFletcher.png}
-\caption{scale variability \citep{fletcher2014phd}}
-\label{figure:literatureReview:scaleVariabilityFletcher}
-\end{figure}
-when considering even one species the scales can vary significantly when moving from the head to the tail. Take, for example, the \textit{Scyliorhinus canicula} (demersal ecology) samples; the scales on the head of the shark are tightly interlocking and rounded scales which quickly change to sharp, loosely interlocked, and ribletted scales on the sharks flank. The vast range of these features, and the variability between species, results in little understanding as to why many of these features exist. Hydrodynamical aspects have only been studied over the last few decades \citep{dean2010} and have only focussed on riblets, examples of which are most prominent on the fast pelagic samples of Figure \ref{figure:literatureReview:scaleVariabilityFletcher}. There have been research into the fluid dynamics of shark scales but there are many gaps and inconsistencies in the literature. These will be discussed in Section \ref{section:literatureReview:sharkScaleFluids}. 
-%
+
 \subsection{Riblets}
 \label{section:literatureReview:Riblets}
+\citep{launder1989} - no effects of riblets on laminar flow!!!
+\vspace{2cm}
  An extensive amount of work has been carried out on simplified, sharkskin-inspired, riblets which have been successful in reducing drag for open channel flows, closed channel flows and when applied to aerofoils \citep{bixler2013review}. These riblets are generally two-dimensional, whereby there is no variation in cross section in the streamwise direction. The most popular cross sectional shapes are blade like, sawtooth and scalloped although they are theorised to reduce drag in the same way. An example of blade-like riblets is presented in Figure \ref{figure:literatureReview:bladeRiblets}, and when compared to the denticle samples of Figure \ref{figure:literatureReview:scaleVariabilityFletcher} it is clear that the intricate details are lost.
 %
 \begin{figure}[!t]
@@ -741,7 +694,7 @@ Substituting this back into \eqref{equation:fundamentalEquations:averagedMom} we
 	\right)
 +
 \pdev{\langle u_i u_j\rangle}{x_i}.
-\label{equation:fundamentalEquations:ReynoldsEquations}
+\label{equation:fundamentalEquations:ReynoldsEquations....}
 \end{equation}
 These equations are similar in appearance as the Navier-Stokes equations \eqref{equation:fundamentalEquations:momentum} but require information about the Reynolds stresses, $\langle u_i u_j \rangle$. This forms the basis of the RANS ideology, whereby \eqref{equation:fundamentalEquations:meanContinuity} and \eqref{equation:fundamentalEquations:ReynoldsEquations} are solved for $\langle U_i \rangle$ and $\langle P \rangle$ by modelling the Reynolds stresses. There have been many proposed models to close this system of equations with varying accuracy and expense. A widely adopted approach to modelling these stresses is the turbulent-viscosity hypothesis which assumes
 \begin{equation}
