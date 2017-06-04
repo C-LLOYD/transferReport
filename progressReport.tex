@@ -170,7 +170,7 @@ where the three component velocity vector, $U_i$, and the kinematic pressure, $P
 \label{equation:literatureReview:FIK}
 C_f = \frac{\tau_w}{\frac{1}{2} \rho U_b^2} = \frac{12}{Re_b} + 12 \int_0^\delta 2 \left(1 - \frac{y}{\delta} \right)\left( - \frac{\left< u'v' \right> }{4 U_b^2} \right) dy,
 \end{equation}
-where $U_b$ is the bulk fluid viscosity and $Re_b$ is the bulk Reynolds number based on the bulk velocity and the channel half height, $\delta$. Similar equations can also be derived for pipe flows and flat plates. \cite{newhall2006} derives an integrated boundary layer equation, similar to \eqref{equation:literatureReview:FIK}, to compare the skin friction coefficients for smooth and rough flat plate flows. 
+where $C_f$ represents the coefficient of friction and $Re_b$ is the bulk Reynolds number based on the bulk velocity, $U_b$, and the channel half height, $\delta$. Similar equations can also be derived for pipe flows and flat plates. \cite{newhall2006} derives an integrated boundary layer equation, similar to \eqref{equation:literatureReview:FIK}, to compare the skin friction coefficients for smooth and rough flat plate flows. 
 
 By setting the Reynolds stresses to zero it is clear that \eqref{equation:literatureReview:FIK} is decomposed into a laminar and turbulent component \citep{kasagi2006}. It is the control of this turbulent component that is key to how riblets reduce drag, as will be discussed in Section \ref{section:literatureReview:Riblets}.
 
@@ -182,7 +182,7 @@ The majority of real engineering problems are subject to surface roughness which
 f \equiv \frac{\Delta p}{\Delta x} \frac{2D}{\rho U_b^2}
 \end{equation}
 %
-where $\Delta p / \Delta x$ is the pressure drop per unit length, $D$ is the pipe diameter, $\rho$ is the fluid density and $U_b$ is the bulk velocity. Nikuradse observed that for both laminar and transitional flows surface roughness had little effect, and its effect on fully turbulent flows is dependent on the relative size of the roughness. To describe the effect of roughness three regimes were defined, based on the average roughness height, $k_s$:
+where $\Delta p / \Delta x$ is the pressure drop per unit length, $D$ is the pipe diameter, $\rho$ is the fluid density and $U_b$ is the bulk velocity. Nikuradse observed that for both laminar and transitional flows surface roughness had little effect, and its effect on fully turbulent flows is dependent on the relative size of the roughness. To describe the effect of roughness on turbulent flows three regimes were defined, based on the average roughness height, $k_s$:
 %
 $$\frac{k_s u_\tau}{\nu} < 5: \text{Hydraulically smooth,} $$
 $$5 \leq \frac{k_s u_\tau}{\nu} \leq 70:	\text{transitionally rough,} $$
@@ -192,6 +192,7 @@ The hydraulically smooth regime occurs when the roughness elements do not protru
 
 In terms of the mean velocity profiles, roughness has the effect of shifting the logarithmic layer towards the wall such that the velocity behaves like
 \begin{equation}
+\label{equation:litReview:roughLawOfWall}
 U^+ = \frac{1}{\kappa} \ln{y^+} + B - \Delta U^+,
 \end{equation}
 where $\Delta U^+$ represents the shift \citep{newhall2006}. Generally the gradient of the logarithmic region remains the same for both smooth and rough surfaces. In addition to this the outer layers of the boundary experience no change when subject to surface roughness, despite there being an increase to the boundary layer thickness, $\delta$ \citep{perlin2016}. However, the above description does not hold true for all types of roughness. In particular, the effect of shark-skin, and shark-skin inspired riblets, have a very different effect on the flow. These will be discussed in sections \ref{section:literatureReview:Riblets} and \ref{section:literatureReview:sharkScaleFluids}.
@@ -201,7 +202,7 @@ where $\Delta U^+$ represents the shift \citep{newhall2006}. Generally the gradi
 \label{section:literatureReview:Riblets}
 \citep{launder1989} - no effects of riblets on laminar flow!!!
 \vspace{2cm}
- An extensive amount of work has been carried out on simplified, sharkskin-inspired, riblets which have been successful in reducing drag for open channel flows, closed channel flows and when applied to aerofoils \citep{bixler2013review}. These riblets are generally two-dimensional, whereby there is no variation in cross section in the streamwise direction. The most popular cross sectional shapes are blade like, sawtooth and scalloped although they are theorised to reduce drag in the same way. An example of blade-like riblets is presented in Figure \ref{figure:literatureReview:bladeRiblets}, and when compared to the denticle samples of Figure \ref{figure:literatureReview:scaleVariabilityFletcher} it is clear that the intricate details are lost.
+ An extensive amount of work has been carried out on simplified, sharkskin-inspired, riblets which have been successful in reducing drag for open channel flows, closed channel flows, and when applied to aerofoils \citep{bixler2013review}. These riblets are generally two-dimensional, whereby there is no variation in cross section in the streamwise direction. The most popular cross sectional shapes are blade like, sawtooth and scalloped although they are theorised to reduce drag in the same way. An example of blade-like riblets is presented in Figure \ref{figure:literatureReview:bladeRiblets}, and when compared to the denticle samples of Figure \ref{figure:literatureReview:scaleVariabilityFletcher} it is clear that the intricate details are lost.
 %
 \begin{figure}[!t]
 \centering
@@ -210,7 +211,7 @@ where $\Delta U^+$ represents the shift \citep{newhall2006}. Generally the gradi
 \label{figure:literatureReview:bladeRiblets}
 \end{figure} 
 %
-Figure \ref{figure:literatureReview:ribletPerformanceRegions} indicates three operating regions for the performance of a typical ribletted surface, whereby the difference in wall shear stress is plotted against the dimensionless riblet spacing, $s^+ = u_\tau s / \nu$.
+Riblets are typically characterised by their spacing in wall units, $s^+ = u_\tau s / \nu$, although there are other scaling options. For example, \cite{garcia2011a} proposes a scaling based on the cross-sectional groove area, $(A_g^+)^{1/2}$. The performance of a typical ribletted surface is presented in Figure \ref{figure:literatureReview:ribletPerformanceRegions}, whereby the difference in wall shear stress is plotted against $s^+$.
 %
 \begin{figure}[!b]
 \centering
@@ -219,7 +220,37 @@ Figure \ref{figure:literatureReview:ribletPerformanceRegions} indicates three op
 \label{figure:literatureReview:ribletPerformanceRegions}
 \end{figure}
 %
-The viscous regime exists for riblets with a spacing of $s^+  \lesssim 15$ whereby the drag reduction scales linearly with spacing. The riblets act to impede cross-flow leading to a reduced susceptibility to secondary motion and therefore reduced turbulent mixing \citep{boomsma2015}. 
+The viscous regime exists for riblets with a spacing of $s^+  \lesssim 15$ whereby the drag reduction scales linearly with spacing. For a small riblet spacing the riblet surface is submerged in the viscous sub-layer. Realising this, \cite{luchini1991} used the two-dimensional linear Stokes equations to investigate the flow field. The performance of a particular riblet geometry was found to be related to its virtual origin, whereby the riblet surface can be represented by a flat plate whose origin lies somewhere below the riblet tips. It was found that the virtual origin of spanwise flow lies deeper in the riblet than for streamwise flow. The difference between these two origins  is termed the protrusion height, $\Delta h$. \cite{luchini1991} argued that the larger the protrusion height, the larger the restriction on spanwise flow that could otherwise lead to turbulent mixing above the riblets. \cite{bechert1997} used this protrusion height to derive an empirical equation for the slope $m_s$ of Figure \ref{figure:literatureReview:ribletPerformanceRegions}:
+\begin{equation}
+\label{equation:literatureReview:ribletGradient}
+\frac{\Delta \tau}{\tau_0} = m_s s^+ = - \frac{\mu_0 (\Delta h / s)}{(2 C_f)^{-1/2} + (2 \kappa)^{-1}}s^+,
+\end{equation}
+where $\mu_0 = 0.785$ is an empirical constant. The intercept parameter of 
+\eqref{equation:litReview:roughLawOfWall} is related to the protrusion height by $\Delta U^+ = - \mu_0 \Delta h^+$ such that the mean velocity profile is shifted away from the wall, contrary to typical rough surfaces. 
+
+As the dimensionless riblet spacing increases the riblets begin to interact with layers above the viscous sub-layer and the predictions of \eqref{equation:literatureReview:ribletGradient} deviate from experiments. At the optimal region of Figure \ref{figure:literatureReview:ribletPerformanceRegions}, \cite{garcia2011a} determined that large spanwise vortices are formed, above the riblet tips, due to a Kelvin-Helmholtz type instability. 
+
+
+\vspace{2cm}
+-breakdown
+-however, this equation loses validity as the dimensionless spacing increases.
+-The point of optimal 
+
+-this is due to the restriction of the size of vortices that interact with the wall surface
+-smaller vortices in the grooves means lower shear stress
+-larger vortices only act at riblet tips
+-the control of small vortices also reduces 
+
+
+
+
+ The gradient, $m_s$, is often calculated using the empirical relationship,
+
+
+ Empirical relationships have been derived that estimate the gradient $m_s$ based on the 
+
+
+The riblets act to impede cross-flow leading to a reduced susceptibility to secondary motion and therefore reduced turbulent mixing \citep{boomsma2015}. 
 
 
 friction drag equation .... need some evidence that increasing mixing DOES increase drag ... 
