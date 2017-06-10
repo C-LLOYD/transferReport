@@ -486,6 +486,7 @@ and the covariance between the two components of velocity is calculated by
 
 
 \subsection{Experimental set up}
+\label{section:experiments:setUp}
 The experiments are carried out using a flat plate submerged in a recirculating flume (observed in Figure \ref{figure:experiments:setUp}).
 %
 \begin{figure}[!b]
@@ -534,13 +535,36 @@ The anomalies identified by the filter were removed from the data set rather tha
 Two sets of results are presented in this section; a time dependence analysis of the means, standard deviations, and the covariance of the two velocity components; and an analysis of the measured profiles. The time dependence study investigates the convergence of statistics as a function of the averaging time. This allows the errors associated with short averaging windows to be estimated, and also provides information regarding how much averaging time is required to reduce the error to an acceptable level. The second section investigates the spatial dependency on the flow statistics which will ultimately be used to compare the differences between sharkskin and smooth surfaces. The preliminary results will provide an estimate to the possible Reynolds number range, the coefficient of skin friction, and the development of the boundary layer over the plate. 
 
 \subsubsection{Time Dependence}
+\label{section:experiments:timeDep}
 
+Time dependence was assessed at three vertical locations, \SI{400}{mm} from the upstream end of the plate. These positions were at $z=$\SI{1}{mm}, \SI{15}{mm}, and \SI{40}{mm}. It was assumed that these locations would provide enough data to predict the error associated with the choice of sampling time. Several positions are chosen since the amount of sampling time required is dependent on the local velocity of the flow. It is therefore expected that close to the wall, statistics will require a longer averaging window. This analysis also investigates how the statistics converge against the number of samples measured. This is dependent on the sampling rate of the LDA, and the local time scale of the flow. It is expected that high local velocities will result in a higher sampling rate.
 
-Time dependence was assessed at three vertical locations, \SI{400}{mm} from the upstream end of the plate. These positions were at $z=$\SI{1}{mm}, \SI{15}{mm}, and \SI{40}{mm}. It was assumed that these locations would provide enough data to predict the error associated with the choice of sampling time. Several positions are chosen since the amount of sampling time required is dependent on the local velocity of the flow. It is therefore expected that close to the wall, statistics will require a longer averaging window.
+ The probe measured velocities for \SI{300}{s} at each location for pump speeds of \SI{4}{Hz} and \SI{8}{Hz}. The mean streamwise velocity as a function of time is defined as $\mu_u (t) = \mu_u[0,t]$. The standard deviations and covariance are defined using the same notation. Convergence is determined by normalising these quantities against their evaluation over the whole time series. These reference values can be observed in Table \ref{table:experiments:convergedStatistics}.
+ %
+ \begin{table}[!h]
+ \centering
+ \caption{...}
+ \label{table:experiments:convergedStatistics}
+ \begin{tabular}{l l l l l l l}
+ \hline
+ Pump Frequency	&	$z$ location	&	$\mu_u(300)$	&	$\mu_v(300)$	&	$\sigma_u(300)$	&	$\sigma_v(300)$	&	$\gamma_{u,v}(300)$	\\
+ %
+ \multicolumn{1}{c}{(\SI{}{Hz})}	&	\multicolumn{1}{c}{(\SI{}{mm})}	&	\multicolumn{1}{c}{(\SI{}{m/s})}	&	\multicolumn{1}{c}{(\SI{}{m/s})}	&	\multicolumn{1}{c}{(\SI{}{m/s})}	& \multicolumn{1}{c}{(\SI{}{m/s})}	& \multicolumn{1}{c}{(\SI{}{m^2/s^2})}	\\
+%
+\hline
+4	&	1	&	0.027081	&	-0.000173	&	0.008319	&	0.000773	&	-0.000002	\\
+4	&	15	&	0.091392	&	-0.000447	&	0.008947	&	0.005598	&	-0.000019	\\
+4	&	40	&	0.100255	&	-0.000787	&	0.008099	&	0.005211	&	-0.000011	\\
+8	&	1	&	0.085152	&	-0.000843	&	0.023807	&	0.003023	&	-0.000031	\\
+8	&	15	&	0.185502	&	-0.001367	&	0.015663	&	0.009869	&	-0.000047	\\
+8	&	40	&	0.204352	&	-0.001552	&	0.013103	&	0.008496	&	-0.000027	\\
+\hline
+ 
+ \end{tabular}
+ \end{table}
+ %
 
- The probe measured velocities for \SI{300}{s} at each location for pump speeds of \SI{4}{Hz} and \SI{8}{Hz}. The mean streamwise velocity as a function of time is defined as $\mu_u (t) = \mu_u[0,t]$. The standard deviations and covariance are defined using the same notation. Convergence is determined by normalising these quantities against their evaluation over the whole time series.
-
-Figures \ref{figure:experiments:timeDependence:meanUx} to \ref{figure:experiments:timeDependence:uv} indicate how the means, standard deviations, and the covariance of the two velocity components, converge as the averaging time increases. For clarity, only the two extreme $z$ positions are plotted. \ref{figure:experiments:timeDependence:meanUx} indicates fast convergence for the mean streamwise velocity at $z=$\SI{40}{mm} for both pump speeds.
+Figures \ref{figure:experiments:timeDependence:meanUx} to \ref{figure:experiments:timeDependence:uv} indicate how the means, standard deviations, and the covariance of the two velocity components, converge as the averaging time increases. For clarity, only the two extreme $z$ positions are plotted. Figure  \ref{figure:experiments:timeDependence:meanUx} indicates fast convergence for the mean streamwise velocity at $z=$\SI{40}{mm} for both pump speeds.
 %
 \begin{figure}[!h]
 \centering
@@ -550,7 +574,7 @@ Figures \ref{figure:experiments:timeDependence:meanUx} to \ref{figure:experiment
 \label{figure:experiments:timeDependence:meanUx}
 \end{figure}
 %
- An averaging window of $\lesssim$ \SI{30}{s} can reduce the error to below \SI{1}{\%}. As expected, the mean streamwise velocity converges more slowly near the wall. After $\sim$\SI{30}{s} convergence to $\sim$\SI{5}{\%} is achieved for the pump frequency of \SI{8}{Hz} but only \SI{10}{\%} for \SI{4}{Hz}. In order to reduce the low pump frequency error to below \SI{5}{\%} an averaging window of $\sim$\SI{50}{s} is required. Both pump frequencies require an averaging windoe of $\sim$\SI{200}{s} to converge to within a $\sim$\SI{1}{\%} error. In terms of the number of samples it takes more than twice as many samples to converge for the higher pump frequency. These results suggest that convergence of the mean streamwise velocity is more dependent on averaging time rather than the number of samples obtained. 
+ An averaging window of $\lesssim$ \SI{30}{s} can reduce the error to below \SI{1}{\%}. As expected, the mean streamwise velocity converges more slowly near the wall. After $\sim$\SI{30}{s} convergence to $\sim$\SI{5}{\%} is achieved for the pump frequency of \SI{8}{Hz} but only \SI{10}{\%} for \SI{4}{Hz}. In order to reduce the low pump frequency error to below \SI{5}{\%} an averaging window of $\sim$\SI{50}{s} is required. Both pump frequencies require an averaging window of $\sim$\SI{200}{s} to converge to within a $\sim$\SI{1}{\%} error. In terms of the number of samples, it takes more than twice as many to converge for the higher pump frequency. These results suggest that convergence of the mean streamwise velocity is more dependent on averaging time rather than the number of samples obtained. 
  
 Figure \ref{figure:experiments:timeDependence:meanUy} indicates very poor convergence for the mean vertical component of velocity, especially for the low pump frequency.
 %
@@ -562,100 +586,76 @@ Figure \ref{figure:experiments:timeDependence:meanUy} indicates very poor conver
 \label{figure:experiments:timeDependence:meanUy}
 \end{figure}
 %
- This is likely due to the tolerances of the LDA; the recorded velocities are of the order  \SI{0.01}{mm/s} for the low pump frequency. For completeness the statistics were not omitted, but the mean wall-normal velocity is of little importance. 
+ This is likely due to the tolerances of the LDA; the recorded wall-normal velocities are of the order  \SI{0.1}{mm/s} for the low pump frequency. This is at least two orders of magnitude lower than the streamwise velocity measurements, even close to the wall. For completeness the statistics were not omitted, but the mean wall-normal velocity is rarely published in boundary layer literature. 
 
-The standard deviations are important due to their relationship with the turbulent kinetic energy. F
-
--u plot shows both positions at 4hz converging at same rate. It takes roughly 130 secto get to 5\% and 200 to get to 2\%. 8hz near wall converges much faster than far wall... why? - it is a higher magnitude ..?
-
--v plot shows much faster convergence than u plot, all stats behave the same in terms of time, 5\% at 130 ish and 2\% at 200. again, more dependent on time than sample number.
-
--uv plot shows very little convergence. Could be due to magnitudes again? issue is that this is an important stat .... 
-
-\begin{figure}
+The standard deviations are important due to their relationship with the turbulent kinetic energy and the Reynolds stresses. As observed in Figure \ref{figure:experiments:timeDependence:RMSux}, the standard deviations of the streamwise velocity, at a pump frequency of \SI{4}{Hz}, converge at the same rate for both vertical positions, taking $\sim$\SI{130}{s} to reduce to a \SI{5}{\%} error, and $\sim$\SI{200}{s} to reduce to \SI{2}{\%}. 
+%
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{images/LDA_timeDependenceImages/uxRMSTConvergence.png}\hfill
 \includegraphics[width=0.5\linewidth]{images/LDA_timeDependenceImages/uxRMSNConvergence.png}\\
 \caption{Convergence of the standard deviation of the streamwise velocity as a function of time (left) and sample number (right). For legend, see Figure \ref{figure:experiments:timeDependence:meanUx}.}
 \label{figure:experiments:timeDependence:RMSux}
 \end{figure}
+%
+In contrast, the standard deviation at $z=$\SI{1}{mm} converges more quickly than at $z=$\SI{40}{mm}, for the higher pump frequency. This can be explained by referring to Table \ref{table:experiments:convergedStatistics}; for a pump frequency of \SI{4}{Hz} the magnitude of $\sigma_u$ is of a similar magnitude for both $z$ locations. This is not the case for the higher pump frequency; at $z=$\SI{1}{mm} the magnitude of $\sigma_u$ is larger than at $z=$\SI{40}{mm}, suggesting that convergence is related to the magnitude of the statistic in question. At $z=$\SI{1}{mm} the standard deviation reduces to an error of $\sim$\SI{2}{\%} after just \SI{60}{s}. In contrast, it takes $\sim$\SI{200}{s} at $z=$\SI{40}{mm}. Figure \ref{figure:experiments:timeDependence:RMSux} also indicates that convergence is more dependent on the averaging time rather than the number of samples. After $\sim$\SI{200}{s} all four profiles have converged within $\sim$\SI{2}{\%} of their final value, but there is no common sample number that suggests convergence. 
 
-\begin{figure}
+The convergence of the wall-normal velocity standard deviations can be observed in Figure \ref{figure:experiments:timeDependence:RMSuy}.
+%
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{images/LDA_timeDependenceImages/uyRMSTConvergence.png}\hfill
 \includegraphics[width=0.5\linewidth]{images/LDA_timeDependenceImages/uyRMSNConvergence.png}\\
 \caption{Convergence of the standard deviation of the wall-normal velocity as a function of time (left) and sample number (right). For legend, see Figure \ref{figure:experiments:timeDependence:meanUx}.}
 \label{figure:experiments:timeDependence:RMSuy}
 \end{figure}
+%
+After $\sim$\SI{100}{s} all four profiles converge at the same rate. An error of $\sim$\SI{4}{\%} is obtained after \SI{100}{s} and $\sim$\SI{2}{\%} after \SI{220}{s}. Again, convergence appears to be more dependent on the time interval rather than the number of samples.
 
-\begin{figure}
+The covariance of the two velocity components convergences very slowly, as indicated by Figure \ref{figure:experiments:timeDependence:uv}.
+%
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{images/LDA_timeDependenceImages/uvTConvergence.png}\hfill
 \includegraphics[width=0.5\linewidth]{images/LDA_timeDependenceImages/uvNConvergence.png}\\
 \caption{Convergence of the covariance of the streamwise and wall-normal velocities as a function of time (left) and sample number (right). For legend, see Figure \ref{figure:experiments:timeDependence:meanUx}.}
 \label{figure:experiments:timeDependence:uv}
 \end{figure}
-\newpage
-
-
-
-3.	achieve convergence of 1\% at ~150s for both pump speeds near the wall. Get conv at 150s for slow speed and 60s at high speed for z=15mm. We get conv at ~30 sec for both flows far from the wall. \\
-\\
-Figure \ref{figure:experiments:timeDependence:meanUy}:\\
-2.	we don't get convergence to 1\% for any data\\
-3.	could be argued that we reach a 5\% convergence at 40mm for both data sets although little confidence of this without longer sampling times. \\
-\\
-Figure \ref{figure:experiments:timeDependence:RMSux}:\\
-3.	conv is reached sooner for high speed flow than low speed for all distances\\
-4.	interestingly the fast flow converges quicker close to the wall than far from it. (100 sec close to wall, 200 sec far from)\\
-5.	low speed flow struggles to converge close to wall, possibly converges to 1\% at 250s but need more sampling time to confirm\\
-6.	Generally takes longer to conv. than means.\\
-\\
-Figure \ref{figure:experiments:timeDependence:RMSuy}:\\
-3.	generally get quicker convergence for UyRMS than UxRMS, despite lack of convergence for UyMean.\\
-4.	interestingly we get conv. close to wall before far from wall
-\\\\
-Figure \ref{figure:experiments:timeDependence:uv}:\\
-3.	Generally don't achieve convergence - need to sample for longer.\\
-\\
-Recommendations: sample for longer and for more points
--	Construct a polynomial for the estimated error for a given sampling time as a function of space.
-
-
-
-\subsubsection{Streamwise Space Dependence}
-Are we fully developed ..?\\
-\begin{figure}
-\centering
-\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/4Hz_15mm_MeanUx.png}\hfill
-\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/8Hz_15mm_MeanUx.png}\\
-\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/4Hz_15mm_MeanUy.png}\hfill
-\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/8Hz_15mm_MeanUy.png}\\
-\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/4Hz_15mm_RMSux.png}\hfill
-\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/8Hz_15mm_RMSux.png}
-\caption{Spatial dependence of statistical quantities at a location 15mm from the plate and pump speeds of \SI{4}{Hz} (left) and \SI{8}{Hz} (right).}
-\label{figure:experiments:spaceDependence}
-\end{figure}
 %
-\begin{figure}
-\ContinuedFloat
-\captionsetup{list=off,format=cont}
-\centering
-\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/4Hz_15mm_RMSuy.png}\hfill
-\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/8Hz_15mm_RMSuy.png}\\
-\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/4Hz_15mm_uv.png}\hfill
-\includegraphics[width=7.5cm]{images/LDA_spaceDependenceImages/8Hz_15mm_uv.png}
-\caption{For caption see Figure \ref{figure:experiments:spaceDependence}.}
-\end{figure}
-%
+Even after \SI{300}{s}, only the near wall point for the high pump frequency indicates reasonable convergence which reduces the error to $\sim$\SI{2}{\%} after $\sim$\SI{250}{s}. Although this estimate makes the assumption that $\gamma_{u,v}(300)$ represents the 'true' value. Figure \ref{figure:experiments:timeDependence:uv} also highlights some sudden jumps in the near wall, low pump speed covariance. This could have arisen from non-physical spikes in the $(u-\mu_u)(v-\mu_v)$ time series. Perhaps the filtering method should be applied to more than just the $u$ and $v$ data sets. However, the other three covariances still predict an error of $>$\SI{10}{\%} after \SI{200}{s} of averaging time. Clearly, if the Reynolds stresses are to be used to analyse the effect of shark skin then longer averaging times will be required. 
 
 \subsubsection{Profile plot section}
-\begin{figure}
+The means, standard deviations and covariance of velocity are measured along profiles at $z=$\SI{300}{mm} and $z=$\SI{400}{mm}. The vertical locations are given in the grid defined in \ref{section:experiments:setUp} and profiles are measured for a pump frequency of \SI{4}{Hz} and \SI{8}{Hz}. Due to time constraints, velocities were only sampled for \SI{20}{s}. The errors associated with this are estimated by using the time dependence analysis of Section \ref{section:experiments:timeDep}; for a statistic $\phi$, such as the mean streamwise velocity, the error is estimated by
+\begin{equation}
+e_\phi = \mathbf{E} \left( \mid
+				\phi(300) - \phi(t-10:t+10)
+					\mid \right), \hspace{1cm} \text{for } 10 \leq t \leq 290.
+\end{equation}
+This method sweeps through the entire length of the \SI{300}{s} time series and calculates the error between the \SI{20}{s} estimated statistic, $\phi(t-10:t+10)$, and its 'true' value, $\phi(300)$. The expectation of the magnitude of this quantity is taken as the error. However, since the error can only be estimated at three veritcal locations we must interpolate to fit the entire profile. Future work will consider many more locations to estimate this error. 
+
+\begin{figure}[!h]
 \centering
-\includegraphics[width=10cm]{images/LDA_profileImages/tempProfile.png}
-\caption{Temporary velocity profile plot for a pump speed of 8Hz and a distance of 300mm.}
+\includegraphics[width=0.5\linewidth]{images/LDA_profileImages/meanU_4hz.png}\hfill
+\includegraphics[width=0.5\linewidth]{images/LDA_profileImages/meanU_8hz.png}
+\caption{mean velocities}
 \end{figure}
-Plot profiles of mean velocities, rms and Reynolds stresses. We can estimate how well we fit the law of the wall, Reynolds numbers and friction coefficients. 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\linewidth]{images/LDA_profileImages/std_4hz.png}\hfill
+\includegraphics[width=0.5\linewidth]{images/LDA_profileImages/std_8hz.png}
+\caption{std}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\linewidth]{images/LDA_profileImages/cov_4hz.png}\hfill
+\includegraphics[width=0.5\linewidth]{images/LDA_profileImages/cov_8hz.png}
+\caption{cov}
+\end{figure}
+
+
+\newpage
 \section{Work So Far ...}
 A review of the literature indicates two areas that have not been adequately investigated: Analysis of the effect of scale geometry on the flow field, and the impact of scales on separating flows. Proprietary work has, so far, concentrated on the first of those areas, although the techniques adopted are transferable to the latter. A parametric study is to be carried out, in order to investigate the effects of scale geometry on the fluid flow. This tool will exploit the periodicities and symmetries associated with arrayed scales, resulting in an infinitely long and wide computational domain. For smooth walls, an extensive range of DNS data is available, making the validation of early work straight forward. The parametric tool requires several work packages to be completed before it can be used. In order to reduce computational expense, the parametric tool will adopt RANS methods. Experimental methods could be adopted to validate the RANS model, but these will only allow validation of the fields far from the scales, due to resolution issues. This will instead be combined with a high resolution LES, which will capture the flow around the scales. Progress has been made in three areas over the last 6 months:
 
