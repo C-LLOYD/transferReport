@@ -14,6 +14,7 @@ Dr Gareth Keevil, and Dr Robert Dorrell.
 
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{setspace}
 \usepackage[british]{babel}
@@ -545,7 +546,7 @@ Time dependence was assessed at three vertical locations, \SI{400}{mm} from the 
  \centering
  \caption{...}
  \label{table:experiments:convergedStatistics}
- \begin{tabular}{l l l l l l l}
+ \begin{tabular}{c c c c c c c}
  \hline
  Pump Frequency	&	$z$ location	&	$\mu_u(300)$	&	$\mu_v(300)$	&	$\sigma_u(300)$	&	$\sigma_v(300)$	&	$\gamma_{u,v}(300)$	\\
  %
@@ -564,7 +565,7 @@ Time dependence was assessed at three vertical locations, \SI{400}{mm} from the 
  \end{table}
  %
 
-Figures \ref{figure:experiments:timeDependence:meanUx} to \ref{figure:experiments:timeDependence:uv} indicate how the means, standard deviations, and the covariance of the two velocity components, converge as the averaging time increases. For clarity, only the two extreme $z$ positions are plotted. Figure  \ref{figure:experiments:timeDependence:meanUx} indicates fast convergence for the mean streamwise velocity at $z=$\SI{40}{mm} for both pump speeds.
+Figures \ref{figure:experiments:timeDependence:meanUx} to \ref{figure:experiments:timeDependence:uv} indicate how the statistics converge as the averaging time, and sample number, increase. For clarity, only the two extreme $z$ positions are plotted. Figure  \ref{figure:experiments:timeDependence:meanUx} indicates fast convergence for the mean streamwise velocity at $z=$\SI{40}{mm} for both pump speeds.
 %
 \begin{figure}[!h]
 \centering
@@ -628,30 +629,49 @@ Even after \SI{300}{s}, only the near wall point for the high pump frequency ind
 The means, standard deviations and covariance of velocity are measured along profiles at $z=$\SI{300}{mm} and $z=$\SI{400}{mm}. The vertical locations are given in the grid defined in \ref{section:experiments:setUp} and profiles are measured for a pump frequency of \SI{4}{Hz} and \SI{8}{Hz}. Due to time constraints, velocities were only sampled for \SI{20}{s}. The errors associated with this are estimated by using the time dependence analysis of Section \ref{section:experiments:timeDep}; for a statistic $\phi$, such as the mean streamwise velocity, the error is estimated by
 \begin{equation}
 e_\phi = \mathbf{E} \left( \mid
-				\phi(300) - \phi(t-10:t+10)
+				\phi(300) - \phi[t-10,t+10]
 					\mid \right), \hspace{1cm} \text{for } 10 \leq t \leq 290.
 \end{equation}
 This method sweeps through the entire length of the \SI{300}{s} time series and calculates the error between the \SI{20}{s} estimated statistic, $\phi(t-10:t+10)$, and its 'true' value, $\phi(300)$. The expectation of the magnitude of this quantity is taken as the error. However, since the error can only be estimated at three veritcal locations we must interpolate to fit the entire profile. Future work will consider many more locations to estimate this error. 
+
+The mean velocity profiles of Figure \ref{figure:experiments:profiles:meanU} 
+-same form as \ref{figure:literatureReview:boundaryLayerRegions}
+-the exact location of the linear and logarithmic regions is as of yet unclear but these will be fitted later on .. 
+-Profiles at 300 and 400 nearly coincide for the higher flow rate - they do deviate near the wall
+-lower flow rate indicates lower average velocity for all points at 300 - however, only 75 of 200 mm profile is captured and due to exp setup it is unlikely to be symmetrical..? does this explain net flow rate not being equal?
+-can see much more spread of data for lower speed.
+-large cluster of points below 2.5 mm as indicated by the grid (section?) - clearly this much resolution is unecessary at these low flow rates 
+-more points near the wall at 400 mm - suggests more momentum in this region that can be measured by the LDA i.e developed more. 
+
+Standard deviations indicate large uncertainty for the low flow rate in streamwise but acceptable tolerance in wall-normal. We have a peak for streamwise velocity in the buffer layer and slightly delayed peak in wall-normal. This suggests maximum turbulent kinetic energy occurs in buffer layer, as literature suggests.
+-we have larger magnitude in fluctuations for x=400 near the wall - this suggests that flow is developing and transfering more momentum closer to the wall. This is consistent for both flow rates. 
+
+covariance shows good collapse of data near the wall for both flow rates but there is a very large spread after $z$ = 1 mm .. the estimated errors do not clearly don't represent the data very well - perhaps we need to account for standard deviations of the error. It is however clear that we need to average for much longer if we want to analyse Reynolds stresses.
+
+
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{images/LDA_profileImages/meanU_4hz.png}\hfill
 \includegraphics[width=0.5\linewidth]{images/LDA_profileImages/meanU_8hz.png}
-\caption{mean velocities}
+\caption{Raw profiles of mean streamwise velocity for pump frequencies of \SI{4}{Hz} (left), and \SI{8}{Hz} (right). Symbols represent the following: $\color{black}{\bullet}$, $\mu_u$ at $x=$ \SI{300}{mm}; $\color{red}{\times}$, $\mu_u$ at $x=$ \SI{400}{mm}.}
+\label{figure:experiments:profiles:meanU}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{images/LDA_profileImages/std_4hz.png}\hfill
 \includegraphics[width=0.5\linewidth]{images/LDA_profileImages/std_8hz.png}
-\caption{std}
+\caption{Raw profiles of standard deviations of velocity for pump frequencies of \SI{4}{Hz} (left), and \SI{8}{Hz} (right). Symbols represent the following: $\color{red}{\bullet}$, $\sigma_u$ at $x=$ \SI{300}{mm}; $\color{blue} \times $, $\sigma_u$ at $x=$ \SI{400}{mm}; $\color{green}{\bullet}$, $\sigma_v$ at $x=$ \SI{300}{mm}; $\color{black} \times $, $\sigma_v$ at $x=$ \SI{400}{mm}.}
+\label{figure:experiments:profiles:std}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{images/LDA_profileImages/cov_4hz.png}\hfill
 \includegraphics[width=0.5\linewidth]{images/LDA_profileImages/cov_8hz.png}
-\caption{cov}
+\caption{Raw profiles of the covariance of the two velocity components for pump frequencies of \SI{4}{Hz} (left), and \SI{8}{Hz} (right). Symbols represent the following: $\color{black}{\bullet}$, $\gamma_{u,v}$ at $x=$\SI{300}{mm}; $\color{red}{\times}$, $\gamma_{u,v}$ at $x=$\SI{400}{mm}.}
+\label{figure:experiments:profiles:gamma}
 \end{figure}
 
 
