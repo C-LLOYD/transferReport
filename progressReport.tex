@@ -497,7 +497,9 @@ The experiments are carried out using a flat plate submerged in a recirculating 
 \label{figure:experiments:setUp}
 \end{figure}
 %
-The plate has the dimensions $L \times w \times h = 500 \times 100 \times 10 $ (mm) with semi-circular leading and trailing edge cross sections. The volumetric flow rate is controlled by setting the pump frequency. Relating this to a Reynolds number prior to experiments is non-trivial due to the unknown bulk velocity in-between the plate and the flume wall. Subsequently the Reynolds number is estimated from the measured profiles. The operating range of the pump is \SI{4}{Hz} to \SI{16}{Hz}. As discussed in Section \ref{section:literatureReview:sharkScaleFluids}, previous experiments have been unable to capture the effects of sharkskin at small values of $s^+$. Experiments are therefore carried out at low pump frequencies of \SI{4}{Hz} and \SI{8}{Hz}. A grid is created in order to define the locations at which the velocity is measured. The LDA probe is mounted to a traverse and calibrated such that $(0,0,0)$ lies along the centre of the plate at the most upstream point of the flat section. As discussed in Section \ref{section:literatureReview}, the viscous sub-layer exists up to $y^+ \approx 5$. If this is to be measured accurately the wall-normal grid size must be of the same order as the viscous length scale, $\delta_\nu = u_\tau / \nu$. In addition to this, the location of the wall must be known to the same order. For this reason the wall-normal zero position is set to lie in the flat plate such that the first few wall-normal grid points lie in the wall. This ensures that the full velocity profile can be captured. The probe is then traversed normal to the wall with a grid spacing of \SI{0.1}{mm}. For a Reynolds number of $Re_\tau \approx 400$ this equates to a spacing of $\Delta \approx 0.33 \delta_v$. The following grid is defined such that a high spatial resolution is present near the wall which blends into a low resolution in the far field:
+The plate has the dimensions $L \times w \times h = 500 \times 100 \times 10 $ (mm) with semi-circular leading and trailing edge cross sections. The volumetric flow rate is controlled by setting the pump frequency. Relating this to a Reynolds number prior to experiments is non-trivial due to the unknown bulk velocity in-between the plate and the flume wall. Subsequently the Reynolds number is estimated from the measured profiles. The operating range of the pump is \SI{4}{Hz} to \SI{16}{Hz}. As discussed in Section \ref{section:literatureReview:sharkScaleFluids}, previous experiments have been unable to capture the effects of sharkskin at small values of $s^+$. Experiments are therefore carried out at low pump frequencies of \SI{4}{Hz} and \SI{8}{Hz}. A grid is created in order to define the locations at which the velocity is measured. The LDA probe is mounted to a traverse and calibrated such that $(0,0,0)$ lies along the centre of the plate at the most upstream point of the flat section. As discussed in Section \ref{section:literatureReview}, the viscous sub-layer exists up to $y^+ \approx 5$. If this is to be measured accurately the wall-normal grid size must be of the same order as the viscous length scale, $\delta_\nu = u_\tau / \nu$. In addition to this, the location of the wall must be known to the same order. For this reason the wall-normal zero position is set to lie in the flat plate such that the first few wall-normal grid points lie in the wall. This ensures that the full velocity profile can be captured.
+% The probe is then traversed normal to the wall with a grid spacing of \SI{0.1}{mm}. For a Reynolds number of $Re_\tau \approx 400$ this equates to a spacing of $\Delta \approx 0.33 \delta_v$.
+ The following grid is defined such that a high spatial resolution is present near the wall which blends into a low resolution in the far field:
 \begin{align*}
 \Delta = 
 \begin{cases}
@@ -533,7 +535,8 @@ The anomalies identified by the filter were removed from the data set rather tha
 
 
 \subsection{Preliminary Results}
-Two sets of results are presented in this section; a time dependence analysis of the means, standard deviations, and the covariance of the two velocity components; and an analysis of the measured profiles. The time dependence study investigates the convergence of statistics as a function of the averaging time. This allows the errors associated with short averaging windows to be estimated, and also provides information regarding how much averaging time is required to reduce the error to an acceptable level. The second section investigates the spatial dependency on the flow statistics which will ultimately be used to compare the differences between sharkskin and smooth surfaces. The preliminary results will provide an estimate to the possible Reynolds number range, the coefficient of skin friction, and the development of the boundary layer over the plate. 
+Two sets of results are presented in this section; a time dependence analysis of the means, standard deviations, and the covariance of the two velocity components; and an analysis of the measured profiles. The time dependence study investigates the convergence of statistics as a function of the averaging time. This allows the errors associated with short averaging windows to be estimated, and also provides information regarding how much averaging time is required to reduce the error to an acceptable level. The second section investigates the spatial dependency on the flow statistics which will ultimately be used to compare the differences between sharkskin and smooth surfaces.
+% The preliminary results will provide an estimate to the possible Reynolds number range, the coefficient of skin friction, and the development of the boundary layer over the plate. 
 
 \subsubsection{Time Dependence}
 \label{section:experiments:timeDep}
@@ -626,30 +629,17 @@ The covariance of the two velocity components convergences very slowly, as indic
 Even after \SI{300}{s}, only the near wall point for the high pump frequency indicates reasonable convergence which reduces the error to $\sim$\SI{2}{\%} after $\sim$\SI{250}{s}. Although this estimate makes the assumption that $\gamma_{u,v}(300)$ represents the 'true' value. Figure \ref{figure:experiments:timeDependence:uv} also highlights some sudden jumps in the near wall, low pump speed covariance. This could have arisen from non-physical spikes in the $(u-\mu_u)(v-\mu_v)$ time series. Perhaps the filtering method should be applied to more than just the $u$ and $v$ data sets. However, the other three covariances still predict an error of $>$\SI{10}{\%} after \SI{200}{s} of averaging time. Clearly, if the Reynolds stresses are to be used to analyse the effect of shark skin then longer averaging times will be required. 
 
 \subsubsection{Profile plot section}
-The means, standard deviations and covariance of velocity are measured along profiles at $z=$\SI{300}{mm} and $z=$\SI{400}{mm}. The vertical locations are given in the grid defined in \ref{section:experiments:setUp} and profiles are measured for a pump frequency of \SI{4}{Hz} and \SI{8}{Hz}. Due to time constraints, velocities were only sampled for \SI{20}{s}. The errors associated with this are estimated by using the time dependence analysis of Section \ref{section:experiments:timeDep}; for a statistic $\phi$, such as the mean streamwise velocity, the error is estimated by
+The means, standard deviations and covariance of velocity are measured along profiles at $z=$\SI{300}{mm} and $z=$\SI{400}{mm}. The vertical locations are given in the grid defined in Section \ref{section:experiments:setUp} and profiles are measured for a pump frequency of \SI{4}{Hz} and \SI{8}{Hz}. Due to time constraints, velocities were only sampled for \SI{20}{s}. The errors associated with this are estimated by using the time dependence analysis of Section \ref{section:experiments:timeDep}; for a statistic $\phi$, such as the mean streamwise velocity, the error is estimated by
 \begin{equation}
+\label{equation:experiments:errorCalc}
 e_\phi = \mathbf{E} \left( \mid
 				\phi(300) - \phi[t-10,t+10]
 					\mid \right), \hspace{1cm} \text{for } 10 \leq t \leq 290.
 \end{equation}
-This method sweeps through the entire length of the \SI{300}{s} time series and calculates the error between the \SI{20}{s} estimated statistic, $\phi(t-10:t+10)$, and its 'true' value, $\phi(300)$. The expectation of the magnitude of this quantity is taken as the error. However, since the error can only be estimated at three veritcal locations we must interpolate to fit the entire profile. Future work will consider many more locations to estimate this error. 
+This method sweeps through the entire length of the \SI{300}{s} time series and calculates the error between the \SI{20}{s} estimated statistic, $\phi[t-10,t+10]$, and its `true' value, $\phi(300)$. The expectation of the magnitude of this quantity is taken as the error. However, since the error can only be estimated at three veritcal locations we must interpolate to fit the entire profile. Future work will consider many more locations to estimate this error. 
 
-The mean velocity profiles of Figure \ref{figure:experiments:profiles:meanU} 
--same form as \ref{figure:literatureReview:boundaryLayerRegions}
--the exact location of the linear and logarithmic regions is as of yet unclear but these will be fitted later on .. 
--Profiles at 300 and 400 nearly coincide for the higher flow rate - they do deviate near the wall
--lower flow rate indicates lower average velocity for all points at 300 - however, only 75 of 200 mm profile is captured and due to exp setup it is unlikely to be symmetrical..? does this explain net flow rate not being equal?
--can see much more spread of data for lower speed.
--large cluster of points below 2.5 mm as indicated by the grid (section?) - clearly this much resolution is unecessary at these low flow rates 
--more points near the wall at 400 mm - suggests more momentum in this region that can be measured by the LDA i.e developed more. 
-
-Standard deviations indicate large uncertainty for the low flow rate in streamwise but acceptable tolerance in wall-normal. We have a peak for streamwise velocity in the buffer layer and slightly delayed peak in wall-normal. This suggests maximum turbulent kinetic energy occurs in buffer layer, as literature suggests.
--we have larger magnitude in fluctuations for x=400 near the wall - this suggests that flow is developing and transfering more momentum closer to the wall. This is consistent for both flow rates. 
-
-covariance shows good collapse of data near the wall for both flow rates but there is a very large spread after $z$ = 1 mm .. the estimated errors do not clearly don't represent the data very well - perhaps we need to account for standard deviations of the error. It is however clear that we need to average for much longer if we want to analyse Reynolds stresses.
-
-
-
+The mean streamwise velocity profiles can be observed in Figure \ref{figure:experiments:profiles:meanU}.
+%
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{images/LDA_profileImages/meanU_4hz.png}\hfill
@@ -657,7 +647,11 @@ covariance shows good collapse of data near the wall for both flow rates but the
 \caption{Raw profiles of mean streamwise velocity for pump frequencies of \SI{4}{Hz} (left), and \SI{8}{Hz} (right). Symbols represent the following: $\color{black}{\bullet}$, $\mu_u$ at $x=$ \SI{300}{mm}; $\color{red}{\times}$, $\mu_u$ at $x=$ \SI{400}{mm}.}
 \label{figure:experiments:profiles:meanU}
 \end{figure}
-
+%
+ The logarithmic region of the \SI{8}{Hz} pump frequency can be distinguished as the linear trend between $\sim$\SI{2}{mm} and $\sim$\SI{20}{mm} but it is harder to locate for the low pump frequency. This is due to its shorter length and a larger spread in the data, likely due to the short averaging time. However, the viscous and buffer regions are especially well resolved for the mean velocity. Figure \ref{figure:experiments:profiles:meanU} also shows a collapse of the $z=$ \SI{300}{mm} and $z=$ \SI{400}{mm} for the higher flow rate, with a small deviation near the wall. This suggests that the velocity profiles are close to fully developed. In contrast, the lower frequency flows indicate a slightly reduced velocity for the entire measured profile. It should be noted that the profiles were only measured up to \SI{75}{mm} due to experimental constraints. Future experiments will be revised such that half the height of the channel can be measured (\SI{10}{mm}). The low pump frequency results also indicate more points captured in the downstream profile. This suggests that the plate is not quite flat. However, a difference in \SI{0.4}{mm} over a distance of \SI{100}{mm} equates to an angle of $\sim$\SI{0.3}{\degree} and can therefore be neglected. 
+ 
+The standard deviation profiles can be observed in Figure \ref{figure:experiments:profiles:std}.
+%
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{images/LDA_profileImages/std_4hz.png}\hfill
@@ -665,7 +659,11 @@ covariance shows good collapse of data near the wall for both flow rates but the
 \caption{Raw profiles of standard deviations of velocity for pump frequencies of \SI{4}{Hz} (left), and \SI{8}{Hz} (right). Symbols represent the following: $\color{red}{\bullet}$, $\sigma_u$ at $x=$ \SI{300}{mm}; $\color{blue} \times $, $\sigma_u$ at $x=$ \SI{400}{mm}; $\color{green}{\bullet}$, $\sigma_v$ at $x=$ \SI{300}{mm}; $\color{black} \times $, $\sigma_v$ at $x=$ \SI{400}{mm}.}
 \label{figure:experiments:profiles:std}
 \end{figure}
+%
+The wall-normal fluctuations are captured reasonably well for both pump speeds. The two $z$ locations collapse until $z\approx$ \SI{1}{mm}, at which point the wall-normal standard deviations reach their maximum and a larger spread of the data can be observed. At a pump frequency of \SI{8}{Hz} the streamwise fluctuations reach a maximum in the buffer region. There is a lot of spread in the data, clearly suggesting that longer averaging times are required. Despite the spread in data, a collapse can be observed in the buffer layer, between the two $z$ profiles. These differentiate nearer the wall, indicating that the fluctuations are of a greater magnitude further along the plate. The \SI{4}{Hz} standard deviations indicate a much larger error in the streamwise direction.  The plot also indicates that there is much more spatial resolution between $z=$ \SI{1}{mm} and $z=$\SI{3}{mm} than is required. 
 
+The profiles of velocity covariance can be observed in Figure \ref{figure:experiments:profiles:gamma}.
+%
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{images/LDA_profileImages/cov_4hz.png}\hfill
@@ -673,6 +671,20 @@ covariance shows good collapse of data near the wall for both flow rates but the
 \caption{Raw profiles of the covariance of the two velocity components for pump frequencies of \SI{4}{Hz} (left), and \SI{8}{Hz} (right). Symbols represent the following: $\color{black}{\bullet}$, $\gamma_{u,v}$ at $x=$\SI{300}{mm}; $\color{red}{\times}$, $\gamma_{u,v}$ at $x=$\SI{400}{mm}.}
 \label{figure:experiments:profiles:gamma}
 \end{figure}
+%
+The covariance indicates a large spread in the data as the distance from the wall increases. The estimated error bars do reflect this increase in uncertainty but the magnitude seems too small in this case. This is likely due to the lack of points used to estimate these errors. It could also be due to the fluctuations in the errors which are not reflected by taking the expectation in \eqref{equation:experiments:errorCalc}. Future work will investigate the effect of taking into account the standard deviations. It is clear from Figure \ref{figure:experiments:profiles:gamma} that if the Reynolds stresses are to be compared between smooth and sharkskin surfaces then a much longer averaging time is required.
+
+Conclusions and future work:
+- we can reduce number of $Z$ points
+- clearly not fully developed for slower flows
+- very well resolved mean profiles
+- reasonable RMS for high flow rate
+- need more averaging time for lower flow rate and reynolds stresses
+- future work will adopt different methods to calculating Utau in order to normalise data
+- 
+
+
+
 
 
 \newpage
