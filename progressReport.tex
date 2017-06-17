@@ -630,6 +630,7 @@ The covariance of the two velocity components convergences very slowly, as indic
 Even after \SI{300}{s}, only the near wall point for the high pump frequency indicates reasonable convergence, whereby the error is reduced to $\sim$\SI{2}{\%} after $\sim$\SI{250}{s}. Although this estimate makes the assumption that $\gamma_{u,v}(300)$ represents the `true' value. Figure \ref{figure:experiments:timeDependence:uv} also highlights some sudden jumps in the near wall, low pump speed covariance. This could have arisen from non-physical spikes in the $(u-\mu_u)(v-\mu_v)$ time series. Perhaps the filtering method should be applied to more than just the $u$ and $v$ data sets. However, the other three covariances still predict an error of $>$\SI{10}{\%} after \SI{200}{s} of averaging time. Clearly, if the Reynolds stresses are to be used to analyse the effect of shark skin then longer averaging times will be required. 
 
 \subsubsection{Spatial dependence of the velocity statistics}
+\label{section:experiments:profiles}
 The means, standard deviations and covariance of velocity are measured along profiles at $x=$\SI{300}{mm} and $x=$\SI{400}{mm}. The vertical locations are given in the grid defined in Section \ref{section:experiments:setUp} and profiles are measured for a pump frequency of \SI{4}{Hz} and \SI{8}{Hz}. Due to time constraints, velocities were only sampled for \SI{20}{s}. The errors associated with this are estimated by using the time dependence analysis of Section \ref{section:experiments:timeDep}; the mean streamwise velocity, $\mu_u$, is evaluated over \SI{20}{s} intervals, throughout the length of the \SI{300}{s} time series. The mean of the absolute difference between each interval mean and the reference mean, $\mu_u(300)$, is defined as the error. However, since the error can only be estimated at three vertical locations, interpolation is adopted in order to fit the entire profile. Future work will consider many more locations to estimate this error. 
 
 The mean streamwise velocity profiles can be observed in Figure \ref{figure:experiments:profiles:meanU}.
@@ -727,80 +728,61 @@ The current work has only investigated means, standard deviations, and the covar
 
 
 \newpage
-\section{CAD: Replication of a shark scale}
+\section{Replication of a shark scale using Computer Aided Design (CAD)}
 \label{section:cad}
-This Section details the process adopted to replicate and simplify a \textit{Poracanthodes sp.} fish scale (sampled by \cite{fletcher2014phd}) for fluid dynamic analysis. This particular scale was chosen due to its relatively simple geometry. Other sampled scales included other geometric features, such as riblets, which are not yet of interest. The implications of these additional features will be investigated through the parameter study. The Computer Aided Design (CAD) process, carried out using CREO Parametric software, is required in order to create an array of scales suitable for manufacture and LDA experimentation. The CAD model is also required in order to carry out numerical analysis; a body fitted mesh will be constructed using the CAD in order to adopt finite volume methods.
-
-The scale sample, provided by \cite{fletcher2014phd}, is displayed in figure \ref{figure:scaleSample}. It can be observed from this image that there are many sharp edges that have been introduced, possibly by a lack of resolution from the scanning equipment, defects on the scale sample, or damage to the sample.
+This section details the process adopted to replicate and simplify a sharkskin denticle, using Computer Aided Design (CAD). The purpose of this work is to create a reference case for future experiments; by varying the parameters of the reference CAD model, the effects of different denticle geometry can be investigated. For this reason, a \textit{Poracanthodes sp.} fish scale (sampled by \cite{fletcher2014phd}) was chosen for replication, due to its relatively simple geometry. The 3D \textit{Poracanthodes sp.} model of \cite{fletcher2014phd} can be observed in Figure \ref{figure:cad:scaleSample}.  
+%
 \begin{figure}[!b]
 \centering
-\includegraphics[width=6cm]{images/Scale_Replication_1.PNG}\hfill
-\caption{\textit{Poracanthodes sp.} sample from \cite{fletcher2014phd}.}
-\label{figure:scaleSample}
+\includegraphics[width=6cm]{images/cad/scannedScaleFletcher.png}\hfill
+\caption{\textit{Poracanthodes sp.} sample from \cite{fletcher2014phd}. Streamwise direction is positive in $x$.}
+\label{figure:cad:scaleSample}
 \end{figure}
-There are also many asymmetries that exist, such as the wave-like shapes on the trailing edge of the scales. These features are likely due to the discrepancies between scale samples; even scales in tightly packed arrays are known to vary in geometry from scale to scale \citep{fletcher2014phd}. In addition to this, a large portion of the scale is embedded in the dermis of the fish and therefore has no effect on the hydrodynamics of the scale. For these reasons a simplified scale is created, based on the \textit{Poracanthodes sp.} sample. The simplified replica removes the sharp faceted features, the asymmetries and the portion of the scale that lies underneath the fish dermis.
+%
+ Future models will vary the geometry of the reference scale in order to isolate the effects of different parameters. 
 
-\subsubsection{Methodology}
-A coordinate system is fitted to the scale and 10 datum planes are created in the $xz$ plane with equal spacings between the first 7 and last 3 planes. The first set of planes extend to the point of maximum width of the sample and the last three are placed in order to capture the steep gradients beyond this point. A sketch is created at each of these planes resembling the cross section of the scale sample but using primitive shapes that can later be parametrised. An example of this is presented in Figure \ref{figure:crossSection};
+There are many features of the scale in Figure \ref{figure:cad:scaleSample} that are undesirable for our reference case. In particular, the asymmetries, and the wave-like trailing edge. The reasons for their existence is unknown; perhaps the asymmetries are present to redirect flow, or to interlock better with neighbouring denticles, or perhaps they are random defects that just so happen to be present on the sample that was taken by \cite{fletcher2014phd}. However, for a reference case a simpler geometry is desired which maintains the main features of the denticle.
 
-the wave-like shapes on the downstream section of the scale has been removed and the sketch is symmetric about the central axis. This is achieved by using three arcs connected by tangential lines, reducing each section to three radius parameters, three vertical positions and a single horizontal position (as observed in Figure \ref{figure:crossSection}). Each sketch can therefore be represented by a displacement from the $y=0$ plane and 7 dimensions defining the sketch section. This makes parameter studies straight forward to implement in future work. 
-
-\begin{figure}[!b]
-\centering
-\vcenteredhbox{\includegraphics[width=12cm]{images/cross_section_sketch.PNG}}
-\caption{A comparison between a simplified cross section and the sampled scale cross section. The dimensions are scaled after the simplified scale is generated.}
-\label{figure:crossSection}
-\end{figure}
-
-The sketches are blended together using a `protrusion blend' function, creating the CAD model on the right of Figure \ref{figure:blendedScale}. An undesirable feature of this technique is that the top surface is orthogonal to the defined datum plane. In order to create a more natural curved surface a warping tool, unique to Creo Parametric, is adopted. This tool creates a mesh around the object and allows free-hand manipulation of the surface by moving the mesh nodes. This process allows an organic Scale to be created which more closely resembles that of the original sample. However, parametrising the `warping' tool is non-trivial. Further work in this area will be carried out in order to develop a more systematic approach, but for initial experimentation this `one-off' scale is appropriate.
-
-The final scale replica is compared against the scanned sample in Figure \ref{figure:scaleComparison}. The model is scaled to a height of $H^+ \sim 10$ at a Reynolds number of $Re_\tau = 180$ for preliminary meshing experiments. This will later be scaled to a suitable size for both 3D printing, LDA experiments and a high resolution LES. The scales are arranged into a staggered array (Figure \ref{figure:staggeredArray}) with an addition two parameters to define; a spacing in $x$ and in $z$. The exploitation of this periodic arrangement, through the use of CFD, will be discussed in Section \ref{section:meshing}.
-
+The simplified model is defined by fitting a coordinate system to the sample of Figure \ref{figure:cad:scaleSample}, and taking several cross sections of the scale in the $xz$-plane. Primitive shapes were used to construct sections that capture the main geometry of the scale, but maintain symmetry and remove complex features. An example of this can be observed in Figure \ref{figure:cad:crossSection}.
+%
 \begin{figure}[!t]
 \centering
-\vcenteredhbox{\includegraphics[width=7.8cm]{images/Scale_Replication_3.PNG}}\hfill
-\vcenteredhbox{\includegraphics[width=7.8cm]{images/Scale_Replication_9.PNG}}
-\caption{Comparison of sampled scale (left) and simplified scale (right) with overlaying primitive cross sections displayed.}
-\label{figure:blendedScale}
+\vcenteredhbox{\includegraphics[width=14cm]{images/cad/crossSectionExample.png}}
+\caption{A comparison between a simplified cross section (orange) and the sampled scale cross section (black). The dimensions are scaled after the simplified scale is generated.}
+\label{figure:cad:crossSection}
 \end{figure}
-
-\begin{figure}[!b]
+%
+ Clearly, the asymmetries and the wave-like features have been removed by the simple cross section. However, this method allows the model to be reduced to $7$ parameters for each cross section. These sections are blended together using CREO Parametric software in order to create the 3D model observed in Figure \ref{figure:cad:scaleComparison}.
+%
+\begin{figure}
 \centering
-\vcenteredhbox{\includegraphics[width=7cm]{images/Scale_Replication_10.PNG}}\hfill
-\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_11.PNG}}
-\caption{Comparison of blended scale (left) and warped scale (right).}
-\label{figure:warping}
-\end{figure}
-
-\begin{figure}[!t]
-\centering
-\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_15.PNG}}\hfill
-\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_11.PNG}}
-\\
-\vspace{2cm}
-\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_16.PNG}}\hfill
-\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_12.PNG}}
-\\
-\vspace{2.5cm}
-\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_14.PNG}}\hfill
-\vcenteredhbox{\includegraphics[width=7.5cm]{images/Scale_Replication_13.PNG}}
+\vcenteredhbox{\includegraphics[width=\linewidth]{images/cad/finalCadComparisons.png}}
 \caption{Comparison of sampled scale (left) and simplified scale (right).}
-\label{figure:scaleComparison}
+\label{figure:cad:scaleComparison}
 \end{figure}
-
-\begin{figure}[!t]
+%
+ A few discrepancies can be observed, but the CAD is adequate for the purpose of a reference model.
+ 
+ Parametric studies can be carried out by varying the parameters specified in Figure \ref{figure:cad:crossSection}, although the models response is quite sensitive; small changes can distort the model significantly. For this reason, a systematic approach that varies the parameters using this particular CAD model is unrealistic, due to additional interactions required to ensure model validity. However, there are other, less traditional, CAD methods that can be adopted for this project; Blender, often used for graphical design, is an open source modelling software that allows the creation of organic shapes by manipulating a surface mesh. Blender is also scriptable using python, although the capabilities of this are not yet known. Work alongside the PhD will focus on using Blender as a potential replacement to the current CAD software.
+ 
+Arrays of the reference CAD model have been 3D printed by the University of Leeds engineering department, and a commercial company, at denticle widths of \SI{1}{mm} and \SI{2}{mm}. Since these denticles do not have riblets, it is assumed that the total width is an appropriate length scale. Using the estimations of the friction velocity in Section \ref{section:experiments:profiles}, these widths correspond to a dimensionless width of $w^+ = u_\tau w /\nu = 3.63$ for the \SI{1}{mm} width scales, and $w^+ = 7.27$ for the \SI{2}{mm} width scales, at a pump frequency of \SI{4}{Hz}. However, the preliminary results have indicated an inadequate resolution, even for the larger scales. A Scanning Electron Microscope (SEM) image of two \SI{2}{mm} scales can be seen in Figure \ref{figure:cad:printedSEM}. 
+%
+\begin{figure}
 \centering
-\includegraphics[width=7.5cm]{images/array_progress_report.PNG}
-\caption{Array of staggered scales for 3D printing.}
-\label{figure:staggeredArray}
+\vcenteredhbox{\includegraphics[width=\linewidth]{images/cad/printedSamples.png}}
+\caption{SEM image of printed scale from the university of Leeds (left), and a commercial company (right).}
+\label{figure:cad:printedSEM}
 \end{figure}
+%
+Poor surface quality can be observed in both images, and the edges seem to have been merged together during the printing process. Further tests are being carried out at the University of Nottingham, who have access to printers of a much higher resolution than those used to generate the samples of Figure \ref{figure:cad:printedSEM}.
 
 \newpage
-\subsection{Application of Reynolds-Averaged Navier-Stokes to a periodic shark scale domain}
+
+\section{Application of Reynolds-Averaged Navier-Stokes to a periodic shark scale domain}
 \label{section:rans}
 This section details the mesh independence study of the flow over a periodic array of scales using a RANS turbulence closure. Section \ref{section:literatureReview} indicated a large gap in the literature concerning the effect of shark scale geometry on a flow. RANS methods have the potential to investigate this without large expense, but requires validation. When available, the results of the present study will be validated against LES data.
 
-\subsubsection{Mathematical model}
+\subsection{Mathematical model}
 \label{section:rans:maths}
 The present work adopts a steady state RANS turbulence closure using OpenFOAM; an open source finite volume code. The fundamental equations are the Reynolds averaged equations, first introduced in Section \ref{section:literatureReview}, and the continuity equation. These are defined as,
 \begin{equation}
@@ -868,7 +850,7 @@ where $\beta^*$ and $\sigma_K$ are empirical constants, and $\mathcal{P}$ is the
 %
 where $\alpha$, $\beta$, $\sigma_\omega$, and $\sigma_d$, are empirical constants, $\mu_T =  \rho \nu_T$, and $F_2$ is a blending function of the same form as $F_1$. The choices of $F_1$, $F_2$, and the empirical constants, are detailed by \cite{menter1994}. The three component momentum equation, \eqref{equation:rans:mom}, continuity equation, \eqref{equation:rans:cont}, transport of kinetic energy equation, \eqref{equation:rans:k}, and the transport of turbulent frequency equation, \eqref{equation:rans:omega}, are our closed system of equations. 
 
-\subsubsection{Numerical implementation}
+\subsection{Numerical implementation}
 The system of equations, defined in Section \ref{section:rans:maths}, are discretised using finite volume methods. Gradient and Laplacian terms are discretised using standard Gaussian integration. Linear interpolation is adopted in order to calculate face fluxes from the variables stored at cell centres. In order to ensure stability, the interpolation scheme of the convective terms is a mixture of upwind and linear methods, whereby in regions of rapidly changing gradient an upwind scheme is adopted (but still accurate to second order). The SIMPLE algorithm of \cite{caretto1973} is adopted in order to couple the continuity and momentum equations. The semi-discrete form of \eqref{equation:rans:mom} can be written as
 \begin{equation}
 \label{equation:piso1}
@@ -975,110 +957,78 @@ C3	&	14	&	117065	&	113105	&	12167	\\
 \end{tabular}
 \end{table}
 %
- At least \SI{90}{\%} of the cells in the domain lie below $y^+ < 40$ for each of the cases. case C1 is the 'coarse' solution, with a maximum cell size of 18, and large jumps between cell sizes. C2 has finer cells but still has large jumps. C3 is the same specifications as C2 but has smoother transitions i.e more cells in each layer. The size of the cells covering the STL shark scale is very similar for C2 and C3 cases. 
-\newpage
-
-- scale height
--mesh parameters of three test cases are in table
--and in fig.
--should be noted that in order to resolve these relatively large scales we need >90\% of the cells to be below yPlus = 40 i.e mostly below buffer layer. 
--cell level over scales is defined
-
--
-
-
- \newpage
-
-
-
-
-
-
-
-\newpage
-
-Dependency analysis of RANS methods on a periodic shark scale domain.
-Dependencies include MI, DI, model I, Numerics I, Tol I ...
-The results will form the basis for the mesh resolution for the LES and the RANS studies. Before carrying out further RANS the results will be validated against a LES. 
-
-\subsubsection{Problem definition}
-As discussed? The Reynolds equations are given by
-
-
-
--present k and epsilon equations
--indicate what each term is - including the weighting factor
--Then introduce the FV method and how equations are discretised over our domain - BC. 
-
-
-\newpage
-
-\subsubsection{Results and discussion}
-
-%PROFILES: Ux
-\begin{figure}[!h]
-\centering
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X1_Ux.png}\hfill \includegraphics[width=7.5cm]{images/CFD_meshIndependence/X2_Ux.png}\\
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X3_Ux.png}
-\end{figure}
-
-%PROFILES: Uy
-\begin{figure}
-\centering
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X1_Uy.png}\hfill \includegraphics[width=7.5cm]{images/CFD_meshIndependence/X2_Uy.png}\\
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X3_Uy.png}
-\end{figure}
-
-%PROFILES: Uz
-\begin{figure}
-\centering
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X1_Uz.png}\hfill \includegraphics[width=7.5cm]{images/CFD_meshIndependence/X2_Uz.png}\\
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X3_Uz.png}
-\end{figure}
-
-%PROFILES: magGradU
-\begin{figure}
-\centering
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X1_gradU.png}\hfill \includegraphics[width=7.5cm]{images/CFD_meshIndependence/X2_gradU.png}\\
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X3_gradU.png}
-\end{figure}
-
-%PROFILES: p
-\begin{figure}
-\centering
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X1_p.png}\hfill \includegraphics[width=7.5cm]{images/CFD_meshIndependence/X2_p.png}\\
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X3_p.png}
-\end{figure}
-
-%PROFILES: k
-\begin{figure}
-\centering
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X1_k.png}\hfill \includegraphics[width=7.5cm]{images/CFD_meshIndependence/X2_k.png}\\
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X3_k.png}
-\end{figure}
-
-%PROFILES: omega
-\begin{figure}
-\centering
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X1_omega.png}\hfill \includegraphics[width=7.5cm]{images/CFD_meshIndependence/X2_omega.png}\\
-\includegraphics[width=7.5cm]{images/CFD_meshIndependence/X3_omega.png}
-\end{figure}
-
-
-Contour plots:
-For a scalar, $\phi$, we assess independence by interpolating the solution over the scale surface onto the finest STL scale surface. This ensures that cells coincide and solutions can be directly compared. The reference scalar $\phi_{REF}$ is the solution of the finest mesh. It is scaled such that its minimum value is 0 and maximum is 1:
+ At least \SI{90}{\%} of the cells in the domain lie below $y^+ < 40$ for each of the cases. case C1 is the 'coarse' solution, with a maximum cell size of 18, and large jumps between cell sizes. C2 has finer cells but still has large jumps. C3 is the same specifications as C2 but has smoother transitions i.e more cells in each layer. The size of the cells covering the STL shark scale are very similar for C2 and C3 cases. 
+ 
+Mesh independence is assessed in two ways; the $y$ dependence of several variables is plotted at three locations, specified in Figure \ref{figure:rans:methodology:periodicDomain3}. In addition to this, the errors associated with pressure, and absolute velocity gradient, over the shark scale surface are analysed. For a scalar, $\phi$, independence is assessed by interpolating the solution over the scale surface onto the finest mesh scale surface. This ensures that cells coincide, and solutions can be directly compared. The values of $\phi$ over the finest mesh are denoted $\phi_{REF}$, and are scaled such that their minimum value is 0 and their maximum is 1:
 \begin{equation}
 \overline{\phi}_{\text{REF}} = \frac{\phi_{\text{REF}}-\text{min}(\phi_{\text{REF}})}{\text{max}(\phi_{\text{REF}})-\text{min}(\phi_{\text{REF}})}.
 \end{equation}
-Similarly, $\phi$, the coarse mesh solution, is translated to a minimum value of 0 and then scaled by the same amount as $\phi_{\text{REF}}$:
+where $\overline{\phi}_{\text{REF}}$ is the scaled reference value of $\phi$. Similarly, $\phi$, the coarse mesh solution, is translated to a minimum value of 0 and then scaled by the same amount as $\phi_{\text{REF}}$:
 \begin{equation}
 \overline{\phi} = \frac{\phi-\text{min}(\phi)}{\text{max}(\phi_{\text{REF}})-\text{min}(\phi_{\text{REF}})}.
 \end{equation}
 The error is defined as the root-mean-square of the difference between $\phi$ and $\phi_{\text{REF}}$:
 \begin{equation}
-\text{error}(\phi)\sqrt{(\overline{\phi}_{\text{REF}} - \overline{\phi})^2}
+\text{Error}(\phi) = \sqrt{(\overline{\phi}_{\text{REF}} - \overline{\phi})^2}
 \end{equation}
 
+\subsection{Results and discussion}
+Figures \ref{figure:rans:Uz} to \ref{figure:rans:omega} indicate very little difference between the three cases.
+%PROFILES: Ux
+\begin{figure}
+\centering
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X1_Ux.png}\hfill \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X2_Ux.png}\hfill \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X3_Ux.png}\hfill
+\caption{Profiles of cross-stream velocity, normalised by the bulk velocity. Locations of the profiles are $x_1$ (left), $x_2$ (center), and $x_3$ (right), which can be observed in Figure \ref{figure:rans:methodology:periodicDomain3}.}
+\label{figure:rans:Uz}
+\end{figure}
+%PROFILES: Uy
+\begin{figure}
+\centering
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X1_Uy.png}\hfill \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X2_Uy.png}\hfill
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X3_Uy.png}\hfill
+\caption{Profiles of wall-normal velocity, normalised by the bulk velocity. Locations of the profiles are $x_1$ (left), $x_2$ (center), and $x_3$ (right), which can be observed in Figure \ref{figure:rans:methodology:periodicDomain3}. For legend, see Figure \ref{figure:rans:Uz}.}
+\label{figure:rans:Uy}
+\end{figure}
+%PROFILES: Uz
+\begin{figure}
+\centering
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X1_Uz.png}\hfill \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X2_Uz.png}\hfill
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X3_Uz.png}\hfill
+\caption{Profiles of streamwise velocity, normalised by the bulk velocity. Locations of the profiles are $x_1$ (left), $x_2$ (center), and $x_3$ (right), which can be observed in Figure \ref{figure:rans:methodology:periodicDomain3}. For legend, see Figure \ref{figure:rans:Uz}.}
+\label{figure:rans:Ux}
+\end{figure}
+%PROFILES: magGradU
+\begin{figure}
+\centering
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X1_gradU.png}\hfill \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X2_gradU.png}\hfill
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X3_gradU.png}\hfill
+\caption{Profiles of absolute velocity gradient, normalised by the bulk velocity and half channel height. Locations of the profiles are $x_1$ (left), $x_2$ (center), and $x_3$ (right), which can be observed in Figure \ref{figure:rans:methodology:periodicDomain3}. For legend, see Figure \ref{figure:rans:Uz}.}
+\label{figure:rans:gradU}
+\end{figure}
+%PROFILES: p
+\begin{figure}
+\centering
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X1_p.png}\hfill \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X2_p.png}\hfill
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X3_p.png}\hfill
+\caption{Profiles of pressure, normalised by the square of the bulk velocity. Locations of the profiles are $x_1$ (left), $x_2$ (center), and $x_3$ (right), which can be observed in Figure \ref{figure:rans:methodology:periodicDomain3}. For legend, see Figure \ref{figure:rans:Uz}.}
+\label{figure:rans:p}
+\end{figure}
+%PROFILES: k
+\begin{figure}
+\centering
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X1_k.png}\hfill \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X2_k.png}\hfill
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X3_k.png}\hfill
+\caption{Profiles of turbulent kinetic energy, normalised by the square of the bulk velocity. Locations of the profiles are $x_1$ (left), $x_2$ (center), and $x_3$ (right), which can be observed in Figure \ref{figure:rans:methodology:periodicDomain3}. For legend, see Figure \ref{figure:rans:Uz}.}
+\label{figure:rans:k}
+\end{figure}
+%PROFILES: omega
+\begin{figure}
+\centering
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X1_omega.png}\hfill \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X2_omega.png}\hfill
+\includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X3_omega.png}\hfill\caption{Profiles of turbulent frequency, normalised by the bulk velocity and half channel height. Locations of the profiles are $x_1$ (left), $x_2$ (center), and $x_3$ (right), which can be observed in Figure \ref{figure:rans:methodology:periodicDomain3}. For legend, see Figure \ref{figure:rans:Uz}.}
+\label{figure:rans:omega}
+\end{figure}
+Profiles of velocity, turbulent kinetic energy, and turbulent frequency, collapse for all three cases. Discrepancies can be observed between C1 and the other two cases when considering the magnitude of velocity gradient profiles; the maximum point is under predicted for the $x_1$ and $x_3$ profiles. It is only when considering the profiles of pressure that C2 profile becomes separate from the C3 profile.
 
 %contour plots: pressure
 \begin{figure}
@@ -1092,25 +1042,12 @@ The error is defined as the root-mean-square of the difference between $\phi$ an
 \includegraphics[height=3.1cm]{images/CFD_meshIndependence/tc3_gradU.png}\hfill \includegraphics[height=3.1cm]{images/CFD_meshIndependence/tc5_gradU_bar.png}\\
 \end{figure}
 
-
 \newpage
-Introduction: - what are we doing, why, how ..
-dependency studies
--MI, DI, models, tolerances, disc. schemes etc. 
--Eventually validate against LES 
--Then we can start varying parameters to see effects on the flow field
-Methodology: - meshing parameters and models used
-- show domain and BCs,
--numerical methods,
-Results: - MI results for contour plots over surface, profile plots in wall-normal direction.
-
-
-\newpage
-\subsection{Large eddy simulation of a channel flow}
+\section{Large eddy simulation of a channel flow}
 \label{section:les}
 In order to exploit periodicity, an infinitely long and wide channel flow with scales on one wall will be simulated. Large-eddy simulation will be adopted in order to model the flow at a feasibly high resolution for a bulk Reynolds number greater than $Re_b = 20\ 000$. The precise Reynolds number will be determined later this year when designing the LDA experiments. Before implementing the LES on a channel flow with scales, the code is validated with smooth walls. This is carried out at a low Reynolds number of $Re_\tau = 180$ to make use of the extensive DNS database of \cite{vreman2014}. By validating at this Reynolds number we can determine suitable model and solver parameters without requiring extensive computing costs. Over the following year the model will be extended to a high Reynolds number to provide a base case for both comparisons against fish scale surfaces, and an estimation of the number of cells required.
 
-\subsubsection{Mathematical Model}
+\subsection{Mathematical Model}
 \label{section:mathematicalModel}
 Large eddy simulation is a technique used to study turbulence whereby the large turbulent structures are resolved and the small structures are modelled as a stress term. This is achieved by decomposing the velocity field into a filtered and residual term so that $\vecti{U} = \overline{\vecti{U}} + \vecti{u}'$. The filtered momentum (\ref{equation:momentum}) and continuity (\ref{equation:continuity}) equations \citep{pope2001} are defined as
 \begin{equation}
@@ -1192,7 +1129,7 @@ $T$ represents a timescale that controls the memory length. There are some natur
 
 With these parameters now defined, the transport equations (\ref{equation:flmTransport}) and (\ref{equation:fmmTransport}) can be solved and used to determine $C_s$. The turbulent stress tensor equation, (\ref{equation:tau}), can now be solved, closing our set of equations.
 
-\subsubsection{Numerical Implementation}
+\subsection{Numerical Implementation}
 The equations are solved using OpenFOAM, a finite volume platform. The equations are discretised over a channel of dimensions $4.2\delta \times 2\delta \times 12.6\delta$ where $\delta$ is the channel half height. Similar dimensions are used by several authors such as \cite{moser1999}, and \cite{vreman2014} for a Reynolds number of $Re_\tau = 180$, although the influence of domain size on the turbulent statistics is still poorly understood \citep{vreman2014}. Three simulations are presented in this report, one which which solves equations for only half the channel height and applies symmetry boundary conditions at the central plane, $y=\delta$. If validated, this model could reduce the number of required cells. The half channel simulation adopts a constant value of $C_s = 0.17$, validated against a full channel simulation using the same model. The final simulation adopts the dynamic Lagrangian model discussed in Section \ref{section:mathematicalModel}.
 
 The mesh statistics are presented in Table \ref{table:meshStatistics}. The total number of cells is $\sim 4M$, much fewer than an equivalent finite difference DNS of \cite{vreman2014} who used $\sim 33M$ grid points. A Cosine distribution is adopted in the wall-normal direction in order to capture the large gradients close to the wall. The y-normal boundary conditions can be observed from Table \ref{table:boundaryConditions}. The boundary conditions for $f_{LM}$ and $f_{MM}$ are defined by \cite{meneveau1996}. Periodic boundary conditions are applied in both streamwise and spanwise direction with a forcing term added to the momentum equation (\ref{equation:momentum}) in order to maintain a constant bulk Reynolds number in the $z$ direction. The forcing term is derived by decomposing the pressure gradient into an average and fluctuating component; the average pressure gradient is adjusted each timestep in order to ensure a fixed mean velocity through the periodic faces, $ \overline{\vect{U}}_{ave} $. A description of this technique is presented by \cite{murthy1997}.
@@ -1254,7 +1191,7 @@ This Laplacian equation is solved using a Geometric-algebraic multi-grid solver 
 
 Post-processing is carried out in MATLAB; Statistical quantities, such as means and standard deviations, are looped through each time-step directory and averaged in $x$ and $z$. The results of which are compared to those of a spectral DNS code of \cite{vreman2014}.
 
-\subsubsection{Results and Discussion}
+\subsection{Results and Discussion}
 \label{section:lesResults}
 
 The calculated Reynolds numbers for the three simulations are compared against the DNS code in Table \ref{table:globalVariables}. All three simulations compute a slightly lower Reynolds number than the DNS, due to the method of calculating the forcing term. The target bulk Re was 2800, thus these small discrepancies are expected. The coefficients of friction match very well for both the half-channel and full-channel Smagorinsky models but the dynamic model underpredicts it by $1.11\%$. This will be further discussed when investigating variable profiles.
@@ -1335,7 +1272,7 @@ The skewness of velocity indicates the likelihood to take on large positive valu
 
 There is very poor agreement between the models for $S_u$ suggesting that statistical convergence requires a much longer averaging period. The $S_v$ profile indicates that all three models underpredict the magnitude of the maximum point, with the dynamic Lagrangian model performing worse than the Smagorinsky model. The streamwise skewness of velocity is better predicted by all three models but again the dynamic model performs worse. All three models underpredict the flatness of velocity at $y=0$ (Figure \ref{figure:flatness}). A possible reason for this is that events of large fluctuations are not captured over the period of averaging. In addition to this the number of cells close to the surface may not be sufficient in capturing these features. The general trends of the DNS results are followed for the two full-channel simulations. It is expected that these high order statistics require more temporal averaging than the other statistics presented. 
 
-\subsubsection{Conclusions and Further Work}
+\subsection{Conclusions and Further Work}
 Three LES models have been assessed by their ability to predict an infinitely long and wide channel flow, validated against a DNS dataset \citep{vreman2014}. Both the Smagorinsky model \citep{smagorinsky1963} and the dynamic Lagrangian model \citep{meneveau1996} predict the velocity profiles well, even for the simulation considering only half the channel. Deviations were more substantial when investigating RMS velocity, RMS vorticity, and Reynolds stresses. The half channel simulation fails to predict the flow close to the central channel due to restrictions on the flow. the Smagorinsky model generally underpredicts the magnitude of the fluctuations for all three components of vorticity, and the cross-stream and wall-normal fluctuations of velocity. The dynamic Lagrangian model compares well against the DNS for these statistics, accurately capturing the features close to the wall. However, the skewness and flatness of velocity are not well captured by the LES models. This is likely due to number of time steps that contribute to the statistics. Further work will investigate the sensitivity of these statistics to the temporal averaging.
 
 In order to extend this work to shark scale surfaces the code will be run on generic polyhedral elements. Changes are likely to be made to the discretisation schemes in order to ensure stability, and changes will also have to be made to the post processing techniques. When validated, the code will be extended to shark scale surface. 
