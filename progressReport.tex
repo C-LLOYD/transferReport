@@ -74,7 +74,7 @@ Dr Gareth Keevil, and Dr Robert Dorrell.
 \section{Introduction}
 \cite{dean2010} define biomimicry as the study of naturally occurring properties of plants and animals for the purpose of inspired design. This particular project investigates how we can reduce the fluid dynamic drag that acts on surfaces, such as ship hulls and aircraft wings, by investigating animals that swim long distances in the ocean. There are several natural mechanisms that have evolved to reduce drag, such as the excretion of mucus, but sharks possess a unique method that can be theoretically replicated and applied to smooth surfaces \citep{dean2010}. Sharks have evolved dermal denticles (skin teeth) which help the fish defend against parasites, abrasion, and reduce hydrodynamic drag \citep{fletcher2014}. While the hydrodynamic benefit of shark scales has been known for decades, most work has been focussed on the riblet features that exist on the crest of some shark scales, examples of which can be observed in Figure \ref{figure:scalesExample}. These riblets have been simplified and applied to channel flows and aerofoils, typically achieving a maximum drag reduction of $\sim 10\%$ (Discussed in Section \ref{section:literatureReview}).
 
-However, riblets are one of many features that are present on shark scales (see Figure \ref{figure:scalesExample}). Through observation of the surface it is clear that the scales are very three-dimensional and variable in geometry between different shark species and location on the shark \citep{fletcher2014phd}. Some shark species have scales with no riblets, loosely interlocking scales, and variable angles of attack \citep{fletcher2014phd}. It is the variability of shark scales that is the primary focus of this project. Before defining the project research question, aim, and objectives, the literature concerning riblet and shark scale experiments will be reviewed. 
+However, riblets are one of many features that are present on shark scales (see Figure \ref{figure:scalesExample}). Through observation of the surface it is clear that the scales are very three-dimensional and variable in geometry between different shark species and location on the shark \citep{fletcher2014phd}. Some shark species have scales with no riblets, loosely interlocking scales, and variable angles of attack \citep{fletcher2014phd}. It is the variability of shark scales that is the primary focus of this project. Before defining the project research questions, aims, and objectives, the literature concerning riblet and shark scale experiments will be reviewed. 
 \vspace{2cm}
 %
 \begin{figure}[!h]
@@ -92,7 +92,7 @@ However, riblets are one of many features that are present on shark scales (see 
 
 %\subsection{Shark scales}
 %\label{section:literatureReview:sharkScales}
-Sharks are the only surviving fishes that possess dermal denticles \citep{fletcher2014phd}. These small tooth-like structures erupt through soft skin tissue and are optimised for the prevention of abrasion, defence against parasites, and the reduction of hydrodynamic drag \citep{fletcher2014phd}. An extensive range of dermal denticles are documented by \cite{reif1985}, highlighting the differences between shark species and the location of scales on the fishes. The study also indicates the complex features of real shark scales such as three dimensionality beneath the exposed scale, overlapping, diverging and converging riblets, variable angles of incidence, and the aerofoil-like shape of each scale with a smooth leading edge and a sharp trailing edge. These features can be observed in Figure \ref{figure:literatureReview:scaleVariabilityFletcher};
+Sharks are the only surviving fishes that possess dermal denticles \citep{fletcher2014phd}. An extensive range of denticles are documented by \cite{reif1985}, highlighting the differences between shark species and the location of scales on the fishes. The study also indicates the complex features of real shark scales such as three dimensionality beneath the exposed scale, overlapping, diverging and converging riblets, variable angles of incidence, and the aerofoil-like shape of each scale with a smooth leading edge and a sharp trailing edge. These features can be observed in Figure \ref{figure:literatureReview:scaleVariabilityFletcher};
 \begin{figure}[!b]
 \centering
 \includegraphics[width=14cm]{images/litReview/scaleVariabilityFletcher.png}
@@ -102,7 +102,7 @@ Sharks are the only surviving fishes that possess dermal denticles \citep{fletch
 even when considering just one species the scales can vary significantly when moving from the head to the tail. Take, for example, the \textit{Scyliorhinus canicula} (demersal ecology) samples in Figure \ref{figure:literatureReview:scaleVariabilityFletcher}; the scales on the head of the shark are tightly interlocking and rounded scales which quickly change to sharp, loosely interlocked, and ribletted scales on the shark's flank. The vast range of these features, and the variability between species, results in little understanding as to why many of these features exist. Hydrodynamical aspects have only been studied over the last few decades \citep{dean2010} and have mainly focussed on riblets, examples of which are most prominent on the fast pelagic samples of Figure \ref{figure:literatureReview:scaleVariabilityFletcher}. There has been research into the fluid dynamics of shark scales but there are many gaps and inconsistencies in the literature. These will be discussed in Section \ref{section:literatureReview:sharkScaleFluids}.
 %Before reviewing the experiments carried out on shark scales and riblets we must first understand the underlying principles behind boundary layers and skin friction. 
 %
-\subsection{Boundary layers and skin friction}
+\subsection{Boundary Layers and Skin Friction}
 Most engineering and atmospheric flows are bounded by one or many surfaces. These take the form of external flows, such as the flow around cars and aircraft, and internal flows, such as through pipes and channels. Boundary layers are formed as a fluid passes over a surface, whereby the fluid velocity converges to zero as the distance to the wall decreases. Skin friction, arising from the no-slip condition, can be a large contribution to the total drag force that impedes the motion of an object: \SI{50}{\%} of the drag that acts on a ship hull is due to skin-friction \citep{perlin2016}. A typical boundary layer is presented in Figure \ref{figure:literatureReview:boundaryLayerRegions}, which splits the temporally averaged streamwise velocity into several different regions.
 %
 \begin{figure}[!b]
@@ -144,7 +144,7 @@ and
 0,
 \label{equation:literatureReview:Continuity}
 \end{equation}
-where the three component velocity vector, $U_i$, and the kinematic pressure, $P$, are decomposed into an ensemble mean and fluctuating component: $U_i = \langle U_i \rangle + u_i$, and $P = \langle P \rangle + p$. $\langle u_i u_j \rangle$, is termed the Reynolds stresses which account for the effect of velocity fluctuations on the mean flow \citep{pope2001}. The FIK identity, named after Fukagata, Iwamoto, and Kasagi, manipulates \eqref{equation:literatureReview:FIK} to determine a relationship for the coefficient of skin friction \citep{fukagata2002}. For a statistically steady and fully developed channel flow the FIK identity reduces to
+where the three component velocity vector, $U_i$, and the kinematic pressure, $P$, are decomposed into an ensemble mean and fluctuating component: $U_i = \langle U_i \rangle + u_i$, and $P = \langle P \rangle + p$. $\langle u_i u_j \rangle$ is termed the Reynolds stresses which account for the effect of velocity fluctuations on the mean flow \citep{pope2001}. The FIK identity, named after Fukagata, Iwamoto, and Kasagi, manipulates \eqref{equation:literatureReview:FIK} to determine a relationship for the coefficient of skin friction \citep{fukagata2002}. For a statistically steady and fully developed channel flow the FIK identity reduces to
 \begin{equation}
 \label{equation:literatureReview:FIK}
 C_f = \frac{\tau_w}{\frac{1}{2} \rho U_b^2} = \frac{12}{Re_b} + 12 \int_0^\delta 2 \left(1 - \frac{y}{\delta} \right)\left( - \frac{\left< u_x u_y \right> }{4 U_b^2} \right) dy,
@@ -153,7 +153,7 @@ where $C_f$ represents the coefficient of friction and $Re_b$ is the bulk Reynol
 
 By setting the Reynolds stresses to zero it is clear that \eqref{equation:literatureReview:FIK} is decomposed into a laminar and turbulent component \citep{kasagi2006}. It is the reduction of this turbulent component that is key to how riblets reduce drag, as will be discussed in Section \ref{section:literatureReview:Riblets}.
 
-\subsection{Surface roughness}
+\subsection{Surface Roughness}
 \label{section:literatureReview:roughness}
 The majority of real engineering problems are subject to surface roughness which generally increases skin friction. The first quantitative study on the effect of surface roughness was carried out by \cite{nikuradse1933} who applied different grain sizes of sand to a pipe flow and measured the resulting friction factor (equivalent to the coefficient of friction, $C_f$). \cite{nikuradse1933} observed that for laminar, and transitional flows, surface roughness had little effect, and its effect on fully turbulent flows was dependent on the relative size of the roughness. To describe the effect of roughness on turbulent flows three regimes were defined, based on the average roughness height, $k_s$:
 %
@@ -199,9 +199,9 @@ A commonly cited empirical relationship predicting the drag reduction of a rible
 \frac{\Delta \tau}{\tau_0} = m_s s^+ = - \frac{\mu_0 (\Delta h / s)}{(2 C_f)^{-1/2} + (2 \kappa)^{-1}}s^+,
 \end{equation}
 where $m_s$ is the gradient indicated by Figure \ref{figure:literatureReview:ribletPerformanceRegions} and $\mu_0 = 0.785$ is an empirical constant. The roughness parameter of 
-\eqref{equation:litReview:roughLawOfWall} is related to the protrusion height by $\Delta U^+ = - \mu_0 \Delta h^+$, such that the mean velocity profile is shifted away from the wall, contrary to typical rough surfaces. This theory provides a reasonable estimation for the performance of small riblet spacings; through Direct Numerical Simulation (DNS) \cite{garcia2011a} identified a stable spanwise recirculation pattern inside the riblet spacing that mimicked those of a two-dimensional linear Stokes solution. This recirculation pattern became increasingly unstable and asymmetric as the spacing increased. At the optimal region, \cite{garcia2011a} identified the formation of large spanwise vortices, above the riblet tips, due to a Kelvin-Helmholtz type instability. The same vortices were identified in further simulations at a Reynolds number of $Re_\tau = u_\tau \delta / \nu = 550$ \citep{garcia2012}. \cite{garcia2012} also suggest that simulations at low Reynolds numbers of $Re_\tau = 180$, commonly observed in the literature, are equally valid for the study of surface roughness as higher Reynolds numbers, despite perhaps not being as representative of the flow conditions for practical applications. 
+\eqref{equation:litReview:roughLawOfWall} is related to the protrusion height by $\Delta U^+ = - \mu_0 \Delta h^+$, such that the mean velocity profile is shifted away from the wall, contrary to typical rough surfaces. This theory provides a reasonable estimation for the performance of small riblet spacings; through Direct Numerical Simulation (DNS) \cite{garcia2011a} identified a stable spanwise recirculation pattern inside the riblet spacing that mimicked those of a two-dimensional linear Stokes solution. This recirculation pattern became increasingly unstable and asymmetric as the spacing increased. At the optimal region, \cite{garcia2011a} identified the formation of large spanwise vortices, above the riblet tips, due to a Kelvin-Helmholtz type instability. The same vortices were identified in further simulations at a Reynolds number of $Re_\tau = u_\tau \delta / \nu = 550$ \citep{garcia2012}. \cite{garcia2012} also concluded that simulations at low Reynolds numbers of $Re_\tau = 180$, commonly observed in the literature, are equally valid for the study of surface roughness as higher Reynolds numbers, despite perhaps not being as representative of the flow conditions for practical applications. 
 
-As the dimensionless riblet spacing increases the riblets begin to interact with layers above the viscous sub-layer and the predictions of \eqref{equation:literatureReview:ribletGradient} deviate from experiments. The region after the optimum performance behaves like k-roughness, whereby the roughness parameter can be represented by $\Delta U^+ = \kappa^{-1} \ln k_s + A$, where the roughness height, $k_s$, is related to the dimensions of the riblet \citep{jimenez2004}. As the riblet spacing increases, they lose their ability to constrict spanwise flow and fast moving fluid can penetrate to the base of the grooves, as observed by \cite{lee2001}. 
+As the dimensionless riblet spacing increases, the riblets begin to interact with layers above the viscous sub-layer and the predictions of \eqref{equation:literatureReview:ribletGradient} deviate from experiments. The region after the optimum performance behaves like k-roughness, whereby the roughness parameter can be represented by $\Delta U^+ = \kappa^{-1} \ln k_s + A$, where the roughness height, $k_s$, is related to the dimensions of the riblet \citep{jimenez2004}. As the riblet spacing increases, they lose their ability to constrict spanwise flow and fast moving fluid can penetrate to the base of the grooves, as observed by \cite{lee2001}. 
 
 The application of riblets to adverse pressure gradients (APG) is still an area of much uncertainty \citep{boomsma2015}. Tables \ref{table:litReview:openChannelRiblets} and \ref{table:litReview:ribletsAerofoil} indicate the discrepancies between the application of riblets to channel flows and aerofoils.
 %
@@ -267,9 +267,9 @@ Sawtooth, Scalloped		& Continuous	& \begin{tabular}[c]{@{}l@{}}Aluminium \&\\ Vi
 \end{tabular}
 \end{table}
 %
- Even when taking into account the different configurations and riblet types, open channel flow experiments indicate a range of only \SI{5}{\%} for the maximum drag reduction. When riblets are applied to aerofoils the range increases to \SI{10}{\%}. This is largely due to the additional dependencies on riblet configuration and the shape of the foil; the experiments of \cite{chamorro2013}, carried out on a wind turbine blade, indicate that for some cases a partially ribletted foil reduces drag more than a fully covered foil. This is due to development of the boundary layer over the foil; unlike the fully turbulent channel flow experiments the boundary layer of an aerofoil transitions from laminar to turbulent. Uncertainty is further introduced by some experiments using a boundary layer trip to shift the transitional point towards the leading edge (see Table \ref{table:litReview:ribletsAerofoil}). There have been more fundamental approaches to the investigation of riblets applied to APG flows; \cite{choi1990} use a wind tunnel with an adjustable wall height to vary the pressure gradient. It is concluded that the reduction of skin friction is independent of the pressure gradient. In contrast, \cite{nieuwstadt1993} and \cite{debisschop1996} indicate a drag reduction twice the magnitude of a zero pressure gradient (ZPG) case for an APG case. This is achieved by applying riblets to a diffuser. These results are further supported by the LES of \cite{klumpp2010} and \cite{boomsma2015}. However, little reasoning behind this increase is given; \cite{boomsma2015} does provide evidence that the drag reducing mechanisms are the same for both ZPG and APG flows but fails to answer why riblets in an APG are more effective.
+ Even when taking into account the different configurations and riblet types, open channel flow experiments indicate a range of only \SI{5}{\%} for the maximum drag reduction. When riblets are applied to aerofoils the range increases to \SI{10}{\%}. This is largely due to the additional dependencies on riblet configuration and the shape of the foil; the experiments of \cite{chamorro2013}, carried out on a wind turbine blade, indicate that for some cases a partially ribletted foil reduces drag more than a fully covered foil. This is due to development of the boundary layer over the foil; unlike the fully turbulent channel flow experiments the boundary layer of an aerofoil transitions from laminar to turbulent. Uncertainty is further introduced by some experiments using a boundary layer trip to shift the transitional point towards the leading edge (see Table \ref{table:litReview:ribletsAerofoil}). There have been more fundamental approaches to the investigation of riblets applied to APG flows; \cite{choi1990} used a wind tunnel with an adjustable wall height to vary the pressure gradient. It was concluded that the reduction of skin friction is independent of the pressure gradient. In contrast, \cite{nieuwstadt1993} and \cite{debisschop1996} measured a drag reduction twice the magnitude of a zero pressure gradient (ZPG) case for an APG case. These results are further supported by the Large Eddy Simulation (LES) of \cite{klumpp2010} and \cite{boomsma2015}. However, little reasoning behind this increase is given; \cite{boomsma2015} does provide evidence that the drag reducing mechanisms are the same for both ZPG and APG flows but fails to answer why riblets in an APG are more effective.
 
-\subsection{Investigations of the fluid dynamics of shark scales}
+\subsection{Investigations of the Fluid Dynamics of Shark Scales}
 \label{section:literatureReview:sharkScaleFluids}
 There have been very few hydrodynamic experiments carried out on shark scales, and those that have been carried out are rarely in agreement. Table \ref{table:litReview:denticleExperiments} summarises the hydrodynamic experiments that have been carried out on shark scale surfaces applied to channel flows and flat plates.
 %
@@ -306,7 +306,7 @@ Mako						& Scanned + smoothed	& Numerical DNS                                  
 \end{tabular}
 \end{table}
 %
-The maximum drag reduction ranges from an increased drag of \SI{50}{\%} to a decreased drag of \SI{35}{\%}. It should be noted that these extreme cases (highlighted with an asterisk in Table \ref{table:litReview:denticleExperiments}) were only carried out at a single flow rate unlike the other studies. Thus they are limited to a single calculation of the drag force. The drag reduction of \SI{35}{\%} is associated with the work of \cite{fletcher2014phd} who adopted Laser Doppler Anemometry to measure the coefficient of drag for 5 different arrays of fish scales. The scales were 3D printed to a normalised scale length of \SI{2}{mm}, ensuring that the denticle features were captured to an appropriate resolution. However, no attempt was made to non-dimensionalise the scale width, as opposed to comparable studies on riblets. The use of LDA in this particular case is also questionable: \cite{newhall2006} validates the use of flow field measurements to calculate the coefficient of drag but suggests that the most accurate method is to measure drag directly, such as through the use of force balances. The advantage of LDA is that flow fields can be resolved such as the Reynolds stresses but only the mean velocity profiles are reported by \cite{fletcher2014phd}. Comparable studies by \cite{wen2014,wen2015} were carried out using mako scales printed at a width of \SI{1.6}{mm}. The scales in question had riblets on the denticle crown, the spacing of which was used to determine an $s^+$ value for each flow rate. Drag was directly measured using a force balance and the profile of Figure \ref{figure:literatureReview:dragProfileSharkScales} was obtained. In this case, the difference in drag was quantified by $D_s/D_0$ rather than $\Delta \tau/\tau_0$, where $D_s$ and $D_0$ are the drag forces acting on the scales and the reference flat plate respectively.
+The maximum drag reduction ranges from an increased drag of \SI{50}{\%} to a decreased drag of \SI{35}{\%}. It should be noted that these extreme cases (highlighted with an asterisk in Table \ref{table:litReview:denticleExperiments}) were only carried out at a single flow rate, unlike the other studies. Therefore they are limited to a single calculation of the drag force. The drag reduction of \SI{35}{\%} is associated with the work of \cite{fletcher2014phd} who adopted Laser Doppler Anemometry to measure the coefficient of drag for 5 different arrays of fish scales. The scales were 3D printed to a normalised scale length of \SI{2}{mm}, ensuring that the denticle features were captured to an appropriate resolution. However, no attempt was made to non-dimensionalise the scale width, as opposed to comparable studies on riblets. The use of LDA in this particular case is also questionable: \cite{newhall2006} validated the use of flow field measurements to calculate the coefficient of drag but suggested that the most accurate method is to measure drag directly, such as through the use of force balances. The advantage of LDA is that flow fields can be resolved, such as the Reynolds stresses, but only the mean velocity profiles are reported by \cite{fletcher2014phd}. Comparable studies by \cite{wen2014,wen2015} were carried out using mako scales printed at a width of \SI{1.6}{mm}. The scales in question had riblets on the denticle crown, the spacing of which was used to determine an $s^+$ value for each flow rate. Drag was directly measured using a force balance and the profile of Figure \ref{figure:literatureReview:dragProfileSharkScales} was obtained. In this case, the difference in drag was quantified by $D_s/D_0$ rather than $\Delta \tau/\tau_0$, where $D_s$ and $D_0$ are the drag forces acting on the scales and the reference flat plate respectively.
 %
 \begin{figure}[!b]
 \centering
@@ -343,20 +343,20 @@ The experiments of \cite{fletcher2014phd} were carried out at a bulk velocity of
 \label{figure:litReview:makoScaleWen}
 \end{figure}
 %
-Clearly there are many other length scales that quantify a shark scale. The results of \cite{wen2014} are further supported by \cite{wen2015} when investigating the effects of denticle arrangements. Closely interlocked/overlapping scales are found to behave in the way indicated by Figure \ref{figure:literatureReview:dragProfileSharkScales}. In contrast, loosely interlocking scales reduce drag for $s^+ \approx 16$ by \SI{3}{\%} but increase drag for all over riblet spacings. It might be expected that the optimal riblet spacing for engineered riblets and shark scales would coincide for tightly interlocking scales but these results suggest otherwise. A major limitation noted by \cite{wen2014} is the pump range of the flume which was unable to operate below a bulk flow velocity of $\sim$\SI{0.13}{m/s}. This was also the cause of the large error bars associated with the lowest flow rate, observed in Figure \ref{figure:literatureReview:dragProfileSharkScales}. The experiments of \cite{bechert1985} determined an increased drag, for both mako and silky shark scales, for the full range of $s^+$ values. However, they did not produce results for $s^+<10$ which further supports the argument that smaller denticle riblet spacings need further investigation.
+Clearly there are many other length scales that quantify a shark scale. The results of \cite{wen2014} are further supported by \cite{wen2015} who investigated the effects of denticle arrangements. Closely interlocked/overlapping scales were found to behave in the way indicated by Figure \ref{figure:literatureReview:dragProfileSharkScales}. In contrast, loosely interlocking scales reduced drag for $s^+ \approx 16$ by \SI{3}{\%} but increased drag for all over riblet spacings. It might be expected that the optimal riblet spacing for engineered riblets and shark scales would coincide for tightly interlocking scales but these results suggest otherwise. A major limitation noted by \cite{wen2014} was the pump range of the flume which was unable to operate below a bulk flow velocity of $\sim$\SI{0.13}{m/s}. This was also the cause of the large error bars associated with the lowest flow rate, observed in Figure \ref{figure:literatureReview:dragProfileSharkScales}. The experiments of \cite{bechert1985} determined an increased drag, for both mako and silky shark scales, for the full range of $s^+$ values. However, they did not produce results for $s^+<10$ which further supports the argument that smaller denticle riblet spacings need further investigation.
 
-The other extreme result of Table \ref{table:litReview:denticleExperiments} is the DNS of \cite{boomsma2015}. This work adopts an immersed boundary technique to model the flow around the same denticles (staggered and aligned) printed by \cite{wen2014,wen2015}, and some engineered riblets. Periodic boundary conditions are adopted to simulate a fully developed channel flow at a Reynolds number of $Re_\tau = 180$ and a riblet spacing of $s^+=16$ (for both the engineered riblets and the denticles). The riblet surface behaved as expected; a drag reduction of $\sim$\SI{5}{\%} was predicted, arising from the reduction of the Reynolds stresses. In contrast, the denticles were found to induce separation and large vortices near the scale surface; both of which contribute to increased Reynolds stresses. The results are validated against those of \cite{bechert1985} but over predict the drag compared to \cite{wen2014,wen2015}, despite the shark scales being identical. \cite{boomsma2016} argue that this is due to the different experimental conditions of \cite{wen2014} and \cite{bechert1985}. The denticles of \cite{wen2014} were exposed to a developing flow, at a much higher Reynolds number than the simulations. However, the DNS of \cite{garcia2012} suggests that, for riblet surfaces, low Reynolds number flows are comparable to high Reynolds number flows, as long as the $s^+$ values are identical. \cite{boomsma2016} provide no reason as to why the experiments of \cite{bechert1985} are in agreement with theirs. 
+The other extreme result of Table \ref{table:litReview:denticleExperiments} is the DNS of \cite{boomsma2015}. This work adopted an immersed boundary technique to model the flow around the same denticles (staggered and aligned) printed by \cite{wen2014,wen2015}, and some engineered riblets. Periodic boundary conditions were adopted to simulate a fully developed channel flow at a Reynolds number of $Re_\tau = 180$ and a riblet spacing of $s^+=16$ (for both the engineered riblets and the denticles). The riblet surface behaved as expected; a drag reduction of $\sim$\SI{5}{\%} was predicted, arising from a reduction of the Reynolds stresses. In contrast, the denticles were found to induce separation and large vortices near the scale surface; both of which contributed to an increase in the Reynolds stresses. The results were validated against those of \cite{bechert1985} but over predicted the drag compared to \cite{wen2014,wen2015}, despite the shark scales being identical. \cite{boomsma2016} argued that this was due to the different experimental conditions of \cite{wen2014} and \cite{bechert1985}. The denticles of \cite{wen2014} were exposed to a developing flow, at a much higher Reynolds number than the simulations. However, the conclusions of \cite{garcia2012} suggested that, for riblet surfaces, low Reynolds number flows are comparable to high Reynolds number flows, as long as the $s^+$ values are identical. \cite{boomsma2016} provide no reason as to why the experiments of \cite{bechert1985} are in agreement with theirs. 
 
 Referring to Table \ref{table:litReview:denticleExperiments} there is still a large spread of drag reduction results, even when ignoring the two extremes. %(why ignoring Fletcher?)
-Generally the maximum drag reduction of shark scales is of a greater magnitude than those of engineered riblets, contrary to the results of \cite{bechert1985}. \cite{chen2014} observes similar drag reduction behaviour for both engineered riblets and ribletted denticles.
-The denticles consistently outperformed the riblets for the full range of flow rates, achieving a maximum reduction of \SI{12}{\%}. However, there is no effort made to relate the bulk velocity to a dimensionless parameter such as $s^+$. The denticles were fabricated using a mould which was created from a real shark scale surface. The authors report a replication error of only \SI{2}{\%} but there are several issues with this technique that are not discussed. Imperfections, asymmetries, and changes in denticle geometry that exist on real shark scale arrays are all captured using the moulding technique. Clearly this model is more physical, but isolating the effects of slight geometric changes between the different denticles is unrealistic using current experimental methods. To the author's knowledge, only tightly interlocking scales have been replicated using this technique \citep{zhang2011a,zhang2011b, zhao2012, chen2014,luo2015b,luo2015}. It has yet to be established whether the same methods can be applied to more loosely interlocking scales which are equally common among different shark species (see Figure \ref{figure:literatureReview:scaleVariabilityFletcher}).
+Generally the maximum drag reduction of shark scales is of a greater magnitude than those of engineered riblets, contrary to the results of \cite{bechert1985}. \cite{chen2014} observed similar drag reduction behaviour for both engineered riblets and ribletted denticles.
+The denticles consistently outperformed the riblets for the full range of flow rates, achieving a maximum reduction of \SI{12}{\%}. However, no effort was made to relate the bulk velocity to a dimensionless parameter such as $s^+$. The denticles were fabricated using a mould which was created from a real shark scale surface. The authors reported a replication error of only \SI{2}{\%} but there are several issues with this technique that are not discussed. Imperfections, asymmetries, and changes in denticle geometry that exist on real shark scale arrays are all captured using the moulding technique. Clearly this model is more physical, but isolating the effects of slight geometric changes between the different denticles is unrealistic using current experimental methods. To the author's knowledge, only tightly interlocking scales have been replicated using this technique \citep{zhang2011a,zhang2011b, zhao2012, chen2014,luo2015b,luo2015}. It has yet to be established whether the same methods can be applied to more loosely interlocking scales which are equally common among different shark species (see Figure \ref{figure:literatureReview:scaleVariabilityFletcher}).
 
-A similar technique is adopted by \cite{zhao2012}; a drag reduction of 18\% is achieved at the lowest velocity measured, which then reduces to a local minimum, raising to a local maximum and then reduces to its minimum value at the highest fluid velocity. This result is not discussed, and without support from other literature the validity of the experimental techniques is questionable. \cite{zhang2011b} adopts the same moulding technology on a \textit{Isurus oxyrinchus} sample. Drag reduction is compared for a ribletted surface, sharkskin replica and a sharkskin replica with non-long polymer chains attached to the surface. The polymer surface was introduced as a method to mimic the mucus excretion of sharks. Small fishes are known to rely on mucus excretion to increase burst swimming speeds; when added to a fluid this mucus can reduce drag by up to \SI{66}{\%} \citep{fletcher2014phd}. However, unlike most fishes, sharks mucus production is restricted to small areas below the denticle crowns. It is therefore often assumed that mucus excretion has a lesser effect for sharks although the topic is still poorly understood \citep{fletcher2014phd}. %why not discussing this?
-\cite{zhang2011b} measures a maximum drag reduction of \SI{8}{\%} for the sharkskin replica which increases to \SI{24}{\%} when the polymer is added. In addition to this, the drag reduction effect increases with increasing flow rate, contrary to the sharkskin without polymer added to its surface. However, \cite{fletcher2014phd} suggests that mucus is excreted from pores below the scales. \cite{zhang2011b} applies the polymer coating to the whole surface which is perhaps not a physical representation of mucus excretion. 
+A similar technique is adopted by \cite{zhao2012}; a drag reduction of 18\% is achieved at the lowest velocity measured, which then reduces to a local minimum, raises to a local maximum, and then reduces to its minimum value at the highest fluid velocity. This result is not discussed, and without support from other literature the validity of the experimental techniques is questionable. \cite{zhang2011b} adopted the same moulding technology on a \textit{Isurus oxyrinchus} sample. Drag reduction is compared for a ribletted surface, sharkskin replica and a sharkskin replica with non-long polymer chains attached to the surface. The polymer surface was introduced as a method to mimic the mucus excretion of sharks. Small fishes are known to rely on mucus excretion to increase burst swimming speeds; when added to a fluid this mucus can reduce drag by up to \SI{66}{\%} \citep{fletcher2014phd}. However, unlike most fishes, sharks mucus production is restricted to small areas below the denticle crowns. It is therefore often assumed that mucus excretion has a lesser effect for sharks, although the topic is still poorly understood \citep{fletcher2014phd}. %why not discussing this?
+\cite{zhang2011b} measured a maximum drag reduction of \SI{8}{\%} for the sharkskin replica which increases to \SI{24}{\%} when the polymer was added. In addition to this, the drag reduction effect increased with increasing flow rate, contrary to the sharkskin without polymer added to its surface. However, \cite{fletcher2014phd} suggested that mucus is excreted from pores below the scales. \cite{zhang2011b} applied the polymer coating to the whole surface, which was perhaps not a physical representation of mucus excretion. 
 
-\cite{zhang2011a} adopts numerical and experimental techniques to investigate the drag reduction of moulded shark scales, although little detail is presented explaining either of the adopted methods. The experimental results indicate a maximum drag reduction of \SI{12.8}{\%} at the slowest flow rate which then asymptotes to a value of $\sim$\SI{9}{\%}. This behaviour is similar to that of the non-polymer covered sharkskin of \cite{zhang2011b}, although the magnitude of drag reduction is consistently $\sim$\SI{3}{\%} higher. The numerical simulations of \cite{zhang2011a} adopt a finite volume method, with a $k-\epsilon$ turbulence closure, to solve the developing flow field over an array of $\sim$30 shark scales. The shark scales were micro-CT scans of those that were replicated. While the model predicts a drag reduction of the same order as the experiments they increase from \SI{7}{\%} to \SI{14}{\%} as the flow rate increases; i.e a trend opposite to the experiments. There are several potential causes, such as a lack of grid dependence, convergence, and the use of $k-\epsilon$, which is known to perform poorly in boundary layers \citep{pope2001}. However, none of these issues are discussed by \cite{zhang2011a}. Despite this these results are often used to justify the drag reduction observed in experiments \citep{zhao2012,chen2014}.
+\cite{zhang2011a} adopted numerical and experimental techniques to investigate the drag reduction of moulded shark scales, although little detail is presented explaining either of the adopted methods. The experimental results indicated a maximum drag reduction of \SI{12.8}{\%} at the slowest flow rate, which asymptotes to a value of $\sim$\SI{9}{\%}. This behaviour is similar to that of the non-polymer covered sharkskin of \cite{zhang2011b}, although the magnitude of drag reduction is consistently $\sim$\SI{3}{\%} higher. The numerical simulations of \cite{zhang2011a} adopted a finite volume method, with a $k-\epsilon$ turbulence closure, to solve the developing flow field over an array of $\sim$30 shark scales. The shark scales were micro-CT scans of those that were replicated. While the model predicted a drag reduction of the same order as the experiments, they increased from \SI{7}{\%} to \SI{14}{\%} as the flow rate increased; i.e a trend opposite to the experiments. There are several potential causes, such as a lack of grid dependence, convergence, and the use of $k-\epsilon$, which is known to perform poorly in boundary layers \citep{pope2001}. However, none of these issues are discussed by \cite{zhang2011a}. Despite this these results are often used to justify the drag reduction observed in experiments \citep{zhao2012,chen2014}.
 
-This section has so far only discussed the literature associated with shark skin applied to flat plates and channel flows. These simple flow configurations are commonly adopted due to their applicability to a wide range of engineering flows, and the repeatability of experiments. This is made clear when referring to the riblet experiments of Section \ref{section:literatureReview:Riblets}; channel flows and flat plate experiments agree more closely than when riblets are applied to aerofoils. However, the flow field around a shark is far from the idealised flow in channels. \cite{diez2015} attempts to resolve the flow around a shortfin mako shark using Computational Fluid Dynamics (CFD). The model adopts the $k-\epsilon$ turbulence closure with wall functions to reduce computing costs. In addition to this, a roughness parameter is used to account for the denticle surface. This is clearly a large simplification to the shark scale geometry but the general flow field around the shark body is captured. The coefficient of drag as a function of position is presented in Figure \ref{figure:litReview:makoSharkFlowField}.
+This section has so far only discussed the literature associated with shark skin applied to flat plates and channel flows. These simple flow configurations are commonly adopted due to their applicability to a wide range of engineering flows, and the repeatability of experiments. This is made clear when referring to the riblet experiments of Section \ref{section:literatureReview:Riblets}; channel flows and flat plate experiments agree more closely than when riblets are applied to aerofoils. However, the flow field around a shark is far from the idealised flow in channels. \cite{diez2015} attempted to resolve the flow around a shortfin mako shark using Computational Fluid Dynamics (CFD). The model adopted the $k-\epsilon$ turbulence closure with wall functions to reduce computing costs. In addition to this, a roughness parameter was used to account for the denticle surface. This is clearly a large simplification to the shark scale geometry but the general flow field around the shark body was captured. The coefficient of drag as a function of position is presented in Figure \ref{figure:litReview:makoSharkFlowField}.
 %
 \begin{figure}[!t]
 \centering
@@ -374,7 +374,7 @@ This section has so far only discussed the literature associated with shark skin
 \label{figure:litReview:fletcherMorphology}
 \end{figure}
 %
-Strongly converging riblets can be observed on the nose and pectoral fin of the fish and slightly converging scales are found on the dorsal fin. \cite{fletcher2014phd} hypothesises that converging riblets could act as a turbulent trip, similar to those observed on aerofoils (see Section \ref{section:literatureReview:Riblets}). This is further supported by the conclusions of \cite{bechert1985} who argue that denticles could increase turbulent mixing and result in a reduced susceptibility to flow separation. If this is the case then why does the mako shark analysed by \cite{diez2015} possess smooth scales on the nose? Figure \ref{figure:litReview:fletcherMorphology} also indicates reduced riblet spacing on the fins. Referring to Section \ref{section:literatureReview:Riblets} small riblet spacings are associated with higher flow rates; i.e an increase to the friction velocity, $u_\tau$ will require a reduction in riblet spacing, $s$, if the $s^+$ value is to be maintained. The findings of \cite{diez2015} reinforce this by determining an increased flow velocity near the fins of the shark. 
+Strongly converging riblets can be observed on the nose and pectoral fin of the fish and slightly converging scales are found on the dorsal fin. \cite{fletcher2014phd} hypothesised that converging riblets could act as a turbulent trip, similar to those observed on aerofoils (see Section \ref{section:literatureReview:Riblets}). This is further supported by the conclusions of \cite{bechert1985} who argued that denticles could increase turbulent mixing and result in a reduced susceptibility to flow separation. If this is the case then why does the mako shark analysed by \cite{diez2015} possess smooth scales on the nose? Figure \ref{figure:litReview:fletcherMorphology} also indicates a reduced riblet spacing on the fins. Referring to Section \ref{section:literatureReview:Riblets} small riblet spacings are associated with higher flow rates; i.e an increase to the friction velocity, $u_\tau$ will require a reduction in riblet spacing, $s$, if the $s^+$ value is to be maintained. The findings of \cite{diez2015} reinforce this by determining an increased flow velocity near the fins of the shark. 
 
 An aspect of shark skin that has not yet been discussed is the effect of passive bristling as a mechanism for maintaining attached boundary layers. This effect can be observed in Figure \ref{figure:litReview:bristlingScales}; while shark scales are rigid, they are embedded into a flexible epidermis which allows the denticle angle of attack to be altered \citep{lang2014}.
 %
@@ -385,7 +385,7 @@ An aspect of shark skin that has not yet been discussed is the effect of passive
 \label{figure:litReview:bristlingScales}
 \end{figure}
 %
-The precise mechanism that leads to this bristling is still unknown. \cite{bechert1985} suggested that the variation in mechanical tension of the epidermis could control the bristling mechanism. At high speeds the epidermis is under larger tension than lower speeds, and perhaps it is this mechanism that drives scale bristling. However, \cite{lang2014} concluded that the presence of recirculating flow could be enough to bristle scales alone. This is determined by imaging the effect of a small pulsating jet which created a backflow over a shark skin sample. However, the authors note that since experiments are carried out on a small section of shark skin the mechanical tension will not be matched for a real shark. \cite{lang2014} apply these sharkskin sections to a NACA 4412 aerofoil and measure the resulting flow field using Digital Particle Image Velocimetry (DPIV). They compare the resulting backflow for a sharkskin surface with bristling scales, and a smooth surface. They find that at low angles of attack the sharkskin surface produces more backflow than the smooth surface. However, backflow is substantially reduced for large angles of attack; at a foil angle of \SI{18}{\degree} there is a large amount of separation for the smooth surface but very little for the sharkskin. The authors hypothesise that at low angles of attack the backflow is too weak to induce bristling, and as a result the performance of the foil is hindered by its increased thickness. However, DPIV is unable to capture the bristling behaviour directly since the scales are so small. There are also other issues with this technique; since sharkskin is directly applied to the foil there is much uncertainty concerning the mechanical properties of the epidermis and the variability between individual scales. These issues are eliminated by the experimental technique of \cite{wen2014,wen2015} who 3D print an array of smoothed mako scales onto a flexible membrane, mimicking that of a shark epidermis. The membranes are subsequently applied to the surface of a flapping NACA aerofoil, hypothesising that the flexibility of the scales could have implications on thrust generation. Both studies conclude that the swimming speed of the flapping foil is increased when denticles are present but both the cost of transport (energy required per unit distance) and power required increased. The authors suggest that this is likely due to the poor representation of the flexible membrane to real shark skin where scales are more flexibly embedded into the dermis. It is suggested that dynamic experiments are more representative of shark skin and should be further investigated.
+The precise mechanism that leads to this bristling is still unknown. \cite{bechert1985} suggested that the variation in mechanical tension of the epidermis could control the bristling mechanism. At high speeds the epidermis is under larger tension than lower speeds; \cite{bechert1985} argues that perhaps it is this mechanism that drives scale bristling. However, \cite{lang2014} concluded that the presence of recirculating flow could be enough to bristle scales alone. This was determined by imaging the effect of a small pulsating jet which created a backflow over a shark skin sample. However, the authors noted that since experiments were carried out on a small section of shark skin the mechanical tension was unlikely to be matched for a real shark. \cite{lang2014} applied these sharkskin sections to a NACA 4412 aerofoil and measured the resulting flow field using Digital Particle Image Velocimetry (DPIV). They compared the resulting backflow for a sharkskin surface with bristling scales, and a smooth surface. They found that at low angles of attack the sharkskin surface produced more backflow than the smooth surface. However, backflow is substantially reduced for large angles of attack; at a foil angle of \SI{18}{\degree} there was a large amount of separation for the smooth surface but very little for the sharkskin. The authors hypothesised that at low angles of attack the backflow was too weak to induce bristling, and as a result the performance of the foil was hindered by its increased thickness. However, DPIV is unable to capture the bristling behaviour directly since the scales are so small. There are also other issues with this technique; since sharkskin was directly applied to the foil there is much uncertainty concerning the mechanical properties of the epidermis and the variability between individual scales. These issues are eliminated by the experimental technique of \cite{wen2014,wen2015} who 3D printed an array of smoothed mako scales onto a flexible membrane, mimicking that of a shark epidermis. The membranes are subsequently applied to the surface of a flapping NACA aerofoil, hypothesising that the flexibility of the epidermis could have implications on thrust generation. Both studies concluded that the swimming speed of the flapping foil was increased when denticles were present, but both the cost of transport (energy required per unit distance) and power required increased. The authors suggested that this is likely due to the poor representation of the flexible membrane to real shark skin, where scales are more flexibly embedded into the dermis. It was suggested that dynamic experiments are more representative of shark skin and should be further investigated.
 
 \subsection{Summary}
 This section has reviewed the literature concerning engineered riblets and the experiments concerning shark scales. Several inconsistencies and gaps in the literature can be identified:
@@ -406,13 +406,13 @@ This section has reviewed the literature concerning engineered riblets and the e
 %
 \item The application of scales to separating flows and adverse pressure gradients has seen little investigation. Studies that have been carried out in this area have focused on large scale fluid structures rather than investigating how the flow interacts with the denticles.
 %
-\item Dynamic experiments have also been recently introduced whereby the interactions between the flexible epidermis and the denticles are investigated. These methods can create more physical models but are currently limited to the observation of large scale structures. 
+\item Dynamic experiments have also been recently introduced, whereby the interactions between the flexible epidermis and the denticles can be investigated. These methods can create more physical models but are currently limited to the observation of large scale structures. 
 %
-\item Mucus excretion is another subject that has seen little investigation in terms of shark skin. Authors have often disregarded its effect but the work of \cite{zhang2011b} suggests it could have much larger implications. 
+\item Mucus excretion is another subject that has seen little investigation in terms of shark skin. Authors have often disregarded its effect, but the work of \cite{zhang2011b} suggests it could have much larger implications. 
 %
 \end{itemize}
 
-\section{Research questions}
+\section{Research Questions}
 
 Section \ref{section:literatureReview} indicated several gaps in the literature concerning shark scales. As a result, several research questions have been proposed:
 \begin{enumerate}
@@ -423,7 +423,7 @@ Section \ref{section:literatureReview} indicated several gaps in the literature 
 \item What are the effects of denticles on separating flows?
 \end{enumerate}
 
-These questions will be answered using a mixture of experimental and numerical techniques. Questions related to denticle geometry will be answered via LDA experiments, LES, and RANS simulations. The LDA experiments will measure the effects of smooth, and ribletted, 3D printed denticles on a flat plate. LES will be adopted to investigate the effect of these denticles in a periodic channel flow, and RANS will be used to carry out a parametric analysis. There are advantages and disadvantages associated with each of these methods; LDA is a highly accurate, and non-intrusive, experimental technique, but the flow field surrounding individual scales cannot be captured. On the contrary, LES has the capabilities to resolve the turbulent structures near the scales, but requires too much computing power to carry out lots of different case studies. RANS is more suitable for parameter studies, but requires validation. 
+These questions will be answered using a mixture of experimental and numerical techniques. Questions related to denticle geometry will be answered via LDA experiments, LES, and Reynolds Averaged Navier-Stokes (RANS) simulations. The LDA experiments will measure the effects of smooth, and ribletted, 3D printed denticles on a flat plate. LES will be adopted to investigate the effect of these denticles in a periodic channel flow, and RANS will be used to carry out a parametric analysis. There are advantages and disadvantages associated with each of these methods; LDA is a highly accurate, and non-intrusive, experimental technique, but the flow field surrounding individual scales cannot be captured. On the contrary, LES has the capabilities to resolve the turbulent structures near the scales, but requires too much computing power to carry out lots of different case studies. RANS is more suitable for parameter studies, but requires validation. 
 
 In addition to this the project will investigate the effect of applying scales to surfaces subject to separating flows. LES, or RANS, will be applied to a separating flow problem in order to quantify the differences between smooth and shark-skin surfaces. The results will be validated against a laboratory experiment using Particle Image Velocimetry (PIV). 
 
@@ -447,13 +447,13 @@ There are two aims of this project; to investigate the influence of shark scale 
 \newpage
 
 \section{Channel Flow Experiments using Laser Doppler Anemometry}
-As discussed in Section \ref{section:literatureReview}, little work has been carried out in analysing the fluid flow around shark scale surfaces; most work has primarily made use of force balances which cannot measure velocity or pressure fields. While previous experiments have successfully measured drag reduction for sharkskin they have not yet investigated the fluid dynamic features that are causing it. For this reason we choose to adopt Laser Doppler Anemometry (LDA) to measure a channel flow, with and without shark scales. While a channel flow does not replicate the complex flow fields around a shark, it allows comparison against a wide range of empirical and numerical literature data (in the case of smooth channels), and also ensures the results are applicable to a wide range of surface flows, such as boat hulls and pipe walls. In addition to this, understanding how shark scales behave in simple and controllable configurations will provide comparative data when investigating their effects on separating flows. This simplification also allows numerical models to exploit the periodicity of shark scale surfaces, greatly reducing the required computing power for numerical methods. This section details the preliminary experiments, the aim of which is to validate the experimental method and identify changes that must be made to future designs.
+As discussed in Section \ref{section:literatureReview}, little work has been carried out in analysing the fluid flow around shark scale surfaces; most work has primarily made use of force balances which cannot measure velocity or pressure fields. While previous experiments have successfully measured drag reduction for sharkskin they have not yet investigated the fluid dynamic features that are causing it. For this reason we choose to adopt Laser Doppler Anemometry (LDA) to measure a flat plate boundary layer, with and without shark scales. While a flat plate does not replicate the complex flow fields around a shark, it allows comparison against a wide range of empirical and numerical literature data (in the case of smooth plates), and also ensures the results are applicable to a wide range of surface flows, such as boat hulls and pipe walls. In addition to this, understanding how shark scales behave in simple and controllable configurations will provide comparative data when investigating their effects on separating flows. This section details the preliminary experiments, the aim of which is to validate the experimental method and identify changes that must be made to future designs.
 
 \subsection{Fundamentals of LDA}
 LDA is a non-intrusive method of determining a fluids velocity by measuring the Doppler shift of laser light \citep{zhang2010lda}. There are several key components which can be split into two groups; an optical unit, and a receiving unit. The optical unit generates and transmits a pair of laser beams for each velocity component and focusses them onto a small volume. %, with a typical width of \SI{100}{\mu m} (Reference).
  The two beams create a fringe pattern in the measurement volume, the spacing of which, $\Delta x$, is determined by the angle of intersection, $\alpha$, and the light wavelength, $\lambda$. This is demonstrated in Figure \ref{figure:experiments:fringePattern}, whereby a particle of velocity $\overrightarrow{u}_p$, passes through the fringe pattern created by the two beams $E_a$ and $E_b$. The two beams can be represented by 
 %
-\begin{figure}[!t]
+\begin{figure}[!b]
 \centering
 \includegraphics[width=10cm]{images/LDA_theoryImages/fringePattern.png}
 \caption{Fringe pattern of an intersecting pair of laser beams. Image taken from \cite{zhang2010lda}.}
@@ -469,7 +469,7 @@ E_b = E_0 \cos{ \left[ \omega_b t - k_b (z \cos{\alpha} + x \sin{\alpha} ) \righ
 \end{equation}
 where $E_0$ represents the wave amplitude, $\omega$ represents the respective angular frequencies, and $k = 2 \pi / \lambda$ represents the angular wavenumber. The wavelength is related to the speed of light by $c = \lambda f$, where $c$ represents the speed of light, and $f$ represents the oscillation frequency. With some manipulation the $x$-component of the particle velocity is found to be directly related to the fringe spacing, and the shift in oscillation frequency as the particle passes through the fringes \citep{zhang2010lda}. The receiving components detect this change in frequency and converts this to an electrical signal which can be processed. In order to relate the particle velocity to the fluid velocity the flow is seeded with neutrally buoyant particles. It is assumed that these particles do not deviate from the fluid streamlines. 
 
-The present work makes use of two-component LDA, whereby two pairs of beams, one at $\lambda = $ \SI{514.51}{nm} (green light) and one at $\lambda = $ \SI{488}{nm} (blue light), are transmitted perpendicular to each other. The respective shifts in frequency are separated by the receiving unit in order to produce two velocity components. Particle velocities are only recorded if a shift in frequency is observed by both beam pairs, thus the covariance of the two velocities (Reynolds stresses) can be analysed. 
+The present work makes use of two-component LDA, whereby two pairs of beams, one at $\lambda = $ \SI{514}{nm} (green light) and one at $\lambda = $ \SI{488}{nm} (blue light), are transmitted perpendicular to each other. The respective shifts in frequency are separated by the receiving unit in order to produce two velocity components. Particle velocities are only recorded if a shift in frequency is observed by both beam pairs, thus the covariance of the two velocities (Reynolds stresses) can be analysed. 
 
 Velocity biasing is a phenomena that must be considered when utilising LDA. Since velocities are only sampled when particles pass through the focal volume, the subsequent time series does not have a regular sampling interval. For this reason, high velocity fluctuations are measured more often than low velocity fluctuations, which results in a bias towards higher velocities when calculating statistics. The correction method detailed by \cite{zhang2010lda} is adopted in the present work, whereby the means and standard deviations are normalised by the amount of time a particle resides in the focal volume, $\tau$. The temporal mean of a velocity component $u$ is therefore calculated by
 
@@ -487,7 +487,7 @@ and the covariance between the two components of velocity is calculated by
 
 
 
-\subsection{Experimental set up}
+\subsection{Experimental Set Up}
 \label{section:experiments:setUp}
 The experiments are carried out using a flat plate submerged in a recirculating flume (observed in Figure \ref{figure:experiments:setUp}).
 %
@@ -502,7 +502,7 @@ The plate has the dimensions $L \times w \times h = 500 \times 100 \times 10 $ (
 % The probe is then traversed normal to the wall with a grid spacing of \SI{0.1}{mm}. For a Reynolds number of $Re_\tau \approx 400$ this equates to a spacing of $\Delta \approx 0.33 \delta_v$.
  The following grid is defined such that a high spatial resolution is present near the wall which blends into a low resolution in the far field:
 \begin{align*}
-\Delta = 
+\Delta_y = 
 \begin{cases}
 0.025, \hspace{1cm} &\text{for } 0 \leqslant y < 2.5,\\
 0.05, \hspace{1cm} &\text{for } 2.5 \leqslant y < 3,\\
@@ -526,7 +526,7 @@ and,
 \begin{equation}
 \sigma_{u,2s}^2 = \frac{\sum^s_{i=-s} \tau_i (u_i - \mu_{u,2s})^2}{\sum^s_{i=-s} \tau_i}.
 \end{equation}
-The anomalies identified by the filter were removed from the data set rather than replaced. Other filters were also tested; a global averaging method was found to remove `real' data due to its inability to differentiate between anomalies and low/high speed structures passing through the probe volume. The filtering method of \cite{goring2002}, designed for Acoustic Doppler Anemometry data, was also found to identify more anomalies than expected. 
+The anomalies identified by the filter were removed from the data set rather than replaced. In order to calculate the covariance of the two velocity components, any spikes identified in one velocity data set were also removed from the other. Other filters were also tested; a global averaging method was found to remove `real' data due to its inability to differentiate between anomalies and low/high speed structures passing through the probe volume. The filtering method of \cite{goring2002}, designed for Acoustic Doppler Anemometry data, was also found to identify more anomalies than expected. 
 
 
 %			NOTE - Y+ VALUES ARE DIFFERENT FOR DIFF FLOW RATES
@@ -629,7 +629,7 @@ The covariance of the two velocity components convergences very slowly, as indic
 %
 Even after \SI{300}{s}, only the near wall point for the high pump frequency indicates reasonable convergence, whereby the error is reduced to $\sim$\SI{2}{\%} after $\sim$\SI{250}{s}. Although this estimate makes the assumption that $\gamma_{u,v}(300)$ represents the `true' value. Figure \ref{figure:experiments:timeDependence:uv} also highlights some sudden jumps in the near wall, low pump speed covariance. This could have arisen from non-physical spikes in the $(u-\mu_u)(v-\mu_v)$ time series. Perhaps the filtering method should be applied to more than just the $u$ and $v$ data sets. However, the other three covariances still predict an error of $>$\SI{10}{\%} after \SI{200}{s} of averaging time. Clearly, if the Reynolds stresses are to be used to analyse the effect of shark skin then longer averaging times will be required. 
 
-\subsubsection{Spatial dependence of the velocity statistics}
+\subsubsection{Spatial Dependence of the Velocity Statistics}
 \label{section:experiments:profiles}
 The means, standard deviations and covariance of velocity are measured along profiles at $x=$\SI{300}{mm} and $x=$\SI{400}{mm}. The vertical locations are given in the grid defined in Section \ref{section:experiments:setUp} and profiles are measured for a pump frequency of \SI{4}{Hz} and \SI{8}{Hz}. Due to time constraints, velocities were only sampled for \SI{20}{s}. The errors associated with this are estimated by using the time dependence analysis of Section \ref{section:experiments:timeDep}; the mean streamwise velocity, $\mu_u$, is evaluated over \SI{20}{s} intervals, throughout the length of the \SI{300}{s} time series. The mean of the absolute difference between each interval mean and the reference mean, $\mu_u(300)$, is defined as the error. However, since the error can only be estimated at three vertical locations, interpolation is adopted in order to fit the entire profile. Future work will consider many more locations to estimate this error. 
 
@@ -669,7 +669,7 @@ The profiles of velocity covariance can be observed in Figure \ref{figure:experi
 %
 The covariance indicates a large spread in the data as the distance from the wall increases. The estimated error bars do reflect this increase in uncertainty but the magnitude seems too small in this case. This is likely due to the lack of points used to estimate these errors. It could also be due to the fluctuations in the errors which are not reflected by taking the mean of the absolute error. Future work will investigate the effect of taking into account the standard deviations. It is clear from Figure \ref{figure:experiments:profiles:gamma} that if the Reynolds stresses are to be compared between smooth and sharkskin surfaces then a much longer averaging time is required.
 
-\subsubsection*{Estimation of the friction velocity}
+\subsubsection*{Estimation of the Friction Velocity}
 In order to compare both smooth and sharkskin surfaces the friction velocity must be estimated from the flow field. There are several methods of doing this, such as using the near wall gradients or using the integrated boundary layer equations of a similar form to \eqref{equation:literatureReview:FIK}. The present work adopts the \cite{clauser1956} method, whereby the logarithmic region identified in Figure \ref{figure:literatureReview:boundaryLayerRegions} is fitted with the empirical equations:
 \begin{align}
 U^+ = \begin{cases}	
@@ -677,15 +677,15 @@ y^+, \hspace{1cm} &\text{for } y^+ \lesssim 5,\\
 \kappa^{-1} \ln{y^+} + B, \hspace{1cm} &\text{for } y^+ \gtrsim 30,
 \end{cases}
 \end{align}
-where $U^+$ and $y^+$ are defined by \eqref{equation:litReview:UplusYplus}. Several challenges are presented with fitting this relationship; the upper bound for the logarithmic layer is dependent on the Reynolds number, and is therefore unknown. In addition to this, the location of the wall has not yet been accounted for in the previous statistics. Subsequently the profile offset needs to be estimated. Since the viscous sub-layer is well resolved, we can estimate the offset by using the equation,
+where $U^+$ and $y^+$ are defined by $ U^+ = \mu_u / u_\tau $ and $ y^+ = y u_\tau / \nu$. Several challenges are presented with fitting this relationship; the upper bound for the logarithmic layer is dependent on the Reynolds number, and is therefore unknown. In addition to this, the location of the wall has not yet been accounted for in the previous statistics. Subsequently the profile offset needs to be estimated. Since the viscous sub-layer is well resolved, we can estimate the offset by using the equation,
 \begin{equation}
 \label{equation:experiments:viscousPart}
-y = U\frac{u_\tau^2}{\nu} + \Delta_w,
+y = \mu_u \frac{u_\tau^2}{\nu} + \Delta_w,
 \end{equation}
-where $\Delta_w$ is the offset from the wall and $U = \mu_u$. We adopt least-squares regression to fit the data and subtract $\Delta_w$ from the vertical position. The least-squares approach also provides an estimate for $u_\tau$ which is subsequently used to estimate the range of vertical positions in the logarithmic region, such that least-squares regression can be applied to
+where $\Delta_w$ is the offset from the wall. We adopt least-squares regression to fit the data and subtract $\Delta_w$ from the vertical position. The least-squares approach also provides an estimate for $u_\tau$ which is subsequently used to estimate the range of vertical positions in the logarithmic region, such that least-squares regression can be applied to
 \begin{equation}
 \label{equation:experiments:logPart}
-U = \frac{u_\tau}{\kappa} \ln{y} + \frac{u_\tau}{\kappa}\ln{\frac{u_\tau}{\nu}} + Bu_\tau.
+\mu_u = \frac{u_\tau}{\kappa} \ln{y} + \frac{u_\tau}{\kappa}\ln{\frac{u_\tau}{\nu}} + Bu_\tau.
 \end{equation}
 Currently the upper bound of the logarithmic region is defined as $y^+ = 150$ in order to ensure the wake region is not captured. As a result, two estimates of the friction velocity are obtained for each profile, one from \eqref{equation:experiments:viscousPart}, and one from \eqref{equation:experiments:logPart}. These can be observed in Table \ref{table:experiments:UtauErrors}.
  %
@@ -721,14 +721,10 @@ A maximum difference of \SI{20}{\%} can be observed from the two estimates which
 %
 The fit agrees well with the logarithmic region but deviates slightly for the viscous region. The $x=$ \SI{400}{mm} profile indicates that the viscous estimate lies within the error bars of the data, although there is still a difference in $u_\tau$ predictions of \SI{8.43}{\%}. Further work will investigate the implementation of this method in an attempt to reduce the error. However, other methods of estimating the friction velocity will also be investigated, such as using the near wall gradients of velocity, and an integrated boundary layer method that takes into account the Reynolds stresses. Of course, the accuracy of the later method is dependent on the resolution of the Reynolds stress profile, which will be a priority in future experiments. 
 
-\subsection{Conclusions and further work}
-The presented experiments have indicated several adjustments that should be made to the methodology and rig design. The spatial resolution is much higher than required at these low flow rates, especially in the buffer region. In contrast, the averaging time is too short for accurate estimates of the Reynolds stresses, and the standard deviations of velocity. In addition to this, the errors associated with short averaging times have only been estimated at three vertical locations. Future work will carry out experiments on a coarser grid, with longer averaging times, and calculate errors based on more grid points. Furthermore, the methods of estimating $u_\tau$ will be re-evaluated before carrying out future experiments.
+\subsection{Conclusions and Further Work}
+The presented experiments have indicated several adjustments that should be made to the methodology and rig design. The spatial resolution is much higher than required at these low flow rates, especially in the buffer region. In contrast, the averaging time is too short for accurate estimates of the Reynolds stresses, and the standard deviations of velocity. In addition to this, the errors associated with short averaging times have only been estimated at three vertical locations. Future work will carry out experiments on a coarser grid, with longer averaging times, and calculate errors based on more grid points. Furthermore, the methods of estimating $u_\tau$ will be re-evaluated before carrying out future experiments. The current work has only investigated means, standard deviations, and the covariance of the two velocity components. However, there are many other methods to quantify turbulent flows. In particular, investigations into energy spectra will provide information regarding the turbulent structures near the wall. In addition to this, quadrant analysis could be adopted in order to identify sweep and ejection events for both smooth and sharkskin surfaces.
 
-The current work has only investigated means, standard deviations, and the covariance of the two velocity components. However, there are many other methods to quantify turbulent flows. In particular, investigations into energy spectra will provide information regarding the turbulent structures near the wall. In addition to this, quadrant analysis could be adopted in order to identify sweep and ejection events for both smooth and sharkskin surfaces.
-
-
-\newpage
-\section{Replication of a shark scale using Computer Aided Design (CAD)}
+\section{Replication of a Shark Scale Using Computer Aided Design (CAD)}
 \label{section:cad}
 This section details the process adopted to replicate and simplify a sharkskin denticle, using Computer Aided Design (CAD). The purpose of this work is to create a reference case for future experiments; by varying the parameters of the reference CAD model, the effects of different denticle geometry can be investigated. For this reason, a \textit{Poracanthodes sp.} fish scale (sampled by \cite{fletcher2014phd}) was chosen for replication, due to its relatively simple geometry. The 3D \textit{Poracanthodes sp.} model of \cite{fletcher2014phd} can be observed in Figure \ref{figure:cad:scaleSample}.  
 %
@@ -743,11 +739,11 @@ This section details the process adopted to replicate and simplify a sharkskin d
 
 There are many features of the scale in Figure \ref{figure:cad:scaleSample} that are undesirable for our reference case. In particular, the asymmetries, and the wave-like trailing edge. The reasons for their existence is unknown; perhaps the asymmetries are present to redirect flow, or to interlock better with neighbouring denticles, or perhaps they are random defects that just so happen to be present on the sample that was taken by \cite{fletcher2014phd}. However, for a reference case a simpler geometry is desired which maintains the main features of the denticle.
 
-The simplified model is defined by fitting a coordinate system to the sample of Figure \ref{figure:cad:scaleSample}, and taking several cross sections of the scale in the $xz$-plane. Primitive shapes were used to construct sections that capture the main geometry of the scale, but maintain symmetry and remove complex features. An example of this can be observed in Figure \ref{figure:cad:crossSection}.
+The simplified model is defined by fitting a coordinate system to the sample of Figure \ref{figure:cad:scaleSample}, and taking several cross sections of the scale in the $xz$-plane. Primitive shapes are used to construct sections that capture the main geometry of the scale, but maintain symmetry and remove complex features. An example of this can be observed in Figure \ref{figure:cad:crossSection}.
 %
 \begin{figure}[!t]
 \centering
-\vcenteredhbox{\includegraphics[width=14cm]{images/cad/crossSectionExample.png}}
+\vcenteredhbox{\includegraphics[width=12cm]{images/cad/crossSectionExample.png}}
 \caption{A comparison between a simplified cross section (orange) and the sampled scale cross section (black). The dimensions are scaled after the simplified scale is generated.}
 \label{figure:cad:crossSection}
 \end{figure}
@@ -778,13 +774,13 @@ Poor surface quality can be observed in both images, and the edges seem to have 
 
 \newpage
 
-\section{Application of Reynolds-Averaged Navier-Stokes to a periodic shark scale domain}
+\section{Application of Reynolds-Averaged Navier-Stokes to a Periodic Shark Scale Domain}
 \label{section:rans}
-This section details the mesh independence study of the flow over a periodic array of scales using a RANS turbulence closure. Section \ref{section:literatureReview} indicated a large gap in the literature concerning the effect of shark scale geometry on a flow. RANS methods have the potential to investigate this without large expense, but requires validation. When available, the results of the present study will be validated against LES data.
+This section details the mesh independence study of the flow over a periodic array of scales using a RANS turbulence closure. Section \ref{section:literatureReview} indicated a large gap in the literature concerning the effect of shark scale geometry on a flow. RANS methods have the potential to investigate this without large expense, but require validation. When available, the results of the present study will be validated against LES data.
 
-\subsection{Mathematical model}
+\subsection{Mathematical Model}
 \label{section:rans:maths}
-The present work adopts a steady state RANS turbulence closure using OpenFOAM; an open source finite volume code. The fundamental equations are the Reynolds averaged equations, first introduced in Section \ref{section:literatureReview}, and the continuity equation. These are defined as,
+The present work adopts a steady state RANS turbulence closure using OpenFOAM; an open source finite volume code. The fundamental equations are the Reynolds averaged equations, first introduced in Section \ref{section:literatureReview}, and the continuity equation. These are defined as
 \begin{equation}
 \label{equation:rans:mom}
 \langle U_j \rangle \pdev{\langle U_i \rangle}{x_j}
@@ -800,12 +796,12 @@ The present work adopts a steady state RANS turbulence closure using OpenFOAM; a
 +
 \pdev{\langle u_i u_j\rangle}{x_j},
 \end{equation}
-and the continuity equation,
+and,
 \begin{equation}
 \label{equation:rans:cont}
 \pdev{\langle U_i\rangle}{x_i}=0,
 \end{equation}
-where $\langle  \rangle$ represents the ensemble average. This particular work adopts the $k-\omega$ Shear Stress Transport (SST) model,  first proposed by \cite{menter1994}. This closure estimates the Reynolds stresses by solving a transport equation for the turbulent kinetic energy, $k$, and the turbulent frequency, $\omega$. The standard $k-\omega$ model is known for its ability to resolve boundary layer flows more accurately than other two-equation alternatives, such as $k-\epsilon$. However, it has failed to replace the $k-\epsilon$ model as the industry standard due to its poor performance in freestream flows \citep{menter2003}. This issue is accounted for in the $k-\omega$ SST model by adding an additional term to the $\omega$ equation. The result is essentially a blending between the near wall $k-\omega$ model and the freestream $k-\epsilon$ model. There are many other turbulence closures that could be appropriate for this problem. The two equation $k-\omega$ SST model was chosen as a compromise between the more accurate, but computationally expensive, Reynolds Stress Transport equations, and the less accurate, but cheaper, one-equation models. The solution dependency on turbulence closure will be investigated after obtaining a mesh independent solution.  
+where $\langle  \rangle$ represents the ensemble average. This particular work adopts the $k-\omega$ Shear Stress Transport (SST) model,  first proposed by \cite{menter1994}. This closure estimates the Reynolds stresses by solving a transport equation for the turbulent kinetic energy, $k$, and the turbulent frequency, $\omega$. The standard $k-\omega$ model is known for its ability to resolve boundary layer flows more accurately than other two-equation alternatives, such as $k-\epsilon$. These quantities are related by $\epsilon = \omega k$. However, it has failed to replace the $k-\epsilon$ model as the industry standard due to its poor performance in freestream flows \citep{menter2003}. This issue is accounted for in the $k-\omega$ SST model by adding an additional term to the $\omega$ equation. The result is essentially a blending between the near wall $k-\omega$ model, and the freestream $k-\epsilon$ model. There are many other turbulence closures that could be appropriate for this problem. The two equation $k-\omega$ SST model was chosen as a compromise between the more accurate, but computationally expensive, Reynolds Stress Transport equations, and the less accurate, but cheaper, one-equation models. The solution dependency on turbulence closure will be investigated after obtaining a mesh independent solution.  
 
 The $k-\omega$ SST model adopts the turbulent viscosity hypothesis, whereby the Reynolds stresses are estimated by,
 %
@@ -814,7 +810,7 @@ The $k-\omega$ SST model adopts the turbulent viscosity hypothesis, whereby the 
 	\pdev{\left< U_i \right>}{x_j} + \pdev{\left< U_j \right>}{x_i}	\right),
 \end{equation}
 %
-where $\nu_T$ is the turbulent viscosity. The $k-\omega$ SST model solves two additional transport equations for the turbulent kinetic energy, $k$, and the turbulent frequency, $\omega$. These parameters are related by the rate of turbulent dissipation, $\epsilon = \omega k$. The turbulent viscosity is assumed to be related to $k$ and $\omega$ by,
+where $\nu_T$ is the turbulent viscosity. The turbulent viscosity is assumed to be related to $k$ and $\omega$ by,
 %
 \begin{equation}
 \label{equation:rans:nuT}
@@ -848,71 +844,18 @@ where $\beta^*$ and $\sigma_K$ are empirical constants, and $\mathcal{P}$ is the
 \pdev{(\langle U_j \rangle \omega)}{x_j} = \frac{\alpha}{\mu_T} \mathcal{P} -\beta \omega^2 + \pdev{}{x_j}\left[ 		\left(		\nu + \sigma_w \nu_T	\right) \pdev{\omega}{x_j}		 \right] + 2(1-F_2) \frac{\sigma_d}{\omega} \pdev{k}{x_j}\pdev{\omega}{x_j},
 \end{equation}
 %
-where $\alpha$, $\beta$, $\sigma_\omega$, and $\sigma_d$, are empirical constants, $\mu_T =  \rho \nu_T$, and $F_2$ is a blending function of the same form as $F_1$. The choices of $F_1$, $F_2$, and the empirical constants, are detailed by \cite{menter1994}. The three component momentum equation, \eqref{equation:rans:mom}, continuity equation, \eqref{equation:rans:cont}, transport of kinetic energy equation, \eqref{equation:rans:k}, and the transport of turbulent frequency equation, \eqref{equation:rans:omega}, are our closed system of equations. 
+where $\alpha$, $\beta$, $\sigma_\omega$, and $\sigma_d$, are empirical constants, $\mu_T =  \rho \nu_T$, and $F_2$ is a blending function of the same form as $F_1$. The choices of $F_1$, $F_2$, and the empirical constants, are detailed by \cite{menter1994}. They are essentially chosen to fit the model to a range of flow problems. The blending functions are unique to the SST version of $k-\omega$; they control the blending process between the near wall $k-\omega$ model and the freestream $k-\epsilon$. The three component momentum equation, \eqref{equation:rans:mom}, continuity equation, \eqref{equation:rans:cont}, transport of kinetic energy equation, \eqref{equation:rans:k}, and the transport of turbulent frequency equation, \eqref{equation:rans:omega}, are our closed system of equations. 
 
-\subsection{Numerical implementation}
-The system of equations, defined in Section \ref{section:rans:maths}, are discretised using finite volume methods. Gradient and Laplacian terms are discretised using standard Gaussian integration. Linear interpolation is adopted in order to calculate face fluxes from the variables stored at cell centres. In order to ensure stability, the interpolation scheme of the convective terms is a mixture of upwind and linear methods, whereby in regions of rapidly changing gradient an upwind scheme is adopted (but still accurate to second order). The SIMPLE algorithm of \cite{caretto1973} is adopted in order to couple the continuity and momentum equations. The semi-discrete form of \eqref{equation:rans:mom} can be written as
-\begin{equation}
-\label{equation:piso1}
-\vect{C} \vect{u}^* =  \vect{A}\vect{u}^* + \vect{H'}\vect{u}^* =\vect{r} - \nabla \vect{P}^n,
-\end{equation}
+\subsection{Numerical Implementation}
+The system of equations, defined in Section \ref{section:rans:maths}, are discretised
+using finite volume methods. Gradient and Laplacian terms are discretised using standard Gaussian integration. Linear interpolation is adopted in order to calculate face fluxes from the variables stored at cell centres. In order to ensure stability, the interpolation scheme of the convective terms is a mixture of upwind and linear methods, whereby in regions of rapidly changing gradient an upwind scheme is adopted (but still accurate to second order). The SIMPLE algorithm of \cite{caretto1973} is adopted in order to couple the continuity and momentum equations (see Appendix A for details). Linear algebra is solved using Gauss-Seidel algorithms for all equations apart from pressure, which adopts a generalised multigrid method. Convergence is assessed by monitoring the pressure, velocity, and turbulence scalars, at several locations near the surface of the scales. The residual errors from the linear algebra is also monitored.
 
-
-
- The PISO algorithm (Pressure-Implicit with Splitting of Operators) of \cite{issa1986} is adopted, whereby a pressure equation is derived from the momentum (\ref{equation:momentum}) and continuity equations (\ref{equation:continuity}). The PISO scheme operates using a two-step process: A predictor step and a corrector step. The semi-discrete form of (\ref{equation:momentum}) can be written as
-\begin{equation}
-\label{equation:piso1}
-\vect{C} \vect{u}^* =  \vect{A}\vect{u}^* + \vect{H'}\vect{u}^* =\vect{r} - \nabla \vect{P}^n,
-\end{equation} 
-where $\vect{C}$ represents the implicit coefficient array, $\vect{u}^*$ is the predicted velocity, $\vect{r}$ is the explicit source terms and $\vect{P}^n$ represents the kinematic pressure at the previous time step. The matrix $\vect{C}$ can be split into diagonal and off diagonal components, $\vect{C} = \vect{A} + \vect{H'}$, and the linear equation (\ref{equation:piso1}) can be solved for $\vect{u}^*$. A Gauss-Seidel solver is adopted to solve this system, completing the predictor step. (\ref{equation:piso1}) can be manipulated in order to derive an equation to correct both the velocity and pressure from the predicted velocity:
-\begin{equation}
-\label{equation:piso2}
-\vect{A}\vect{u}^{**} + \vect{H'}\vect{u}^* =\vect{r} - \nabla \vect{P}^*,
-\end{equation}
-\begin{equation}
-\label{equation:piso3}
-\vect{u}^{**}  = \vect{A}^{-1}\vect{H} - \vect{A}^{-1}\nabla \vect{P}^*,
-\end{equation}
-where $\vect{H} = \vect{r} - \vect{H'}\vect{u}^*$. The inversion of $\vect{A}$ is trivial since it is symmetrical. By recognising that $\nabla \vect{u}^{**} = 0$, a Poisson equation for the corrected pressure can be derived:
-\begin{equation}
-\label{equation:piso4}
-\nabla^2 ( \vect{A}^{-1} \vect{P}^* ) = \nabla \cdot (\vect{A}^{-1} \vect{H}).
-\end{equation}
-This Laplacian equation is solved using a Geometric-algebraic multi-grid solver in order to update the pressure. The corrected velocity equation (\ref{equation:piso3}) is then solved to update the velocity. In order to ensure second order accuracy, (\ref{equation:piso4}) and (\ref{equation:piso3}) and solved twice, as recommended by \cite{issa1986}. Equations (\ref{equation:flmTransport}) and (\ref{equation:fmmTransport}) are discretised using the same method as the momentum equation and solved using a Gauss-Seidel solver. All equations are iteratively solved until a tolerance of $10^{-8}$ is met. An adaptive time-stepping scheme is adopted in order to ensure the Courant number does not exceed $0.5$. Statistical averaging is carried out between the time intervals $t=10 \delta / u_\tau$ and $t = 40 \delta / u_\tau$. This interval is much smaller than those adopted by \cite{kim1987} and \cite{vreman2014}, the impact of which will be discussed in Section \ref{section:lesResults}.
-
-Post-processing is carried out in MATLAB; Statistical quantities, such as means and standard deviations, are looped through each time-step directory and averaged in $x$ and $z$. The results of which are compared to those of a spectral DNS code of \cite{vreman2014}.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	-	SIMPLE ..
-	-	solution method
-	-	linear algebra ...
-	-	-iterative method to mesh it ...?
--convergence !!! how do we check?
-
-
-over the domain observed in Figure \ref{figure:rans:methodology:periodicDomain}, using finite volume methods. 
+The finite volume mesh is constructed from the domain observed in Figure \ref{figure:rans:methodology:periodicDomain}.
 % 
 \begin{figure}[!b]
 \centering
 \includegraphics[width = 0.7\linewidth]{images/CFD_meshIndependence/periodicDomain.png}
-\caption{Domain ...}
+\caption{3D periodic domain for the RANS simulations. Streamwise direction is positive in $x$.}
 \label{figure:rans:methodology:periodicDomain}
 \end{figure}
 %
@@ -921,18 +864,18 @@ The CAD model, defined in Section \ref{section:cad}, is arranged in a staggered 
 \begin{figure}[!t]
 \centering
 \includegraphics[width = 0.7\linewidth]{images/CFD_meshIndependence/periodicDomain3.png}
-\caption{Domain ...}
+\caption{Staggered denticle array, wih dimensions normalised by the denticle height. $x_1$, $x_2$, and $x_3$, are the locations at which profiles of variables are taken in Section \ref{section:rans:results}.}
 \label{figure:rans:methodology:periodicDomain3}
 \end{figure}
 %
-The three points, $x_1$, $x_2$, and $x_3$, are used to define wall-normal lines in which data is plotted to assess mesh independence (Discussed in Section ......). Since the fields solved by the RANS formulation are ensemble averaged, we can assume that the flow over each scale is identical. We therefore define periodic boundary conditions in the streamwise ($x$) direction, and symmetry boundaries in the $z$ direction. The shark scale scale surface is placed at the base of the channel, $y=0$, and a flat wall is placed at $y=2 \delta$, where $\delta$ is the half-channel height. The bulk flow Reynolds number is set to $Re_b = \delta U_b/ \nu = 13500$, where $U_b$ is the bulk velocity. For a smooth walled channel, this corresponds to a shear Reynolds number of $Re_\tau = 395$. This particular Reynolds number is commonly adopted in channel flow literature which allows validation to occur. The wall-unit length scale is therefore $\delta_\nu = u_\tau \nu /u_\tau = 1/395$ which is used to estimate the cell sizes when constructing the meshes observed in Figure \ref{figure:rans:methodology:periodicDomain}.
+The three points, $x_1$, $x_2$, and $x_3$, are used to define wall-normal profiles by which mesh independence is assessed. Since the fields solved by the RANS formulation are ensemble averaged, we can assume that the flow over each scale is identical. We therefore define periodic boundary conditions in the streamwise ($x$) direction, and symmetry boundaries in the $z$ direction. The shark scale scale surface is placed at the base of the channel, $y=0$, and a flat wall is placed at $y=2 \delta$, where $\delta$ is the half-channel height. The bulk flow Reynolds number is set to $Re_b = \delta U_b/ \nu = 13500$, where $U_b$ is the bulk velocity. For a smooth walled channel, this corresponds to a shear Reynolds number of $Re_\tau = 395$. The wall-unit length scale is therefore $\delta_\nu = \nu /u_\tau = 1/395$ which is used to estimate the cell sizes when constructing the meshes observed in Figure \ref{figure:rans:methodology:periodicDomain}.
 
-SnappyHexMesh software is used to mesh the domain. The refinement is based on a cell level specification, whereby each level splits the cell size of the previous level into 8 smaller cells. Level 0 corresponds to the base mesh size, and a level 1 cell would have each of its edges halved in length. The effect of this can be observed in Figure \ref{figure:rans:methodology:meshExamples}. As the distance from the scales increases, there are several jumps in cell size before reaching that of the base mesh.
+SnappyHexMesh software is used to mesh the domain. Refinement is based on a cell level specification, whereby each level splits the cell size of the previous level into 8 smaller cells. Level 0 corresponds to the base mesh size, and a level 1 cell would have each of the level 0 cells edges halved in length. The effect of this can be observed in Figure \ref{figure:rans:methodology:meshExamples}. As the distance from the scales increases, there are several jumps in cell size before reaching that of the base mesh.
 %
 \begin{figure}[!b]
 \centering
 \includegraphics[width = \linewidth]{images/CFD_meshIndependence/meshExamples.png}
-\caption{meshes ...}
+\caption{Three meshes corresponding to C1 (left), C2 (center), and C3 (right).}
 \label{figure:rans:methodology:meshExamples}
 \end{figure}
 %
@@ -942,7 +885,7 @@ Three cases are presented in this work, each with a mesh of increasing resolutio
 %
 \begin{table}
 \centering
-\caption{..............}
+\caption{Mesh statistics.}
 \label{table:rans:meshStats}
 \begin{tabular}{c c c c c}
 \hline
@@ -957,10 +900,11 @@ C3	&	14	&	117065	&	113105	&	12167	\\
 \end{tabular}
 \end{table}
 %
- At least \SI{90}{\%} of the cells in the domain lie below $y^+ < 40$ for each of the cases. case C1 is the 'coarse' solution, with a maximum cell size of 18, and large jumps between cell sizes. C2 has finer cells but still has large jumps. C3 is the same specifications as C2 but has smoother transitions i.e more cells in each layer. The size of the cells covering the STL shark scale are very similar for C2 and C3 cases. 
+ At least \SI{90}{\%} of the cells in the domain lie below $y^+ < 40$ for each of the cases. case C1 is the `coarse' solution, with a maximum cell size of 18, and large jumps between cell sizes. C2 has finer cells but still has large jumps. C3 is the same specifications as C2 but has smoother transitions i.e more cells in each layer. The size of the cells covering the STL shark scale are very similar for C2 and C3 cases. 
  
-Mesh independence is assessed in two ways; the $y$ dependence of several variables is plotted at three locations, specified in Figure \ref{figure:rans:methodology:periodicDomain3}. In addition to this, the errors associated with pressure, and absolute velocity gradient, over the shark scale surface are analysed. For a scalar, $\phi$, independence is assessed by interpolating the solution over the scale surface onto the finest mesh scale surface. This ensures that cells coincide, and solutions can be directly compared. The values of $\phi$ over the finest mesh are denoted $\phi_{REF}$, and are scaled such that their minimum value is 0 and their maximum is 1:
+Mesh independence is assessed in two ways; the $y$ dependence of several variables is plotted at three locations, specified in Figure \ref{figure:rans:methodology:periodicDomain3}. In addition to this, the errors associated with pressure and absolute velocity gradient, over the shark scale surface, are analysed. The error associated with a scalar $\phi$ is assessed by interpolating the solution over the scale surface onto the finest scale surface (C3). This ensures that cells coincide, and solutions can be directly compared. The values of $\phi$ over the finest mesh are denoted $\phi_{REF}$, and are scaled such that their minimum value is 0 and their maximum is 1:
 \begin{equation}
+\label{equation:rans:error1}
 \overline{\phi}_{\text{REF}} = \frac{\phi_{\text{REF}}-\text{min}(\phi_{\text{REF}})}{\text{max}(\phi_{\text{REF}})-\text{min}(\phi_{\text{REF}})}.
 \end{equation}
 where $\overline{\phi}_{\text{REF}}$ is the scaled reference value of $\phi$. Similarly, $\phi$, the coarse mesh solution, is translated to a minimum value of 0 and then scaled by the same amount as $\phi_{\text{REF}}$:
@@ -969,13 +913,16 @@ where $\overline{\phi}_{\text{REF}}$ is the scaled reference value of $\phi$. Si
 \end{equation}
 The error is defined as the root-mean-square of the difference between $\phi$ and $\phi_{\text{REF}}$:
 \begin{equation}
+\label{equation:rans:error2}
 \text{Error}(\phi) = \sqrt{(\overline{\phi}_{\text{REF}} - \overline{\phi})^2}
 \end{equation}
 
-\subsection{Results and discussion}
-Figures \ref{figure:rans:Uz} to \ref{figure:rans:omega} indicate very little difference between the three cases. Profiles of velocity, turbulent kinetic energy, and turbulent frequency, collapse for all three cases. Discrepancies can be observed between C1 and the other two cases when considering the magnitude of velocity gradient profiles; the maximum point is under predicted for the $x_1$ and $x_3$ profiles. It is only when considering the profiles of pressure that C2 profile becomes separate from the C3 profile. A possible reason for this is that the pressure is not explicitly stated by the adopted boundary conditions; the walls and symmetry planes adopt neumann conditions, and the periodic boundaries specify an iterative pressure gradient which maintains a constant mass flux. For this reason
+\subsection{Results and Discussion}
+\label{section:rans:results}
+The purpose of this section is to determine whether the current cases are mesh independent; for this reason, comparisons between smooth and sharkskin surfaces are not discussed. These comparisons will be made when LES data sets are available for validation.
+
 %PROFILES: Ux
-\begin{figure}
+\begin{figure}[b]
 \centering
 \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X1_Ux.png}\hfill \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X2_Ux.png}\hfill \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X3_Ux.png}\hfill
 \caption{Profiles of cross-stream velocity, normalised by the bulk velocity. Locations of the profiles are $x_1$ (left), $x_2$ (center), and $x_3$ (right), which can be observed in Figure \ref{figure:rans:methodology:periodicDomain3}.}
@@ -1028,115 +975,91 @@ Figures \ref{figure:rans:Uz} to \ref{figure:rans:omega} indicate very little dif
 \includegraphics[width=0.33\linewidth]{images/CFD_meshIndependence/X3_omega.png}\hfill\caption{Profiles of turbulent frequency, normalised by the bulk velocity and half channel height. Locations of the profiles are $x_1$ (left), $x_2$ (center), and $x_3$ (right), which can be observed in Figure \ref{figure:rans:methodology:periodicDomain3}. For legend, see Figure \ref{figure:rans:Uz}.}
 \label{figure:rans:omega}
 \end{figure}
+%
+%
+Figures \ref{figure:rans:Uz} to \ref{figure:rans:omega} indicate very little difference between the profiles of velocity, turbulent kinetic energy, and turbulent frequency, for the three cases. Discrepancies can be observed between C1 and the other two cases when considering the magnitude of velocity gradient profiles; the maximum point is under predicted for the $x_1$ and $x_3$ profiles. It is only when considering the profiles of pressure that the C2 profile becomes separate from the C3 profile. A possible reason for this is that the pressure is not explicitly stated by the adopted boundary conditions; the walls and symmetry planes adopt Neumann conditions, and the periodic boundaries specify an iterative pressure gradient which maintains a constant mass flux. For this reason, only the pressure gradient is specified at the boundaries. To overcome this, a reference pressure of $0$ is assigned to a fixed location on the top wall. Since the mesh density varies between the different cases, the interpolation between this point and the near wall cells could be the cause of the differences observed in Figure \ref{figure:rans:p}. This is certainly something to investigate in the future.
 
-
+Figures \ref{figure:rans:pressureError} and \ref{figure:rans:velocityGradientError} show how the errors associated with velocity gradient and pressure vary over the surface of the scale.
 %contour plots: pressure
 \begin{figure}
 \centering
 \includegraphics[height=3.1cm]{images/CFD_meshIndependence/tc3_p.png}\hfill \includegraphics[height=3.1cm]{images/CFD_meshIndependence/tc5_p_bar.png}
+\caption{Contours of the error, associated with pressure, between C1 and C3 (left), and C2 and C3 (right), over the scale surface.}
+\label{figure:rans:pressureError}
 \end{figure}
-
 %contour plots: gradU
 \begin{figure}
 \centering
-\includegraphics[height=3.1cm]{images/CFD_meshIndependence/tc3_gradU.png}\hfill \includegraphics[height=3.1cm]{images/CFD_meshIndependence/tc5_gradU_bar.png}\\
+\includegraphics[height=3.1cm]{images/CFD_meshIndependence/tc3_gradU.png}\hfill \includegraphics[height=3.1cm]{images/CFD_meshIndependence/tc5_gradU_bar.png}
+\caption{Contours of the error, associated with velocity gradient, between C1 and C3 (left), and C2 and C3 (right), over the scale surface.}
+\label{figure:rans:velocityGradientError}
 \end{figure}
+ The errors are calculated using \eqref{equation:rans:error1} to \eqref{equation:rans:error2}, where the reference case is C3. It should be noted that the swirling and feint checker-board patterns are likely features of the interpolation, but the figures do highlight the regions of the largest error. When considering the pressure, the error is negligible for both cases over most of the scale surface. However, errors exceed \SI{10}{\%} near the leading edge of the C1 case, and \SI{5}{\%} for the C2 case. These are further emphasised when considering the velocity gradient; the high error regions for pressure and velocity gradient coincide for the C1 case, but cover a larger proportion of the scale for the velocity gradient. The location of maximum velocity gradient error for the C2 case is located on the side edge of the scale, covering only a few cells. However, the number of cells covering the scale surface is nearly identical for the C2 and C3 cases (see Table \ref{table:rans:meshStats}). This suggests that the smoother transition between the fine surface mesh and the background mesh has larger implications on the near-surface flow than the fields captured by the profile plots. 
+ 
+When comparing the profile plots and the error contours several conclusions can be drawn; the background mesh captures the flow field well for all three cases, although discrepancies do appear when considering the profiles of pressure. These will be investigated in future work. In addition to this, the profiles indicate little dependence on the resolution of the scale surface mesh. However, the surface mesh does have large implications on the flow close to the scales. In addition to this, smooth transitions from the fine surface cells to the background mesh have a large effect on the near-surface flow. Further  work will investigate methods of applying the smooth transitions in order to maintain mesh independence but reduce the total number of cells. The current models are not expensive to run, but when extending these mesh parameters to an LES, the additional cells will become significant. 
 
 \newpage
-\section{Large eddy simulation of a channel flow}
+\section{Large Eddy Simulation (LES) of a Channel Flow}
 \label{section:les}
-In order to exploit periodicity, an infinitely long and wide channel flow with scales on one wall will be simulated. Large-eddy simulation will be adopted in order to model the flow at a feasibly high resolution for a bulk Reynolds number greater than $Re_b = 20\ 000$. The precise Reynolds number will be determined later this year when designing the LDA experiments. Before implementing the LES on a channel flow with scales, the code is validated with smooth walls. This is carried out at a low Reynolds number of $Re_\tau = 180$ to make use of the extensive DNS database of \cite{vreman2014}. By validating at this Reynolds number we can determine suitable model and solver parameters without requiring extensive computing costs. Over the following year the model will be extended to a high Reynolds number to provide a base case for both comparisons against fish scale surfaces, and an estimation of the number of cells required.
+LES is adopted in this project in order to investigate the effects of sharkskin on the turbulent structures in a boundary layer. The results will also be used to validate the RANS study of Section \ref{section:rans}. This study will be carried by simulation a fully developed channel flow, with and without shark scales attached to one wall. The present work carries out LES on a smooth walled channel, in order to validate the numerical methods, the turbulence closure, and provide a reference case for comparisons in future work. This is carried out at a Reynolds number of $Re_\tau=180$, allowing the DNS database of \cite{vreman2014} to be used for validation. 
 
 \subsection{Mathematical Model}
-\label{section:mathematicalModel}
-Large eddy simulation is a technique used to study turbulence whereby the large turbulent structures are resolved and the small structures are modelled as a stress term. This is achieved by decomposing the velocity field into a filtered and residual term so that $\vecti{U} = \overline{\vecti{U}} + \vecti{u}'$. The filtered momentum (\ref{equation:momentum}) and continuity (\ref{equation:continuity}) equations \citep{pope2001} are defined as
+The equations solved in the present work are detailed in this section, although a full derivation can be found in Appendix B. Two models are adopted, the \cite{smagorinsky1963} model and the dynamic Lagrangian model of \cite{meneveau1996}. Both of these models solve filtered continuity and momentum equations:
 \begin{equation}
-\label{equation:momentum}
-\pdev{\vecti{\overline{U}}}{t} + \pdev{\vecti{\overline{U}} \vectj{\overline{U}}}{\vectj{x}} - \pdev{}{\vectj{x}}(\matij{\overline{\sigma}} + \matij{\tau}) = - \pdev{\overline{P}}{\vecti{x}},
+\label{equation:les:cont}
+\pdev{\overline{U}_i}{x_i} = 0,
 \end{equation}
 and
 \begin{equation}
-\label{equation:continuity}
-\pdev{\vecti{\overline{U}}}{\vecti{x}} = 0,
+\label{equation:les:momentumFil}
+\pdev{\overline{U}_i}{t} + \pdev{\overline{U}_i \overline{U}_j}{x_j} + \pdev{\tau_{ij}^r}{x_j} - \pdev{\overline{\sigma}_{ij}}{x_j} = - \pdev{\overline{P}}{x_i},
 \end{equation}
-where $\matij{\overline{\sigma}} = 2\nu \matij{\overline{S}}$ represents the resolved viscous stress tensor, $\overline{P} = \overline{p}/\rho$ is the resolved kinematic pressure, and $\matij{\overline{S}} = \frac{1}{2}\left( \pdev{\vecti{\overline{U}}}{\vectj{x}} + \pdev{\vectj{\overline{U}}}{\vecti{x}} \right)$ is the filtered rate of strain tensor. $\tau_{ij} = \vecti{\overline{U}} \vectj{\overline{U}} - \overline{\vecti{U} \vectj{U}}$ represents the effect of the unfiltered velocity field on the filtered field. This may be approximated using the model of \cite{smagorinsky1963}:
+where the filtered velocity and pressure fields are given by $\overline{U}_i = U_i - u_i'$ and $\overline{P} = P_i - p_i'$, where $u_i'$ and $p_i'$ are the residual fields. $\tau_{ij}^r$ represents the anisotropic residual stress term, and accounts for the effect of sub-grid scale motion on the filtered fields:
 \begin{equation}
-\label{equation:tau}
-\matij{\tau}-\frac{1}{3}\matij{\delta}\tau_{kk} = 2\nu_{t} \matij{\overline{S}},
+\tau_{ij}^R \equiv  \tau_{ij}^r + \frac{1}{3} \tau_{kk}^R \delta_{ij}  \equiv \overline{U_i U_j} - \overline{U}_i \overline{U}_j,
 \end{equation}
-where $\nu_t$ is the sub-grid scale viscosity. \cite{smagorinsky1963} defines this sub-grid scale viscosity as
+where $\tau_{ij}^R$ represents the residual stress tensor; its isotropic component is incorporated into the residual pressure term in \eqref{equation:les:momentumFil}. The model of \cite{smagorinsky1963} relates this stress term to a turbulent viscosity:
 \begin{equation}
-\label{equation:smagorinsky}
-\nu_t = (C_s \Delta)^2 |\overline{S}|,
+\label{equation:les:residualStress}
+\tau_{ij}^r = - 2 (C_s \overline{\Delta})^2 |\overline{S}| \overline{S}_{ij},
 \end{equation}
-where $C_s$ is the Smagorinsky constant and $\Delta$ is the filter width, based on the local grid size. The magnitude of the filtered rate of strain tensor is defined as $|\overline{S}|= (2 \matij{\overline{S}} \matij{\overline{S}})^{1/2}$. The Smagorinsky model assumes a constant value of $C_s = 0.17$ \citep{smagorinsky1963}. However, the assumption that $C_s$ does not vary in space or time is a strong limitation to the model, as will be further discussed in section \ref{section:lesResults}. An alternative method, first suggested by \cite{germano1991}, estimates the coefficient by filtering \eqref{equation:momentum} and \eqref{equation:continuity} a second time. By applying this filter we can define an addition stress term, equivalent to (\ref{equation:tau}) just on a coarser grid of filter width $\widetilde{\Delta} = 2\Delta$: $\matij{T}-\frac{1}{3}\matij{\delta}T_{kk} =\vecti{\widetilde{\overline{U}}}\vectj{\widetilde{\overline{U}}}-\widetilde{\overline{\vecti{U}\vectj{U}}}$. By adopting the Germano identity \citep{germano1991}, we relate the scales of motion between the two filter widths:
+where $c_s$ is the Smagorinsky constant, $\overline{\Delta}$ is the filter width (taken as the cube root of the local cell volume), and $\overline{S}$ and $\overline{S}_{ij}$ are given by,
 \begin{equation}
-\label{equation:germano}
-\matij{L} = \matij{T}^r - \matij{\widetilde{\tau}}^r = \vecti{\widetilde{\overline{U}}}\vectj{\widetilde{\overline{U}}} - \widetilde{\vecti{\overline{U}}\vectj{\overline{U}}}.
+\overline{S}_{ij} = \frac{1}{2}\left(  \pdev{\overline{U}_i}{x_j} + \pdev{\overline{U}_j}{x_i}  \right), \hspace{1cm} |\overline{S}| = (2 \overline{S}_{ij} \overline{S}_{ij})^{1/2}.
 \end{equation}
-Unlike the equations for $\tau_{ij}$ and $T_{ij}$, equation \ref{equation:germano} can be solved from the filtered velocity field.  Assuming $\matij{T}$ takes the same form as $\matij{\tau}$, $L_{ij}$ can be solved to find $C_s$:
+The present work adopts a Smagorinsky constant of $C_s = 0.17$. Thus, the Smagorinsky model estimates $\tau_{ij}^r$ using an algebraic relationship with the fluid rate of strain, which is subsequently used to close the momentum and continuity equations, \eqref{equation:les:momentumFil} and \eqref{equation:les:cont}. The dynamic Lagrangian model of \cite{meneveau1996} addresses the limitation that $C_s$ does not vary in space or time. By applying a second filter to the momentum equation, a relationship for $C_s$ can be derived by taking the difference between the once- and twice-filtered velocity fields;
 \begin{equation}
-L_{ij} = 2\Delta^2 \left[	\widetilde{C_s^2 |\overline{S} | \matij{\overline{S}}} - 4 C_s^2 |\widetilde{\overline{S}}| \matij{\widetilde{\overline{S}}}		 \right].
+\label{equation:les:Cs2_flmfmm}
+C_s^2 = \frac{(L_{ij}M_{ij})_{ave}}{(L_{ij}M_{ij})_{ave}} = \frac{f_{LM}}{f_{MM}},
 \end{equation}
-This represents 5 equations with 1 unknown, the error of which is given by
+where $L_{ij}$ and $M_{ij}$ can be calculated from the filtered velocity field:
 \begin{equation}
-\label{equation:CsError}
-e_{ij} = 	L_{ij} - M_{ij}C_s^2			,
+\label{equation:les:germano}
+L_{ij}  = \widetilde{\overline{U}_i \overline{U}_j} - \widetilde{\overline{U}}_i \widetilde{\overline{U}}_j,
 \end{equation}
-where $$M_{ij} =  2\Delta^2 \left[	\widetilde{|\overline{S} | \matij{\overline{S}}} - 4 |\widetilde{\overline{S}}| \matij{\widetilde{\overline{S}}} \right].$$
-It is assumed that the constant $C_s$ does not vary spatially between the scales $\Delta$ and $2\Delta$, allowing it to be taken out of the filter term.
-
-Typically the error is minimised by differentiating equation (\ref{equation:CsError}) with respect to $C_s^2$. However, this method requires both spatial averaging, in homogeneous directions, and clipping, in order to ensure $C_s$ remains positive (energy dissipating). An alternative to this restrictive dynamic model is to average along particle paths using the model of \cite{meneveau1996}. In a Lagrangian frame of reference, the trajectory of a fluid particle for earlier times $t'<t$ is given by
+and,
 \begin{equation}
-\label{equation:particlePath}
-\vect{z}(t') = \vect{x} - \int_{t'}^t \overline{\vect{u}}(\vect{z}(t''),t'')dt''.
+\label{equation:les:LijMij}
+M_{ij} = 2 \overline{\Delta}^2 \widetilde{|\overline{S}|\overline{S}_{ij}} - 2 \widetilde{\overline{\Delta}}^2 |\widetilde{\overline{S}}|\widetilde{\overline{S}}_{ij},
 \end{equation}
-In terms of the Lagrangian description the error to be minimised, (\ref{equation:CsError}), is
+where the tilde represents the second filtering operator, and $\widetilde{\overline{\Delta}} = 2\overline{\Delta}$ is the respective filter width. \cite{meneveau1996} construct relaxation equations for $f_{LM}$ and $f_{MM}$, equivalent to averaging along particle paths with a relative weight $\text{exp}[-(t-t')/T]$, where $t'$ is the earlier time and $T$ is the relaxation time:
 \begin{equation}
-\label{equation:lagrangianCsError}
-e_{ij}(\vect{z},t') = 	L_{ij}(\vect{z},t') - M_{ij}(\vect{z},t')C_s^2(\vect{x},t'),
-\end{equation}
-where it is assumed that $C_s$ can be removed from the filter by assuming it does not vary strongly over the scale of the test filter, an assumption that is investigated and justified by \cite{meneveau1996}. In order to minimise this error we define the total error as the pathline accumulation of the local error squared, 
-\begin{equation}
-\label{equation:ErrorSquared}
-E = \int_{-\infty}^t e_{ij}(\textbf{z}(t'),t')e_{ij}(\textbf{z}(t'),t') W(t-t') dt',
-\end{equation}
-where $W(t-t')$ is a weighting function, introduced in order to control the contributions from times closer to $t$. Differentiating with respect to $C_s^2$, and making use of (\ref{equation:lagrangianCsError}), we obtain
-\begin{equation}
-\label{equation:CsFlmFmm}
-C_s^2(\vect{x},t) = \frac{f_{LM}}{f_{MM}},
-\end{equation}
-where
-\begin{equation}
-\label{equation:flm}
-f_{LM} = \int_{-\infty}^t L_{ij}M_{ij}(\vect{z}(t'),t') W(t-t') dt',
-\end{equation}
-and
-\begin{equation}
-\label{equation:fmm}
-f_{MM} = \int_{-\infty}^t M_{ij}M_{ij}(\vect{z}(t'),t') W(t-t') dt'.
-\end{equation}
-A convenient choice of the weighting function is $W(t-t')=T^{-1} e^{-(t-t')/T}$ \citep{meneveau1996}. This results in two transport equations for $f_{LM}$ and $f_{MM}$ rather than backward integrals in time:
-\begin{equation}
-\label{equation:flmTransport}
-\frac{D f_{LM}}{Dt} = \frac{1}{T}(L_{ij}M_{ij} - f_{LM}),
+\label{equation:les:flmTransport}
+\pdev{f_{LM}}{t} + \pdev{}{x_j}(\overline{U}_j f_{LM}) = \frac{1}{T}(L_{ij}M_{ij} - f_{LM}),
 \end{equation}
 \begin{equation}
-\label{equation:fmmTransport}
-\frac{D f_{MM}}{Dt} = \frac{1}{T}(M_{ij}M_{ij} - f_{MM}).
+\label{equation:les:fmmTransport}
+\pdev{f_{MM}}{t} + \pdev{}{x_j}(\overline{U}_j f_{MM}) = \frac{1}{T}(M_{ij}M_{ij} - f_{MM}).
 \end{equation}
-$T$ represents a timescale that controls the memory length. There are some natural choices for this parameter, highlighted by \cite{meneveau1996}, whereby the timescale can be controlled by the values of $f_{LM}$ and $f_{MM}$. By taking $T=\theta \Delta (f_{LM} f_{MM})^{-1/8}$, where $\theta$ is a constant of order unity, the memory time will be reduced in both regions of high straining (high $f_{MM}$) and large nonlinear energy transfer (high $f_{LM}$). Typically $\theta=1.5$ for most cases, although there is some solution dependence on this value. This dependency will be investigated in future work. 
-
-With these parameters now defined, the transport equations (\ref{equation:flmTransport}) and (\ref{equation:fmmTransport}) can be solved and used to determine $C_s$. The turbulent stress tensor equation, (\ref{equation:tau}), can now be solved, closing our set of equations.
+The present work adopts a relaxation time of $T = 1.5 \overline{\Delta} (f_{LM}f_{MM})^{-1/8}$, as recommended by \cite{meneveau1996}. Subsequently, the memory time is reduced in regions of high straining (high $f_{MM}$) and large nonlinear energy transfer (high $f_{LM}$). Although much less susceptible to negative values \citep{meneveau1996}, $f_{LM}$ is clipped in order to ensure physicality (positive $C_s^2$). The filtered momentum and continuity equations are therefore solved by the following steps: $M_{ij}$ and $L_{ij}$ are calculated from the filtered fields using \eqref{equation:les:germano} and \eqref{equation:les:LijMij}; a top-hat filter is adopted for the second filtering operator. We then solve the relaxation equations, \eqref{equation:appendixB:flmTransport} and \eqref{equation:appendixB:fmmTransport} and calculate the Smagorinsky coefficient from \eqref{equation:les:Cs2_flmfmm}. This is then used to calculate the residual stress, as per the standard Smagorinsky model. A more detailed derivation of the filtered equations can be found in Appendix B.
 
 \subsection{Numerical Implementation}
-The equations are solved using OpenFOAM, a finite volume platform. The equations are discretised over a channel of dimensions $4.2\delta \times 2\delta \times 12.6\delta$ where $\delta$ is the channel half height. Similar dimensions are used by several authors such as \cite{moser1999}, and \cite{vreman2014} for a Reynolds number of $Re_\tau = 180$, although the influence of domain size on the turbulent statistics is still poorly understood \citep{vreman2014}. Three simulations are presented in this report, one which which solves equations for only half the channel height and applies symmetry boundary conditions at the central plane, $y=\delta$. If validated, this model could reduce the number of required cells. The half channel simulation adopts a constant value of $C_s = 0.17$, validated against a full channel simulation using the same model. The final simulation adopts the dynamic Lagrangian model discussed in Section \ref{section:mathematicalModel}.
+The equations are solved using OpenFOAM, a finite volume platform. They are discretised over a channel of dimensions $12.6\delta \times 2\delta \times 4.2\delta $ where $\delta$ is the channel half height. Similar dimensions are used by several authors such as \cite{moser1999}, and \cite{vreman2014} for a Reynolds number of $Re_\tau = 180$, although the influence of domain size on the turbulent statistics is still poorly understood \citep{vreman2014}. Two simulations are presented in this report; one adopting the \cite{smagorinsky1963} closure and one adopting the dynamic Lagrangian closure of \cite{meneveau1996}.
 
-The mesh statistics are presented in Table \ref{table:meshStatistics}. The total number of cells is $\sim 4M$, much fewer than an equivalent finite difference DNS of \cite{vreman2014} who used $\sim 33M$ grid points. A Cosine distribution is adopted in the wall-normal direction in order to capture the large gradients close to the wall. The y-normal boundary conditions can be observed from Table \ref{table:boundaryConditions}. The boundary conditions for $f_{LM}$ and $f_{MM}$ are defined by \cite{meneveau1996}. Periodic boundary conditions are applied in both streamwise and spanwise direction with a forcing term added to the momentum equation (\ref{equation:momentum}) in order to maintain a constant bulk Reynolds number in the $z$ direction. The forcing term is derived by decomposing the pressure gradient into an average and fluctuating component; the average pressure gradient is adjusted each timestep in order to ensure a fixed mean velocity through the periodic faces, $ \overline{\vect{U}}_{ave} $. A description of this technique is presented by \cite{murthy1997}.
-
+The mesh statistics are presented in Table \ref{table:meshStatistics}. The total number of cells is $\sim 4M$, much fewer than an equivalent finite difference DNS of \cite{vreman2014} who used $\sim 33M$ grid points. The mesh is uniform in $x$ and $z$, but cells are clustered near the walls in the $y$ direction in order to capture the large gradients in pressure and velocity near the wall. Periodic boundary conditions are applied in both streamwise and spanwise direction with a forcing term added to the momentum equation \eqref{equation:les:momentumFil} in order to maintain a constant bulk Reynolds number in the $x$ direction. The forcing term is derived by decomposing the pressure gradient into an average and fluctuating component; the average pressure gradient is adjusted each timestep in order to ensure a fixed mean velocity through the periodic faces, $ \overline{\vect{U}}_{ave} $. A description of this technique is presented by \cite{murthy1997}.
 \begin{table}[!b]
 \centering
-\caption{Mesh statistics for the three LES cases. The half channel case takes $N_y = 64$}
+\caption{Mesh statistics for the two LES cases.}
 \label{table:meshStatistics}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
@@ -1144,68 +1067,30 @@ $N_x$  & $N_y$  & $N_z$  & $\Delta x^+$ & $\Delta z^+$ & $\Delta y^+_{min}$ & $\
 $160$ & $128$ & $192$ & $4.7$     & $11.8$    & $0.18$           & $4.5          $ \\ \hline
 \end{tabular}
 \end{table}
-
-A convenient choice for the parameters $\nu$ and $ \overline{\vect{U}}_{ave} $ will fix the bulk Reynolds number to $Re_b = 2800$, corresponding to a shear Reynolds number of $Re_\tau \approx 180$. The choice of fixing the bulk flow Reynolds number is more natural when considering the validation of further results against experiments later this year. For a channel flow, $Re_\tau$ can be determined from the pressure gradient over the periodic boundary by applying a force balance over the domain:
-$$	Re_\tau = u_\tau \delta / \nu, \hspace{1cm} u_\tau = \sqrt{\tau_w / \rho},	\hspace{1cm}	\tau_w / \rho = \delta \pdev{P}{z}\bigg\vert_{ave}. 	$$
+ A convenient choice for the parameters $\nu$ and $ \overline{\vect{U}}_{ave} $ fix the bulk Reynolds number to $Re_b = 2800$, corresponding to a shear Reynolds number of $Re_\tau \approx 180$. The choice of fixing the bulk flow Reynolds number is more natural when considering the validation of results against experiments later this year. For a channel flow, $Re_\tau$ can be determined from the pressure gradient over the periodic boundary by applying a force balance over the domain:
+\begin{equation}
+u_\tau^2 = \frac{\tau_w}{\rho} = \delta \pdev{P}{z}\bigg\vert_{ave}.
+\end{equation}
 A convenient choice of parameters are $\delta = 1$ and $\nu = 1/180$ resulting in an average shear velocity of $u_\tau \approx 1$ and $Re_\tau \approx 180$. The initial state makes use of a perturbation utility in OpenFOAM which adds instabilities to a flow profile of mean velocity $ \overline{\vect{U}}_{ave} $. These instabilities grow between timesteps until a statistically steady and turbulent state is present. 
 
-\begin{table}[!t]
-\centering
-\caption{Boundary conditions for the three LES cases.}
-\label{table:boundaryConditions}
-\begin{tabular}{ll|l|l|}
-\cline{3-4}
-                                                                                                             &           & $y=0$, $y=2\delta$ (full channel) & $y=\delta$ (half channel) \\ \cline{2-4} 
-\multicolumn{1}{l|}{}                                                                                        & Variable  & Condition                         & Condition                 \\ \hline
-\multicolumn{1}{|l|}{Half channel}                                                                           & $U$       & Dirichlet                         & Neumann                   \\
-\multicolumn{1}{|l|}{}                                                                                       & $P$       & Neumann                           & Neumann                   \\
-\multicolumn{1}{|l|}{}                                                                                       & $\nu_{t}$ & Neumann                           & Neumann                   \\ \hline
-\multicolumn{1}{|l|}{Full channel}                                                                           & $U$       & Dirichlet                         & -                         \\
-\multicolumn{1}{|l|}{}                                                                                       & $P$       & Neumann                           & -                         \\
-\multicolumn{1}{|l|}{(Smagorinsky Model)}                                                                    & $\nu_{t}$ & Neumann                           & -                         \\
-\multicolumn{1}{|l|}{\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}(Dynamic\\  Lagrangian Model)\end{tabular}}} & $f_{LM}$  & Dirichlet                         & -                         \\
-\multicolumn{1}{|l|}{}                                                                                       & $f_{MM}$  & Neumann                           & -                         \\ \hline
-\end{tabular}
-\end{table}
-
-The momentum (\ref{equation:momentum}), continuity (\ref{equation:continuity}), and the two Lagrangian transport equations (\ref{equation:flmTransport}) and (\ref{equation:fmmTransport}) are discretised using second order schemes in both space and time. Backward Euler is adopted for discretisation in time and Gaussian integration in space. Linear interpolation is adopted in order to interpolate values from cell centres to cell faces. The PISO algorithm (Pressure-Implicit with Splitting of Operators) of \cite{issa1986} is adopted, whereby a pressure equation is derived from the momentum (\ref{equation:momentum}) and continuity equations (\ref{equation:continuity}). The PISO scheme operates using a two-step process: A predictor step and a corrector step. The semi-discrete form of (\ref{equation:momentum}) can be written as
-\begin{equation}
-\label{equation:piso1}
-\vect{C} \vect{u}^* =  \vect{A}\vect{u}^* + \vect{H'}\vect{u}^* =\vect{r} - \nabla \vect{P}^n,
-\end{equation} 
-where $\vect{C}$ represents the implicit coefficient array, $\vect{u}^*$ is the predicted velocity, $\vect{r}$ is the explicit source terms and $\vect{P}^n$ represents the kinematic pressure at the previous time step. The matrix $\vect{C}$ can be split into diagonal and off diagonal components, $\vect{C} = \vect{A} + \vect{H'}$, and the linear equation (\ref{equation:piso1}) can be solved for $\vect{u}^*$. A Gauss-Seidel solver is adopted to solve this system, completing the predictor step. (\ref{equation:piso1}) can be manipulated in order to derive an equation to correct both the velocity and pressure from the predicted velocity:
-\begin{equation}
-\label{equation:piso2}
-\vect{A}\vect{u}^{**} + \vect{H'}\vect{u}^* =\vect{r} - \nabla \vect{P}^*,
-\end{equation}
-\begin{equation}
-\label{equation:piso3}
-\vect{u}^{**}  = \vect{A}^{-1}\vect{H} - \vect{A}^{-1}\nabla \vect{P}^*,
-\end{equation}
-where $\vect{H} = \vect{r} - \vect{H'}\vect{u}^*$. The inversion of $\vect{A}$ is trivial since it is symmetrical. By recognising that $\nabla \vect{u}^{**} = 0$, a Poisson equation for the corrected pressure can be derived:
-\begin{equation}
-\label{equation:piso4}
-\nabla^2 ( \vect{A}^{-1} \vect{P}^* ) = \nabla \cdot (\vect{A}^{-1} \vect{H}).
-\end{equation}
-This Laplacian equation is solved using a Geometric-algebraic multi-grid solver in order to update the pressure. The corrected velocity equation (\ref{equation:piso3}) is then solved to update the velocity. In order to ensure second order accuracy, (\ref{equation:piso4}) and (\ref{equation:piso3}) and solved twice, as recommended by \cite{issa1986}. Equations (\ref{equation:flmTransport}) and (\ref{equation:fmmTransport}) are discretised using the same method as the momentum equation and solved using a Gauss-Seidel solver. All equations are iteratively solved until a tolerance of $10^{-8}$ is met. An adaptive time-stepping scheme is adopted in order to ensure the Courant number does not exceed $0.5$. Statistical averaging is carried out between the time intervals $t=10 \delta / u_\tau$ and $t = 40 \delta / u_\tau$. This interval is much smaller than those adopted by \cite{kim1987} and \cite{vreman2014}, the impact of which will be discussed in Section \ref{section:lesResults}.
+The momentum \eqref{equation:les:momentumFil}, continuity \eqref{equation:les:cont}, and the two Lagrangian transport equations \eqref{equation:les:flmTransport} and \eqref{equation:les:fmmTransport} are discretised using second order schemes in both space and time. Backward Euler is adopted for discretisation in time and Gaussian integration in space. Linear interpolation is adopted in order to interpolate values from cell centres to cell faces. The PISO algorithm (Pressure-Implicit with Splitting of Operators) of \cite{issa1986} is adopted in order to solve the continuity and momentum equations (see Appendix A for details). The subsequent Laplacian equation for pressure is solved using a generalised multigrid method. An adaptive time-stepping scheme is adopted in order to ensure the Courant number does not exceed $0.5$. Statistical averaging is carried out between the time intervals $t=10 \delta / u_\tau$ and $t = 40 \delta / u_\tau$. This interval is much smaller than those adopted by \cite{kim1987} and \cite{vreman2014}, the impact of which will be discussed in Section \ref{section:lesResults}.
 
 Post-processing is carried out in MATLAB; Statistical quantities, such as means and standard deviations, are looped through each time-step directory and averaged in $x$ and $z$. The results of which are compared to those of a spectral DNS code of \cite{vreman2014}.
 
 \subsection{Results and Discussion}
 \label{section:lesResults}
 
-The calculated Reynolds numbers for the three simulations are compared against the DNS code in Table \ref{table:globalVariables}. All three simulations compute a slightly lower Reynolds number than the DNS, due to the method of calculating the forcing term. The target bulk Re was 2800, thus these small discrepancies are expected. The coefficients of friction match very well for both the half-channel and full-channel Smagorinsky models but the dynamic model underpredicts it by $1.11\%$. This will be further discussed when investigating variable profiles.
+The calculated Reynolds numbers for the two simulations are compared against the DNS code in Table \ref{table:globalVariables}. Both simulations compute a slightly lower Reynolds number than the DNS, due to the method of calculating the forcing term. The target bulk Reynolds number was 2800, thus these small discrepancies are expected. The coefficient of friction agrees well with the DNS for the Smagorinsky model, but is under predicted by $1.11\%$ by the dynamic Lagrangian model. This will be further discussed when investigating variable profiles.
 \begin{table}[!b]
 \centering
-\caption{Comparison of global statistics between three LES cases and a DNS.}
+\caption{Comparison of global statistics between two LES cases and a DNS.}
 \label{table:globalVariables}
 \begin{tabular}{l|lr|lr|lr|lr|}
 \cline{2-9}
                                                                                                              & \multicolumn{1}{l|}{$Re_b$} & \begin{tabular}[c]{@{}l@{}}\% to\\ DNS\end{tabular} & \multicolumn{1}{l|}{$Re_\tau$} & \begin{tabular}[c]{@{}l@{}}\% to\\ DNS\end{tabular} & \multicolumn{1}{l|}{$Re_c$} & \begin{tabular}[c]{@{}l@{}}\% to\\ DNS\end{tabular} & \multicolumn{1}{l|}{$C_f$} & \begin{tabular}[c]{@{}l@{}}\% to\\ DNS\end{tabular} \\ \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}DNS (Vreman and\\ Kuerten, 2014)\end{tabular}}               & $2825$                      & -                                                   & $180$                          & -                                                   & $3290$                      & -                                                   & $0.00812$                  & -                                                   \\ \hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Half channel with\\ Smagorinsky model\end{tabular}}          & $2794$                      & $-1.10$                                             & $177.8$                        & $-1.22$                                             & $3273$                      & $-0.52$                                             & $0.00810$                  & $-0.25$                                             \\ \hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Full channel with\\ Smagorinsky model\end{tabular}}          & $2802$                      & $-0.81$                                             & $178.5$                        & $-0.83$                                             & $3269$                      & $-0.64$                                             & $0.00817$                  & $0.62$                                              \\ \hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Full channel with\\ dynamic Lagrangian\\ model\end{tabular}} & $2800$                      & $-0.88$                                             & $177.4$                        & $-1.44$                                             & $3266$                      & $-0.73$                                             & $0.00803$                  & $-1.11$                                             \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Smagorinsky model\end{tabular}}          & $2802$                      & $-0.81$                                             & $178.5$                        & $-0.83$                                             & $3269$                      & $-0.64$                                             & $0.00817$                  & $0.62$                                              \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}dynamic Lagrangian\\ model\end{tabular}} & $2800$                      & $-0.88$                                             & $177.4$                        & $-1.44$                                             & $3266$                      & $-0.73$                                             & $0.00803$                  & $-1.11$                                             \\ \hline
 \end{tabular}
 \end{table}
 
@@ -1214,25 +1099,20 @@ Little discrepancy can be observed from the velocity profiles of Figure \ref{fig
 \centering
 \includegraphics[width=0.5\textwidth]{images/Mean_Vel_linear.png}\hfill
 \includegraphics[width=0.5\textwidth]{images/Mean_Vel_log.png}
-\caption{Comparison of mean velocity profiles for three LES cases and the DNS of \cite{vreman2014}.}
+\caption{Comparison of mean velocity profiles for two LES cases and the DNS of \cite{vreman2014}.}
 \label{figure:velocityProfiles}
 \end{figure}
-Small differences are present for the two Smagorinsky models in regions of high velocity gradient. Much larger differences are present in the root-mean-square (rms) statistics. Figure \ref{figure:rmsVelocityProfiles} indicates that the non-dynamic models underpredict the maximum values significantly in both the wall-normal and cross-stream directions.
+Small differences can be observed in regions of high velocity gradient for the Smagorinsky model. Much larger discrepancies are present in the root-mean-square (rms) statistics. Figure \ref{figure:rmsVelocityProfiles} indicates that the Smagorinsky models underpredicts the maximum values significantly in both the wall-normal and cross-stream directions.
 \begin{figure}[!b]
 \centering
 \includegraphics[width=0.5\textwidth]{images/rms_u.png}\hfill
 \includegraphics[width=0.5\textwidth]{images/rms_v.png}\\
-\includegraphics[width=0.5\textwidth]{images/rms_w.png}
-\caption{Comparison of root-mean-square velocity profiles for three LES cases and the DNS of \cite{vreman2014}. For legend see Figure \ref{figure:velocityProfiles}.}
+\includegraphics[width=0.5\textwidth]{images/rms_w.png}\hfill
+\includegraphics[width=0.5\textwidth]{images/Reynolds_Stress.png}
+\caption{Comparison of root-mean-square velocity profiles, and the Reynolds stresses, for two LES cases and the DNS of \cite{vreman2014}.}
 \label{figure:rmsVelocityProfiles}
 \end{figure}
-The near-wall gradients are also poorly captured by the non-dynamic models, suggesting that the models perform poorly in these regions. The half-channel simulation behaves similarly to the full-channel until getting close to $y=\delta$, at which point the solutions deviate significantly. This trend can be observed in many of the presented results (Figures \ref{figure:rmsVelocityProfiles} to \ref{figure:flatness}) suggesting that the time dependent asymmetries in the flow have a large impact on the time averaged solution. The dynamic-Lagrangian model performs well, almost matching the DNS in all three directions. The small discrepancy in magnitude can be accounted for by the turbulent kinetic energy captured by the sub-grid scale stress term. The two full-channel rms velocity results collapse at $y=\delta$, suggesting that the dynamic Lagrangian model has little impact in regions far from the wall. The Reynolds stresses (Figure \ref{figure:reynoldsStress}) are well predicted by the dynamic model but the maximum is under-predicted by the Smagorinsky model. A reasonable explanation for this is expressed by \cite{pope2001}, who suggests that, for transitional flows, the fixed constant $C_s$ must be reduced in order to predict the sub-grid scale stresses. Since the Reynolds number is low, this explanation seems reasonable.
-\begin{figure}[!t]
-\centering
-\includegraphics[width=0.5\textwidth]{images/Reynolds_Stress.png}
-\caption{Comparison of Reynolds stresses for three LES cases and the DNS of \cite{vreman2014}. For legend see Figure \ref{figure:velocityProfiles}.}
-\label{figure:reynoldsStress}
-\end{figure}
+The near-wall gradients are also poorly captured by the Smagorinsky model, suggesting that the model perform poorly in these regions. The dynamic-Lagrangian model performs well, almost matching the DNS in all three directions. The small discrepancy in magnitude can be accounted for by the turbulent kinetic energy captured by the sub-grid scale stress term. THE RMS of velocity profiles collapse for both models at $y=\delta$, suggesting that the dynamic Lagrangian model has little impact in regions far from the wall. The Reynolds stresses are well predicted by the dynamic model but the maximum is under-predicted by the Smagorinsky model. A reasonable explanation for this is expressed by \cite{pope2001}, who suggests that, for low Reynolds number flows, the fixed constant $C_s$ must be reduced in order to predict the sub-grid scale stresses. Since the Reynolds number is low, this explanation seems reasonable.
 
 The rms of vorticity profiles (Figure \ref{figure:rmsVorticity}) similarly indicate that the dynamic model predicts the flow much better close to the wall.
 \begin{figure}[!t]
@@ -1240,44 +1120,14 @@ The rms of vorticity profiles (Figure \ref{figure:rmsVorticity}) similarly indic
 \includegraphics[width=0.5\textwidth]{images/rms_omega_x.png}\hfill
 \includegraphics[width=0.5\textwidth]{images/rms_omega_y.png}\\
 \includegraphics[width=0.5\textwidth]{images/rms_omega_z.png}
-\caption{Comparison of RMS Vorticity for three LES cases and the DNS of \cite{vreman2014}. For legend see Figure \ref{figure:velocityProfiles}.}
+\caption{Comparison of RMS Vorticity for two LES cases and the DNS of \cite{vreman2014}.}
 \label{figure:rmsVorticity}
 \end{figure}
-The non-dynamic models both significantly underpredict the vorticity fluctuations below $y^+\approx 50$. Near the centre of the channel there is little difference between the two full-channel simulations, again suggesting that the dynamic modelling is most effective near the wall.
-
-The skewness and flatness (kurtosis) of a variable $q$ are defined as
-\begin{equation}
-\label{equation:skewnessAndFlatness}
-S_q = \frac{\langle q^3 \rangle}{{\langle q^2 \rangle}^{3/2}}, \hspace{1cm} 
-F_q = \frac{\langle q^4 \rangle}{{\langle q^2 \rangle}^2}. 
-\end{equation}
-The skewness of velocity indicates the likelihood to take on large positive values (for $S_u > 0$) or large negative values (for $S_u < 0$). A high kurtosis suggests that large intermittent bursts in velocity are present in the flow, whilst a low kurtosis indicates that fluctuations are close to the mean value. The skewness profiles of Figure \ref{figure:skewness} suggest that the averaging time is too short to reach a unique solution, especially in the cross-stream direction. The small magnitudes of $S_u$ suggest a symmetric probability distribution around the mean.
-\begin{figure}[!t]
-\centering
-\includegraphics[width=0.5\textwidth]{images/S_u.png}\hfill
-\includegraphics[width=0.5\textwidth]{images/S_v.png}\\
-\includegraphics[width=0.5\textwidth]{images/S_w.png}
-\caption{Comparison of skewness of velocity for three LES cases and the DNS of \cite{vreman2014}. For legend see Figure \ref{figure:velocityProfiles}.}
-\label{figure:skewness}
-\end{figure}
-\begin{figure}[!t]
-\centering
-\includegraphics[width=0.5\textwidth]{images/F_u.png}\hfill
-\includegraphics[width=0.5\textwidth]{images/F_v.png}\\
-\includegraphics[width=0.5\textwidth]{images/F_w.png}
-\caption{Comparison of flatness of velocity for three LES cases and the DNS of \cite{vreman2014}. For legend see Figure \ref{figure:velocityProfiles}.}
-\label{figure:flatness}
-\end{figure}
-
-
-There is very poor agreement between the models for $S_u$ suggesting that statistical convergence requires a much longer averaging period. The $S_v$ profile indicates that all three models underpredict the magnitude of the maximum point, with the dynamic Lagrangian model performing worse than the Smagorinsky model. The streamwise skewness of velocity is better predicted by all three models but again the dynamic model performs worse. All three models underpredict the flatness of velocity at $y=0$ (Figure \ref{figure:flatness}). A possible reason for this is that events of large fluctuations are not captured over the period of averaging. In addition to this the number of cells close to the surface may not be sufficient in capturing these features. The general trends of the DNS results are followed for the two full-channel simulations. It is expected that these high order statistics require more temporal averaging than the other statistics presented. 
+The Smagorinsky model significantly underpredicts the vorticity fluctuations below $y^+\approx 50$. Near the centre of the channel there is little difference between the two simulations. Again, this suggests that the dynamic model is most effective near the wall.
 
 \subsection{Conclusions and Further Work}
-Three LES models have been assessed by their ability to predict an infinitely long and wide channel flow, validated against a DNS dataset \citep{vreman2014}. Both the Smagorinsky model \citep{smagorinsky1963} and the dynamic Lagrangian model \citep{meneveau1996} predict the velocity profiles well, even for the simulation considering only half the channel. Deviations were more substantial when investigating RMS velocity, RMS vorticity, and Reynolds stresses. The half channel simulation fails to predict the flow close to the central channel due to restrictions on the flow. the Smagorinsky model generally underpredicts the magnitude of the fluctuations for all three components of vorticity, and the cross-stream and wall-normal fluctuations of velocity. The dynamic Lagrangian model compares well against the DNS for these statistics, accurately capturing the features close to the wall. However, the skewness and flatness of velocity are not well captured by the LES models. This is likely due to number of time steps that contribute to the statistics. Further work will investigate the sensitivity of these statistics to the temporal averaging.
+Two LES models have been assessed by their ability to predict a fully developed channel flow, validated against a DNS dataset \citep{vreman2014}. Both the Smagorinsky model \citep{smagorinsky1963} and the dynamic Lagrangian model \citep{meneveau1996} predict the velocity profiles well. Deviations are more substantial when investigating the RMS velocity, RMS vorticity, and Reynolds stresses. The Smagorinsky model generally underpredicts the magnitude of the fluctuations for all three components of vorticity, and the cross-stream and wall-normal fluctuations of velocity. The dynamic Lagrangian model compares well against the DNS for these statistics, accurately capturing the features close to the wall. However, the statistical dependence on the temporal averaging window has not yet been investigated. In addition to this, the effect of using level-based mesh refinement (described in Section \ref{section:rans}) must be validated before simulating the flow over an array of shark scales. Once the Reynolds number of the shark scale simulations has been determined, these two dependencies will be investigated. 
 
-In order to extend this work to shark scale surfaces the code will be run on generic polyhedral elements. Changes are likely to be made to the discretisation schemes in order to ensure stability, and changes will also have to be made to the post processing techniques. When validated, the code will be extended to shark scale surface. 
-
-\newpage
 \section{6 Month Plan}
 The Gantt chart of Figure \ref{figure:ganttChart2} indicates several different work packages, some of which are dependent on the completion of others.
 %
@@ -1309,7 +1159,7 @@ The main objectives of Section \ref{section:AandO} are given the following times
 \end{itemize}
 \noindent
 
-\section{Publications, conferences, and a long term placement}
+\section{Publications, Conferences, and Placements}
 Four potential papers could be published if the above work packages can be completed:
 \begin{enumerate}
 \itemsep0em
@@ -1322,9 +1172,7 @@ Four potential papers could be published if the above work packages can be compl
 
 \item An experimental investigation into the effects of sharkskin denticles on separating flows, using Particle Image Velocimetry. 
 \end{enumerate}
-There is potential for a placement with another UK university in order to carry out experiments on the flat plates with force balances. These results would complement the findings of the LDA experiments, but would not be essential for publication. 
-
-There are several journals that could be approached with these papers:
+There is potential for a placement with another UK university in order to carry out experiments on the flat plates with force balances. These results would complement the findings of the LDA experiments, but would not be essential for publication. There are several journals that could be approached with these papers:
 \begin{itemize}
 \itemsep0em
 \item Bioinspiration \& Biomimetics,
@@ -1342,6 +1190,146 @@ A list of potential conferences is presented below:
 
 
 \newpage
+\addcontentsline{toc}{section}{References}
 \bibliography{literature.bib}
+
+\newpage
+%\appendix
+%\section*{Appendix A: Pressure Coupling Methods
+\section*{Appendix A: Pressure Coupling Methods}
+\addcontentsline{toc}{section}{Appendix A: Pressure Coupling Methods}
+%
+%
+%
+This section details the pressure coupling methods adopted in Sections \ref{section:rans} and \ref{section:les}. Both SIMPLE \citep{caretto1973} and PISO \citep{issa1986} algorithms can be derived from a semi-discrete form of the momentum equation:
+\begin{equation}
+\label{equation:appendixA:momPredict}
+\vect{a}_p \vect{U}_p = \vect{H} - \nabla P,
+\end{equation}
+where $\vect{a}_p$ represents the matrix coefficients of the velocity $\vect{U}_p$ in the cell $p$. $\vect{H}$ represents the explicit source terms and the influence from the neighbouring cells:
+\begin{equation}
+\vect{H} = - \sum_n \vect{a}_n \vect{U}_n + \vect{S},
+\end{equation}
+where subscript $n$ represents the neighbours, and $\vect{S}$ the source terms. The continuity equation is discretised as
+\begin{equation}
+\label{equation:appendixA:cont}
+\nabla \cdot \vect{U} = \sum_f \vect{S}\cdot \vect{U}_f = 0,
+\end{equation}
+where $\vect{S}$ denotes the outward pointing face area vector and subscript $f$ denotes the face value. Face values are calculated by reformulating \eqref{equation:appendixA:momPredict} for the cell faces, whereby the pressure gradient is evaluated from the neighbouring cells, as per \cite{rhie1983}:
+\begin{equation}
+\vect{U}_f = \left( \frac{\vect{H}}{\vect{a}_p} \right)_f - \frac{\left( \nabla P \right)_f}{\vect{a}_{p,f}}.
+\end{equation}
+By substituting $\vect{U}_f$ into the continuity equation, \eqref{equation:appendixA:cont}, we form a Laplacian equation for pressure: 
+\begin{equation}
+\label{equation:appendixA:pressure}
+\nabla \cdot \left( \frac{\left(\nabla P\right)_f}{\vect{a}_{p,f}} \right) = \sum_f \vect{S} \cdot \left(  \frac{\vect{H}}{\vect{a}_p}  \right)_f.
+\end{equation}
+
+The PISO algorithm \citep{issa1986} calculates the pressure and velocity fields in the following way:
+\begin{enumerate}
+\item Set initial conditions at $t=0$.
+\item Construct $\vect{H}$ and solve the \textit{momentum predictor} equation, \eqref{equation:appendixA:momPredict}, for the velocity field, using the pressure field from the previous known solution. This is known as the \textit{pressure correction} step.
+\item Update $\vect{H}$ using the predicted velocity field and solve the pressure equation, \eqref{equation:appendixA:pressure}, to update the pressure field. 
+\item Carry out a \textit{velocity corrector} step by solving \eqref{equation:appendixA:momPredict}. Repeat steps 3 and 4 to ensure second order accuracy \citep{issa1986}.
+\item Exit the PISO loop and solve transport equations for other scalars (such as turbulent transport equations)
+\item repeat for the next time step. 
+\end{enumerate}
+The reason for the corrector stage is to ensure the continuity equation is satisfied by the velocity field.
+
+The steady-state SIMPLE algorithm \citep{caretto1973} adopts a similar approach to PISO, but corrects the velocity and pressure only once, to ensure continuity. In order to ensure stability, the pressure and velocity fields are relaxed. This method assumes that since a steady state solution is desired, the effect of not correcting the velocity field multiple times at step 3 will reduce computing costs at a reduction in convergence rate \citep{ferziger1997}.
+
+\newpage
+\section*{Appendix B: Notes on LES Closures}
+\addcontentsline{toc}{section}{Appendix B: The Germano Identity}
+This section details the method of defining the sub-grid scale model for the dynamic large eddy simulation. A general filtering operator is defined by
+\begin{equation}
+\overline{U}_i(x_i,t) = \int G(r_i,x_i) U_i(x_i - r_i,t) dr_i,
+\end{equation} 
+where $\overline{U}_i$ is the filtered velocity field, $U_i$ is the velocity field, $r_i$ is a radial coordinate, and $G(r_i,x_i)$ is the filtering operator. This work adopts a top-hat filter, whereby contributions to the filtered field are only taken if the radial coordinate lies within the filter width, $\overline{\Delta}$. The residual velocity is defined by
+\begin{equation}
+u_i'(x_i,t) \equiv U_i(x_i,t) - \overline{U}_i(x_i,t).
+\end{equation}
+The residual pressure is defined in the same way. When the filtering operator is applied to the continuity and momentum equations we arrive at,
+\begin{equation}
+\label{equation:appendixB:cont}
+\pdev{\overline{U}_i}{x_i} = 0,
+\end{equation}
+and
+\begin{equation}
+\label{equation:appendixB:momentum}
+\pdev{\overline{U}_i}{t} + \pdev{\overline{U_i U_j}}{x_j} - \pdev{\overline{\sigma}_{ij}}{x_j} = - \pdev{\overline{P}}{x_i}.
+\end{equation}
+The second term of the filtered momentum equation requires information about the unfiltered field in order to be evaluated. We therefore define a residual-stress tensor:
+\begin{equation}
+\tau_{ij}^R \equiv  \tau_{ij}^r + \frac{1}{3} \tau_{kk}^R \delta_{ij}  \equiv \overline{U_i U_j} - \overline{U}_i \overline{U}_j,
+\end{equation}
+where $\tau_{ij}^R$ is the residual stress tensor and $\tau_{ij}^r$ is its anisotropic component. When substituted into the momentum equation \eqref{equation:appendixB:momentum} we get,
+\begin{equation}
+\label{equation:appendixB:momentumFil}
+\pdev{\overline{U}_i}{t} + \pdev{\overline{U}_i \overline{U}_j}{x_j} + \pdev{\tau_{ij}^r}{x_j} - \pdev{\overline{\sigma}_{ij}}{x_j} = - \pdev{\overline{P}}{x_i}.
+\end{equation}
+The residual stress is modelled using the closure of \cite{smagorinsky1963}:
+\begin{equation}
+\label{equation:appendixB:residualStress}
+\tau_{ij}^r = - 2 (C_s \overline{\Delta})^2 |\overline{S}| \overline{S}_{ij},
+\end{equation}
+where $C_s$ is the Smagorinsky constant, and $\overline{S}$ and $\overline{S}_{ij}$ are given by,
+\begin{equation}
+\overline{S}_{ij} = \frac{1}{2}\left(  \pdev{\overline{U}_i}{x_j} + \pdev{\overline{U}_j}{x_i}  \right), \hspace{1cm} |\overline{S}| = (2 \overline{S}_{ij} \overline{S}_{ij})^{1/2}.
+\end{equation}
+The Smagorinsky constant is typically assigned a value of $C_s = 0.17$. The momentum equation, \eqref{equation:appendixB:momentumFil}, can now be solved for the filtered velocity field by evaluating the residual stress using the fluid rate of strain. It should be noted that the filtering is implicit; the form of the filtering operator is not required to solve for the filtered field. However, the assumption that there is no dependence on space or time is a large limitation to the model. An alternative method, first proposed by \cite{germano1991}, involves filtering the momentum equations a second time in order to derive a relationship between $C_s$ and the filtered velocity field:
+\begin{equation}
+\pdev{\widetilde{\overline{U}}_i}{t} + \pdev{\widetilde{\overline{U_i U_j}}}{x_j} - \pdev{\widetilde{\overline{\sigma}}_{ij}}{x_j} = - \pdev{\widetilde{\overline{P}}}{x_i},
+\end{equation}
+where the second filtering operator is defined by 
+\begin{equation}
+\widetilde{U}_i(x_i,t) = \int \widetilde{G}(r_i,x_i) U_i(x_i - r_i,t) dr_i.
+\end{equation} 
+The residual stress, based on the double-filtered equations, is defined as
+\begin{equation}
+T_{ij} \equiv  T_{ij}^r + \frac{1}{3}T_{kk} \delta_{ij}   \equiv \widetilde{\overline{U_i U_j}} - \widetilde{\overline{U}}_i \widetilde{\overline{U}}_j.
+\end{equation}
+\cite{germano1991} related the once and twice-filtered residual stresses by subtracting them from one another, resulting in
+\begin{equation}
+\label{equation:appendixB:germano}
+L_{ij} \equiv  L_{ij}^r + \frac{1}{3}L_{kk} \delta_{ij}  \equiv T_{ij} - \widetilde{\tau_{ij}}^R = \widetilde{\overline{U}_i \overline{U}_j} - \widetilde{\overline{U}}_i \widetilde{\overline{U}}_j.
+\end{equation}
+which does not require information from the unfiltered field in order to evaluate. By assuming $T_{ij}^r$ can be modelled in the same way as $\tau_{ij}^r$, we get
+\begin{equation}
+T_{ij}^r = - 2 (C_s \widetilde{\overline{\Delta}})^2 |\widetilde{\overline{S}}| \widetilde{\overline{S}}_{ij},
+\end{equation}
+where $\widetilde{\overline{\Delta}}$ is the filter width of the second filter.
+By using the \cite{germano1991} identity, \eqref{equation:appendixB:germano}, we can define a relationship between $L_{ij}$ and $C_s$:
+\begin{equation}
+\label{equation:appendixB:LijMij}
+L_{ij}^r = T_{ij}^r - \widetilde{\tau}_{ij}^r =  C_s^2 M_{ij}, \hspace{1cm} M_{ij} = 2 \overline{\Delta}^2 \widetilde{|\overline{S}|\overline{S}_{ij}} - 2 \widetilde{\overline{\Delta}}^2 |\widetilde{\overline{S}}|\widetilde{\overline{S}}_{ij}.
+\end{equation}
+Since $L_{ij}$ can be evaluated from the filtered velocity field, and $M_{ij}$ can be evaluated from the filtered rate of strain, the only unknown in \eqref{equation:appendixB:LijMij} is $C_s^2$. However, this represents 5 equations with only one unknown. \cite{lilly1992} proposes a least squares method to reduce the error associated with \eqref{equation:appendixB:LijMij}, resulting in 
+\begin{equation}
+\label{equation:appendixB:LijMijonMklMkl}
+C_s^2 = \frac{L_{ij}M_{ij}}{M_{kl}M_{kl}}.
+\end{equation}
+\eqref{equation:appendixB:LijMijonMklMkl} can be used to close our system of equations by calculating $C_s^2$ for the residual stress of \eqref{equation:appendixB:residualStress}, which can then be used to evaluate the filtered momentum equation, \eqref{equation:appendixB:momentumFil}. However, without spatial averaging and clipping, $C_s^2$ has a tendency to exhibit large fluctuations and negative (non-physical) values \citep{pope2001}. In order to prevent this, the current work adopts the Lagrangian averaging technique of \cite{meneveau1996}.
+\begin{equation}
+\label{equation:appendixB:Cs2_flmfmm}
+C_s^2 = \frac{f_{LM}}{f_{MM}},
+\end{equation}
+where $f_{LM}= (L_{ij}M_{ij})_{ave}$ and $f_{MM} = (L_{ij}M_{ij})_{ave}$. \cite{meneveau1996} construct a relaxation equation for these quantities:
+\begin{equation}
+\label{equation:appendixB:flmTransport}
+\pdev{f_{LM}}{t} + \pdev{}{x_j}(\overline{U}_j f_{LM}) = \frac{1}{T}(L_{ij}M_{ij} - f_{LM}),
+\end{equation}
+\begin{equation}
+\label{equation:appendixB:fmmTransport}
+\pdev{f_{MM}}{t} + \pdev{}{x_j}(\overline{U}_j f_{MM}) = \frac{1}{T}(M_{ij}M_{ij} - f_{MM}).
+\end{equation}
+where $T$ is a specified relaxation time. These equations are equivalent to averaging along particle paths, with a relative weight $\text{exp}[-(t-t')/T]$, where $t'$ is the earlier time.  The present work adopts a relaxation time of $T = 1.5 \overline{\Delta} (f_{LM}f_{MM})^{-1/8}$, as recommended by \cite{meneveau1996}. Subsequently, the memory time is reduced in regions of high straining (high $f_{MM}$) and large nonlinear energy transfer (high $f_{LM}$). Although much less susceptible to negative values, $f_{LM}$ is clipped in order to ensure physicality (positive $C_s^2$). 
+
+The procedure for closing the filtered momentum equation, by using the dynamic Lagrangian model of \cite{meneveau1996}, is as follows: We first calculated $M_{ij}$ and $L_{ij}$ using the once filtered, and twice filtered velocity field, from \eqref{equation:appendixB:germano} and \eqref{equation:appendixB:LijMij}. These are then used to solve the relaxation equations, \eqref{equation:appendixB:flmTransport} and \eqref{equation:appendixB:fmmTransport}. This provides a value for the Smagorinsky constant, using \eqref{equation:appendixB:Cs2_flmfmm}, which is subsequently used to calculate the residual stress from \eqref{equation:appendixB:residualStress}. Lastly, the filtered momentum equation, \eqref{equation:appendixB:momentumFil}, and the continuity equation, \eqref{equation:appendixB:cont}, can be solved for the filtered velocity and pressure field.
+
+
+
+
+
 \end{document}
 
